@@ -1,0 +1,245 @@
+1598461192a:1:{s:11:"gallery.htm";a:8:{s:8:"fileName";s:11:"gallery.htm";s:7:"content";s:3219:"title = "GALLERY"
+url = "/gallery"
+layout = "default"
+==
+<?
+function onStart()
+{
+    $files = array();
+    $path = './storage/app/media/';
+    $dir = opendir($path);
+
+    while(false != ($file = readdir($dir))) {
+        if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
+            $files[] = $file; // put in array.
+        }
+    }
+    closedir($dir);
+
+    echo '<ul id="lightSlider">';
+        foreach($files as $file) {
+
+            $fp = $path . $file;
+            echo '<li data-thumb="'.$fp.'">
+                <button id="gallery_toggle">
+                    <div class="middlepane" >
+                        <img src="'.$fp.'" class="active image_2"/>
+                    </div>
+                </button>
+            </li>';
+        }
+    echo '</ul>';
+
+}
+?>
+==
+
+<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
+</head>
+
+<body>
+
+    <div class="row">   
+        <div class="col" >
+            <button type="button" id="goToPrevSlide" class="leftbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+
+        <div class="col" >
+            <button type="button" id="goToNextSlide" class="rightbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+        
+    </div>
+
+    
+    
+</body>
+
+<scripts>
+    <script type="text/javascript">
+
+        var slider = $('#lightSlider').lightSlider({
+        controls: false,
+        gallery: true,
+        // item: 5,
+        slideMargin: 10,
+        // thumbItem: 9,
+        mode: "fade",
+        loop: true,
+        speed: 2000,
+        keyPress: true,
+        autoWidth: false,
+    
+    });
+        $('#goToPrevSlide').on('click', function () {
+        slider.goToPrevSlide();
+    });
+        $('#goToNextSlide').on('click', function () {
+            slider.goToNextSlide();
+    });
+    </script>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+    
+        setTimeout(function(){
+            element.classList.remove('loading');
+        }, index * 500);
+
+    });
+    </script>
+
+    <script type="text/javascript">
+    $("#gallery_toggle").click(function(){
+    // var secondPosition=$("div.box").position();
+    var firstPosition=$("ul.lSPager.lSGallery").offset();
+    var gal = document.querySelector('ul.lSPager.lSGallery');
+    var space = innerHeight - gal.offsetTop - gal.offsetHeight;
+ 
+    // var topSecond =secondPosition.top.toString()+'px';
+    var space_str = space.toString()+'px';
+    var t_ms = 700;
+      
+    if(space > 0)
+    {
+      $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-80px"}, t_ms, function() {});
+      $("img.active.image_2").animate({"max-height": "70%"});
+      
+   
+    }else
+    {
+      $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
+       $("img.active.image_2").animate({"max-height": "60%"}, t_ms);
+    }
+  
+    });
+    </script>
+
+    
+
+</scripts>
+";s:5:"mtime";i:1593468978;s:6:"markup";s:2401:"<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
+</head>
+
+<body>
+
+    <div class="row">   
+        <div class="col" >
+            <button type="button" id="goToPrevSlide" class="leftbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+
+        <div class="col" >
+            <button type="button" id="goToNextSlide" class="rightbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+        
+    </div>
+
+    
+    
+</body>
+
+<scripts>
+    <script type="text/javascript">
+
+        var slider = $('#lightSlider').lightSlider({
+        controls: false,
+        gallery: true,
+        // item: 5,
+        slideMargin: 10,
+        // thumbItem: 9,
+        mode: "fade",
+        loop: true,
+        speed: 2000,
+        keyPress: true,
+        autoWidth: false,
+    
+    });
+        $('#goToPrevSlide').on('click', function () {
+        slider.goToPrevSlide();
+    });
+        $('#goToNextSlide').on('click', function () {
+            slider.goToNextSlide();
+    });
+    </script>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+    
+        setTimeout(function(){
+            element.classList.remove('loading');
+        }, index * 500);
+
+    });
+    </script>
+
+    <script type="text/javascript">
+    $("#gallery_toggle").click(function(){
+    // var secondPosition=$("div.box").position();
+    var firstPosition=$("ul.lSPager.lSGallery").offset();
+    var gal = document.querySelector('ul.lSPager.lSGallery');
+    var space = innerHeight - gal.offsetTop - gal.offsetHeight;
+ 
+    // var topSecond =secondPosition.top.toString()+'px';
+    var space_str = space.toString()+'px';
+    var t_ms = 700;
+      
+    if(space > 0)
+    {
+      $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-80px"}, t_ms, function() {});
+      $("img.active.image_2").animate({"max-height": "70%"});
+      
+   
+    }else
+    {
+      $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
+       $("img.active.image_2").animate({"max-height": "60%"}, t_ms);
+    }
+  
+    });
+    </script>
+
+    
+
+</scripts>";s:4:"code";s:749:"function onStart()
+{
+    $files = array();
+    $path = './storage/app/media/';
+    $dir = opendir($path);
+
+    while(false != ($file = readdir($dir))) {
+        if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
+            $files[] = $file; // put in array.
+        }
+    }
+    closedir($dir);
+
+    echo '<ul id="lightSlider">';
+        foreach($files as $file) {
+
+            $fp = $path . $file;
+            echo '<li data-thumb="'.$fp.'">
+                <button id="gallery_toggle">
+                    <div class="middlepane" >
+                        <img src="'.$fp.'" class="active image_2"/>
+                    </div>
+                </button>
+            </li>';
+        }
+    echo '</ul>';
+
+}";s:5:"title";s:7:"GALLERY";s:3:"url";s:8:"/gallery";s:6:"layout";s:7:"default";}}
