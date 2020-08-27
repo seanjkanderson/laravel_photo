@@ -1,14 +1,49 @@
-1598461299a:1:{s:8:"home.htm";a:8:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:1018:"title = "Home"
+1598490034a:1:{s:8:"home.htm";a:8:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:1733:"title = "Home"
 url = "/"
 layout = "default"
 ==
 
-<div class="container">
+<?
+function onStart()
+{
 
-    <img class="active image" src="{{ 'awakening.jpg'|media }}" >
-    <img class="active image" src="{{ 'caldera.jpg'|media }}" >
-    <img class="active image" src="{{ 'sanctuary.jpg'|media }}" >
-</div>
+$files = array();
+$path = './storage/app/media/';
+$dir = opendir($path);
+
+while(false != ($file = readdir($dir))) {
+    if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
+        $files[] = $file; // put in array.
+    }
+}
+closedir($dir);
+
+echo '<div class="container">';
+    echo '<div id="cycler">';
+    foreach($files as $file) {
+
+        $fp = $path . $file;
+        if (str_contains($fp, '.jpg')) {
+            echo "'.$fp.'";
+            echo '<img class="image" src="'.$fp.'" >';
+        }
+        
+    }
+    echo '</div>';
+echo '</div>';
+}
+?>
+==
+
+
+<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
+</head>
 
 
 <scripts>
@@ -25,15 +60,17 @@ layout = "default"
     
         $(document).ready(function(){
         // run every 4s
-        setInterval('cycleImages()', 10);
+        setInterval('cycleImages()', 4000);
         })</script>
         
-</scripts>";s:5:"mtime";i:1598460697;s:6:"markup";s:970:"<div class="container">
+</scripts>";s:5:"mtime";i:1598465022;s:6:"markup";s:1061:"<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-    <img class="active image" src="{{ 'awakening.jpg'|media }}" >
-    <img class="active image" src="{{ 'caldera.jpg'|media }}" >
-    <img class="active image" src="{{ 'sanctuary.jpg'|media }}" >
-</div>
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
+</head>
 
 
 <scripts>
@@ -50,7 +87,34 @@ layout = "default"
     
         $(document).ready(function(){
         // run every 4s
-        setInterval('cycleImages()', 10);
+        setInterval('cycleImages()', 4000);
         })</script>
         
-</scripts>";s:4:"code";N;s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";}}
+</scripts>";s:4:"code";s:612:"function onStart()
+{
+
+$files = array();
+$path = './storage/app/media/';
+$dir = opendir($path);
+
+while(false != ($file = readdir($dir))) {
+    if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
+        $files[] = $file; // put in array.
+    }
+}
+closedir($dir);
+
+echo '<div class="container">';
+    echo '<div id="cycler">';
+    foreach($files as $file) {
+
+        $fp = $path . $file;
+        if (str_contains($fp, '.jpg')) {
+            echo "'.$fp.'";
+            echo '<img class="image" src="'.$fp.'" >';
+        }
+        
+    }
+    echo '</div>';
+echo '</div>';
+}";s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";}}

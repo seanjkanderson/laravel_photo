@@ -34,21 +34,20 @@ class __TwigTemplate_d724621501a07ae6c50449f1accaf8aba1df4a82639f867c1aa1b342bd8
     {
         $macros = $this->macros;
         // line 1
-        echo "<div class=\"container\">
+        echo "<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
 
-    <img class=\"active image\" src=\"";
-        // line 3
-        echo $this->extensions['System\Twig\Extension']->mediaFilter("awakening.jpg");
-        echo "\" >
-    <img class=\"active image\" src=\"";
-        // line 4
-        echo $this->extensions['System\Twig\Extension']->mediaFilter("caldera.jpg");
-        echo "\" >
-    <img class=\"active image\" src=\"";
+    <link  href=\"";
         // line 5
-        echo $this->extensions['System\Twig\Extension']->mediaFilter("sanctuary.jpg");
-        echo "\" >
-</div>
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/css/lightslider.css");
+        echo "\" rel=\"stylesheet\">
+    <script src=\"";
+        // line 6
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/javascript/lightslider.js");
+        echo "\"></script>            
+
+</head>
 
 
 <scripts>
@@ -65,7 +64,7 @@ class __TwigTemplate_d724621501a07ae6c50449f1accaf8aba1df4a82639f867c1aa1b342bd8
     
         \$(document).ready(function(){
         // run every 4s
-        setInterval('cycleImages()', 10);
+        setInterval('cycleImages()', 4000);
         })</script>
         
 </scripts>";
@@ -83,17 +82,19 @@ class __TwigTemplate_d724621501a07ae6c50449f1accaf8aba1df4a82639f867c1aa1b342bd8
 
     public function getDebugInfo()
     {
-        return array (  49 => 5,  45 => 4,  41 => 3,  37 => 1,);
+        return array (  47 => 6,  43 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"container\">
+        return new Source("<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
 
-    <img class=\"active image\" src=\"{{ 'awakening.jpg'|media }}\" >
-    <img class=\"active image\" src=\"{{ 'caldera.jpg'|media }}\" >
-    <img class=\"active image\" src=\"{{ 'sanctuary.jpg'|media }}\" >
-</div>
+    <link  href=\"{{ '/assets/css/lightslider.css'|theme }}\" rel=\"stylesheet\">
+    <script src=\"{{ '/assets/javascript/lightslider.js'|theme }}\"></script>            
+
+</head>
 
 
 <scripts>
@@ -110,7 +111,7 @@ class __TwigTemplate_d724621501a07ae6c50449f1accaf8aba1df4a82639f867c1aa1b342bd8
     
         \$(document).ready(function(){
         // run every 4s
-        setInterval('cycleImages()', 10);
+        setInterval('cycleImages()', 4000);
         })</script>
         
 </scripts>", "/Users/seananderson/Documents/websites/laravel_photo/themes/seaofdreams/pages/home.htm", "");

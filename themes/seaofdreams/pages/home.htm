@@ -3,12 +3,47 @@ url = "/"
 layout = "default"
 ==
 
-<div class="container">
+<?
+function onStart()
+{
 
-    <img class="active image" src="{{ 'awakening.jpg'|media }}" >
-    <img class="active image" src="{{ 'caldera.jpg'|media }}" >
-    <img class="active image" src="{{ 'sanctuary.jpg'|media }}" >
-</div>
+$files = array();
+$path = './storage/app/media/';
+$dir = opendir($path);
+
+while(false != ($file = readdir($dir))) {
+    if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
+        $files[] = $file; // put in array.
+    }
+}
+closedir($dir);
+
+echo '<div class="container">';
+    echo '<div id="cycler">';
+    foreach($files as $file) {
+
+        $fp = $path . $file;
+        if (str_contains($fp, '.jpg')) {
+            echo "'.$fp.'";
+            echo '<img class="image" src="'.$fp.'" >';
+        }
+        
+    }
+    echo '</div>';
+echo '</div>';
+}
+?>
+==
+
+
+<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
+</head>
 
 
 <scripts>
