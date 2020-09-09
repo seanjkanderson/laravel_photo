@@ -24,11 +24,29 @@ function onStart()
         foreach($files as $file) {
 
             $fp = $path . $file;
+
+            if(strpos($file, 'cover') !== false){
+                $ext = strpos($file, '.');
+                $underscore = strpos($file, '_');
+                $image_name = substr($file, $underscore+1, $ext - $underscore - 1);
+            } else{
+                $ext = strpos($file, '.');
+                $image_name = substr($file, 0, $ext);
+                $image_name = str_replace("_", " ", $image_name);
+
+                
+
+            }
+
             echo '<li data-thumb="'.$fp.'">
-                <button id="gallery_toggle">
+                <button class="gallery_toggle empty_btn">
                     <div class="middlepane" >
                         <img src="'.$fp.'" class="active image_2"/>
                     </div>
+                    <div class="gallery-caption">
+                        <p style="opacity: 0%;">'. strtoupper($image_name).'</p>
+                    </div>
+                    
                 </button>
             </li>';
         }
@@ -101,7 +119,7 @@ function onStart()
     </script>
 
     <script type="text/javascript">
-        $("#gallery_toggle").click(function(){
+        $(".gallery_toggle").click(function(){
         // var secondPosition=$("div.box").position();
         var firstPosition=$("ul.lSPager.lSGallery").offset();
         var gal = document.querySelector('ul.lSPager.lSGallery');
@@ -113,12 +131,14 @@ function onStart()
         
         if(space > 0)
         {
+        $("p").animate({"opacity": "100%"}, t_ms, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-80px"}, t_ms, function() {});
         $("img.active.image_2").animate({"max-height": "70%"});
         
     
         }else
         {
+        $("p").animate({"opacity": "0%"}, t_ms, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
         $("img.active.image_2").animate({"max-height": "60%"}, t_ms);
         }

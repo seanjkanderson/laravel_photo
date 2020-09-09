@@ -37,10 +37,7 @@ class __TwigTemplate_551903ab411efcdd185879e15c6d78beea560e15753a1b3449cffacc163
         echo "<body> 
 
     <p1>
-        <img src=\"";
-        // line 4
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/core-img/about-portrait.jpg");
-        echo "\" class=\"about-portrait\">
+        <img src=\"./storage/app/media/core/about-portrait.jpg\" class=\"about-portrait\">
     </p1>
     
 
@@ -76,14 +73,9 @@ class __TwigTemplate_551903ab411efcdd185879e15c6d78beea560e15753a1b3449cffacc163
         return "/Users/seananderson/Documents/websites/laravel_photo/themes/seaofdreams/pages/about.htm";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  42 => 4,  37 => 1,);
+        return array (  37 => 1,);
     }
 
     public function getSourceContext()
@@ -91,7 +83,7 @@ class __TwigTemplate_551903ab411efcdd185879e15c6d78beea560e15753a1b3449cffacc163
         return new Source("<body> 
 
     <p1>
-        <img src=\"{{ '/assets/img/core-img/about-portrait.jpg'|theme }}\" class=\"about-portrait\">
+        <img src=\"./storage/app/media/core/about-portrait.jpg\" class=\"about-portrait\">
     </p1>
     
 

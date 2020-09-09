@@ -11,7 +11,7 @@ function onStart()
     $dir = opendir($path);
 
     while(false != ($file = readdir($dir))) {
-        if(!str_contains(strtolower($file), '.jpg') and !str_contains(strtolower($file), '.jpeg') and !str_contains(strtolower($file), 'home') and strlen($file) > 3) {
+        if(!str_contains(strtolower($file), '.jpg') and !str_contains(strtolower($file), '.jpeg') and !str_contains(strtolower($file), 'home') and !str_contains(strtolower($file), 'core') and strlen($file) > 3) {
             $temp_path = $path . $file; // put in array.
             $temp_dir = opendir($temp_path);
             

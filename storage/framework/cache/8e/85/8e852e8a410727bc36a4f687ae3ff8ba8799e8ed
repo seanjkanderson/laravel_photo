@@ -1,4 +1,4 @@
-1599672866a:1:{s:11:"gallery.htm";a:8:{s:8:"fileName";s:11:"gallery.htm";s:7:"content";s:3546:"title = "GALLERY"
+1599690276a:1:{s:11:"gallery.htm";a:8:{s:8:"fileName";s:11:"gallery.htm";s:7:"content";s:4313:"title = "GALLERY"
 url = "/gallery"
 layout = "default"
 ==
@@ -24,11 +24,29 @@ function onStart()
         foreach($files as $file) {
 
             $fp = $path . $file;
+
+            if(strpos($file, 'cover') !== false){
+                $ext = strpos($file, '.');
+                $underscore = strpos($file, '_');
+                $image_name = substr($file, $underscore+1, $ext - $underscore - 1);
+            } else{
+                $ext = strpos($file, '.');
+                $image_name = substr($file, 0, $ext);
+                $image_name = str_replace("_", " ", $image_name);
+
+                
+
+            }
+
             echo '<li data-thumb="'.$fp.'">
-                <button id="gallery_toggle">
+                <button class="gallery_toggle empty_btn">
                     <div class="middlepane" >
                         <img src="'.$fp.'" class="active image_2"/>
                     </div>
+                    <div class="gallery-caption">
+                        <p style="opacity: 0%;">'. strtoupper($image_name).'</p>
+                    </div>
+                    
                 </button>
             </li>';
         }
@@ -101,7 +119,7 @@ function onStart()
     </script>
 
     <script type="text/javascript">
-        $("#gallery_toggle").click(function(){
+        $(".gallery_toggle").click(function(){
         // var secondPosition=$("div.box").position();
         var firstPosition=$("ul.lSPager.lSGallery").offset();
         var gal = document.querySelector('ul.lSPager.lSGallery');
@@ -113,12 +131,14 @@ function onStart()
         
         if(space > 0)
         {
+        $("p").animate({"opacity": "100%"}, t_ms, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-80px"}, t_ms, function() {});
         $("img.active.image_2").animate({"max-height": "70%"});
         
     
         }else
         {
+        $("p").animate({"opacity": "0%"}, t_ms, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
         $("img.active.image_2").animate({"max-height": "60%"}, t_ms);
         }
@@ -129,7 +149,7 @@ function onStart()
     
 
 </scripts>
-";s:5:"mtime";i:1599669301;s:6:"markup";s:2474:"<head>
+";s:5:"mtime";i:1599689671;s:6:"markup";s:2604:"<head>
     <!-- jQuery 1.8 or later, 33 KB -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -192,7 +212,7 @@ function onStart()
     </script>
 
     <script type="text/javascript">
-        $("#gallery_toggle").click(function(){
+        $(".gallery_toggle").click(function(){
         // var secondPosition=$("div.box").position();
         var firstPosition=$("ul.lSPager.lSGallery").offset();
         var gal = document.querySelector('ul.lSPager.lSGallery');
@@ -204,12 +224,14 @@ function onStart()
         
         if(space > 0)
         {
+        $("p").animate({"opacity": "100%"}, t_ms, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-80px"}, t_ms, function() {});
         $("img.active.image_2").animate({"max-height": "70%"});
         
     
         }else
         {
+        $("p").animate({"opacity": "0%"}, t_ms, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
         $("img.active.image_2").animate({"max-height": "60%"}, t_ms);
         }
@@ -219,7 +241,7 @@ function onStart()
 
     
 
-</scripts>";s:4:"code";s:1003:"function onStart()
+</scripts>";s:4:"code";s:1640:"function onStart()
 {
     $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $parts = parse_url($url);
@@ -240,11 +262,29 @@ function onStart()
         foreach($files as $file) {
 
             $fp = $path . $file;
+
+            if(strpos($file, 'cover') !== false){
+                $ext = strpos($file, '.');
+                $underscore = strpos($file, '_');
+                $image_name = substr($file, $underscore+1, $ext - $underscore - 1);
+            } else{
+                $ext = strpos($file, '.');
+                $image_name = substr($file, 0, $ext);
+                $image_name = str_replace("_", " ", $image_name);
+
+                
+
+            }
+
             echo '<li data-thumb="'.$fp.'">
-                <button id="gallery_toggle">
+                <button class="gallery_toggle empty_btn">
                     <div class="middlepane" >
                         <img src="'.$fp.'" class="active image_2"/>
                     </div>
+                    <div class="gallery-caption">
+                        <p style="opacity: 0%;">'. strtoupper($image_name).'</p>
+                    </div>
+                    
                 </button>
             </li>';
         }

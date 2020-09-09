@@ -103,7 +103,7 @@ class __TwigTemplate_9e5517846021c43165822f6dbdd030b25cc0a13d02ae8140c1555791cce
     </script>
 
     <script type=\"text/javascript\">
-        \$(\"#gallery_toggle\").click(function(){
+        \$(\".gallery_toggle\").click(function(){
         // var secondPosition=\$(\"div.box\").position();
         var firstPosition=\$(\"ul.lSPager.lSGallery\").offset();
         var gal = document.querySelector('ul.lSPager.lSGallery');
@@ -115,12 +115,14 @@ class __TwigTemplate_9e5517846021c43165822f6dbdd030b25cc0a13d02ae8140c1555791cce
         
         if(space > 0)
         {
+        \$(\"p\").animate({\"opacity\": \"100%\"}, t_ms, function() {});
         \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"-80px\"}, t_ms, function() {});
         \$(\"img.active.image_2\").animate({\"max-height\": \"70%\"});
         
     
         }else
         {
+        \$(\"p\").animate({\"opacity\": \"0%\"}, t_ms, function() {});
         \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"20px\"}, t_ms, function() {});
         \$(\"img.active.image_2\").animate({\"max-height\": \"60%\"}, t_ms);
         }
@@ -213,7 +215,7 @@ class __TwigTemplate_9e5517846021c43165822f6dbdd030b25cc0a13d02ae8140c1555791cce
     </script>
 
     <script type=\"text/javascript\">
-        \$(\"#gallery_toggle\").click(function(){
+        \$(\".gallery_toggle\").click(function(){
         // var secondPosition=\$(\"div.box\").position();
         var firstPosition=\$(\"ul.lSPager.lSGallery\").offset();
         var gal = document.querySelector('ul.lSPager.lSGallery');
@@ -225,12 +227,14 @@ class __TwigTemplate_9e5517846021c43165822f6dbdd030b25cc0a13d02ae8140c1555791cce
         
         if(space > 0)
         {
+        \$(\"p\").animate({\"opacity\": \"100%\"}, t_ms, function() {});
         \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"-80px\"}, t_ms, function() {});
         \$(\"img.active.image_2\").animate({\"max-height\": \"70%\"});
         
     
         }else
         {
+        \$(\"p\").animate({\"opacity\": \"0%\"}, t_ms, function() {});
         \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"20px\"}, t_ms, function() {});
         \$(\"img.active.image_2\").animate({\"max-height\": \"60%\"}, t_ms);
         }

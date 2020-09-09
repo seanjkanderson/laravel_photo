@@ -482,7 +482,7 @@ img {
     width: 100%;
     height: 80px;
     position: fixed;
-    z-index: 1000;
+    z-index: 2000;
     top: 0;
     left: 0;
     padding: 0 34px;
@@ -507,6 +507,7 @@ img {
     text-transform: uppercase;
     color: #424242;
     padding: 0 25px;
+    z-index: 2000;
 }
 
 .header-area .main-menu .nav-link:hover,
@@ -519,6 +520,7 @@ img {
     padding: 15px 0;
     box-shadow: 0 5px 40px rgba(168, 27, 27, 0.15);
     margin-top: 15px;
+    z-index: 2000;
 }
 
 .dropdown-item {
@@ -932,6 +934,17 @@ img {
     left: 300px;
     right: 200px;
     padding-right: 45px;
+    margin-top: 90px;
+}
+
+.gallery-caption {
+    position: fixed;
+    text-align: center;
+    color: green;
+    font-size: 50px;
+    left: 50%;
+    bottom: 20px;
+    z-index: 10000;
 }
 
 .image_2 {
@@ -941,9 +954,9 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* <div>Icons made by <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    /* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 */
-    cursor: url("../img/core-img/oval.gif"), url("../img/core-img/oval.cur")  default;
+    cursor: url("../img/core-img/grid.gif"), default;
 }
 
 .image_2_focused {
@@ -1037,12 +1050,13 @@ color: initial;
 
 .leftbutton:hover {
     border: none;
-    /* Icons made by <a href="https://www.flaticon.com/free-icon/next_709586" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
-    cursor: url("../img/core-img/left.gif"), url("../img/core-img/left.cur"), default;
+    /* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
+    cursor: url("../img/core-img/left.gif"), default;
 }
 
 .rightbutton:hover {
     border: none;
+    /* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
     cursor: url("../img/core-img/right.gif"), default;
 }
 
@@ -1085,6 +1099,12 @@ leftbutton:active, .rightbutton:active {
     top: 50%;
     right: -15%;
     transform: translate(-50%, -50%);
+}
+
+.empty_btn {
+    background: none;
+    border: none;
+    color: white;
 }
 
 .portfolio-menu button {
@@ -1205,6 +1225,28 @@ leftbutton:active, .rightbutton:active {
 }
 
 /* :: 11.0 Blog & Contact Area CSS */
+
+.instagram_profile {
+    /* CSS styles here */
+  }
+  
+.instagram_profile_image {
+/* CSS styles here */
+}
+
+.instagram_username {
+/* CSS styles here */
+ color: black;
+ text-align: center;
+}
+
+.instagram_biography {
+/* CSS styles here */
+}
+
+.instagram_gallery {
+/* CSS styles here */
+}
 
 .blog-content span,
 .contact-heading-text span {

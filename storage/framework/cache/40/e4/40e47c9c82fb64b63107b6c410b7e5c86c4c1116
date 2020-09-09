@@ -1,4 +1,4 @@
-1599672866a:1:{s:9:"about.htm";a:9:{s:8:"fileName";s:9:"about.htm";s:7:"content";s:1483:"title = "ABOUT"
+1599689727a:1:{s:9:"about.htm";a:9:{s:8:"fileName";s:9:"about.htm";s:7:"content";s:1478:"title = "ABOUT"
 url = "/about"
 layout = "inner-scroll"
 is_hidden = 0
@@ -6,7 +6,7 @@ is_hidden = 0
 <body> 
 
     <p1>
-        <img src="{{ '/assets/img/core-img/about-portrait.jpg'|theme }}" class="about-portrait">
+        <img src="./storage/app/media/core/about-portrait.jpg" class="about-portrait">
     </p1>
     
 
@@ -34,10 +34,10 @@ is_hidden = 0
         </p>
         
         </p2>
-</body>";s:5:"mtime";i:1599588614;s:6:"markup";s:1411:"<body> 
+</body>";s:5:"mtime";i:1599679729;s:6:"markup";s:1401:"<body> 
 
     <p1>
-        <img src="{{ '/assets/img/core-img/about-portrait.jpg'|theme }}" class="about-portrait">
+        <img src="./storage/app/media/core/about-portrait.jpg" class="about-portrait">
     </p1>
     
 

@@ -1,5 +1,5 @@
 <?php 
-class Cms5f59043bb2d7c455902406_c0414b9024574bdb0f65875bb85001e1Class extends Cms\Classes\PageCode
+class Cms5f5953cc5d4c0817325121_251419e86e356940242edfcf4a261456Class extends Cms\Classes\PageCode
 {
 public function onStart()
 {
@@ -22,11 +22,29 @@ public function onStart()
         foreach($files as $file) {
 
             $fp = $path . $file;
+
+            if(strpos($file, 'cover') !== false){
+                $ext = strpos($file, '.');
+                $underscore = strpos($file, '_');
+                $image_name = substr($file, $underscore+1, $ext - $underscore - 1);
+            } else{
+                $ext = strpos($file, '.');
+                $image_name = substr($file, 0, $ext);
+                $image_name = str_replace("_", " ", $image_name);
+
+                
+
+            }
+
             echo '<li data-thumb="'.$fp.'">
-                <button id="gallery_toggle">
+                <button class="gallery_toggle empty_btn">
                     <div class="middlepane" >
                         <img src="'.$fp.'" class="active image_2"/>
                     </div>
+                    <div class="gallery-caption">
+                        <p style="opacity: 0%;">'. strtoupper($image_name).'</p>
+                    </div>
+                    
                 </button>
             </li>';
         }

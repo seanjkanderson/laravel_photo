@@ -1,4 +1,4 @@
-1599672866a:1:{s:8:"home.htm";a:8:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:2658:"title = "Home"
+1599689727a:1:{s:8:"home.htm";a:8:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:2000:"title = "Home"
 url = "/"
 layout = "default"
 ==
@@ -40,25 +40,6 @@ function onStart()
     <scripts>
 
         <script> loadImages('.js-files', 'cycler') </script>
-        
-        <!-- <script type="text/javascript">
-            var files = "<?php echo json_encode($out) ?>";
-            var x ="", i;
-            for (i=1; i<=6; i++) {
-            x = x + "<h" + i + ">Heading " + i + "</h" + i + ">";
-            }
-            document.getElementById("demo").innerHTML = x;
-
-            for (var i = 0; i < files.length; i++){
-            document.write("<br><br>array index: " + i);
-            var obj = files[i];
-            for (var key in obj){
-                var value = obj[key];
-                
-                document.write("<br> - " + key + ": " + value);
-            }
-            }
-        </script> -->
 
         <script type="text/javascript">
             function cycleImages(){
@@ -77,7 +58,7 @@ function onStart()
             })</script>
             
     </scripts>
-</body>";s:5:"mtime";i:1598552697;s:6:"markup";s:2184:"<body>
+</body>";s:5:"mtime";i:1599678448;s:6:"markup";s:1526:"<body>
     <head>
         <!-- jQuery 1.8 or later, 33 KB -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -99,25 +80,6 @@ function onStart()
     <scripts>
 
         <script> loadImages('.js-files', 'cycler') </script>
-        
-        <!-- <script type="text/javascript">
-            var files = "<?php echo json_encode($out) ?>";
-            var x ="", i;
-            for (i=1; i<=6; i++) {
-            x = x + "<h" + i + ">Heading " + i + "</h" + i + ">";
-            }
-            document.getElementById("demo").innerHTML = x;
-
-            for (var i = 0; i < files.length; i++){
-            document.write("<br><br>array index: " + i);
-            var obj = files[i];
-            for (var key in obj){
-                var value = obj[key];
-                
-                document.write("<br> - " + key + ": " + value);
-            }
-            }
-        </script> -->
 
         <script type="text/javascript">
             function cycleImages(){

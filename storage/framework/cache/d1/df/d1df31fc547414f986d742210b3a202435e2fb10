@@ -1,4 +1,4 @@
-1599672866a:1:{s:13:"portfolio.htm";a:8:{s:8:"fileName";s:13:"portfolio.htm";s:7:"content";s:2831:"title = "PORTFOLIO"
+1599689727a:1:{s:13:"portfolio.htm";a:8:{s:8:"fileName";s:13:"portfolio.htm";s:7:"content";s:2876:"title = "PORTFOLIO"
 url = "/portfolio"
 layout = "inner-scroll"
 ==
@@ -11,7 +11,7 @@ function onStart()
     $dir = opendir($path);
 
     while(false != ($file = readdir($dir))) {
-        if(!str_contains(strtolower($file), '.jpg') and !str_contains(strtolower($file), '.jpeg') and !str_contains(strtolower($file), 'home') and strlen($file) > 3) {
+        if(!str_contains(strtolower($file), '.jpg') and !str_contains(strtolower($file), '.jpeg') and !str_contains(strtolower($file), 'home') and !str_contains(strtolower($file), 'core') and strlen($file) > 3) {
             $temp_path = $path . $file; // put in array.
             $temp_dir = opendir($temp_path);
             
@@ -81,7 +81,7 @@ function onStart()
     });
     </script>
 
-</scripts>";s:5:"mtime";i:1599670018;s:6:"markup";s:1423:"<head>
+</scripts>";s:5:"mtime";i:1599679614;s:6:"markup";s:1423:"<head>
     <!-- jQuery 1.8 or later, 33 KB -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -123,7 +123,7 @@ function onStart()
     });
     </script>
 
-</scripts>";s:4:"code";s:1337:"function onStart()
+</scripts>";s:4:"code";s:1382:"function onStart()
 {
     session_start();
     $sub_dir = "";
@@ -132,7 +132,7 @@ function onStart()
     $dir = opendir($path);
 
     while(false != ($file = readdir($dir))) {
-        if(!str_contains(strtolower($file), '.jpg') and !str_contains(strtolower($file), '.jpeg') and !str_contains(strtolower($file), 'home') and strlen($file) > 3) {
+        if(!str_contains(strtolower($file), '.jpg') and !str_contains(strtolower($file), '.jpeg') and !str_contains(strtolower($file), 'home') and !str_contains(strtolower($file), 'core') and strlen($file) > 3) {
             $temp_path = $path . $file; // put in array.
             $temp_dir = opendir($temp_path);
             

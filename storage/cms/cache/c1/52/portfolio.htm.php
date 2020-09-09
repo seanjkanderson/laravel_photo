@@ -1,5 +1,5 @@
 <?php 
-class Cms5f59072480a42269175376_0b0e4528668992a59bcb0270b01dc7b5Class extends Cms\Classes\PageCode
+class Cms5f5936c4d0560427673886_e0e3630f6e666829dbf089de04d95347Class extends Cms\Classes\PageCode
 {
 public function onStart()
 {
@@ -10,7 +10,7 @@ public function onStart()
     $dir = opendir($path);
 
     while(false != ($file = readdir($dir))) {
-        if(!str_contains(strtolower($file), '.jpg') and !str_contains(strtolower($file), '.jpeg') and !str_contains(strtolower($file), 'home') and strlen($file) > 3) {
+        if(!str_contains(strtolower($file), '.jpg') and !str_contains(strtolower($file), '.jpeg') and !str_contains(strtolower($file), 'home') and !str_contains(strtolower($file), 'core') and strlen($file) > 3) {
             $temp_path = $path . $file; // put in array.
             $temp_dir = opendir($temp_path);
             
