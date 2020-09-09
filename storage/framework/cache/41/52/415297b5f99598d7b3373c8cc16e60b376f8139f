@@ -1,247 +1,245 @@
-1598490511a:1:{s:12:"home-old.htm";a:8:{s:8:"fileName";s:12:"home-old.htm";s:7:"content";s:4627:"title = "Home"
-url = "/home-old"
+1599672866a:1:{s:12:"home-old.htm";a:8:{s:8:"fileName";s:12:"home-old.htm";s:7:"content";s:3219:"title = "GALLERY"
+url = "/gallery"
 layout = "default"
 ==
+<?
 function onStart()
 {
-    $sub_dir = "home_page/";
     $files = array();
-    $path = './storage/app/media/' . $sub_dir;
+    $path = './storage/app/media/';
     $dir = opendir($path);
 
     while(false != ($file = readdir($dir))) {
         if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
-            $files[] = $path . $file; // put in array.
+            $files[] = $file; // put in array.
         }
     }
     closedir($dir);
-    $this->page["photoFiles"] = $files;
+
+    echo '<ul id="lightSlider">';
+        foreach($files as $file) {
+
+            $fp = $path . $file;
+            echo '<li data-thumb="'.$fp.'">
+                <button id="gallery_toggle">
+                    <div class="middlepane" >
+                        <img src="'.$fp.'" class="active image_2"/>
+                    </div>
+                </button>
+            </li>';
+        }
+    echo '</ul>';
+
 }
+?>
 ==
+
+<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
+</head>
+
 <body>
-    <head>
-        <!-- jQuery 1.8 or later, 33 KB -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-        <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
-        <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+    <div class="row">   
+        <div class="col" >
+            <button type="button" id="goToPrevSlide" class="leftbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
 
-    </head>
-
-    <div id="container">
-        <div id="cycler"> </div>
+        <div class="col" >
+            <button type="button" id="goToNextSlide" class="rightbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+        
     </div>
 
-    <div class="js-files" data-is-authenticated="{{ this.page.photoFiles|json_encode|e('html_attr') }}">
-        <!-- ... -->
-    </div>
-
-    <scripts>
-
-        <!-- <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-                var userRating = document.querySelector('.js-files');
-                var data = $('.js-files').data('isAuthenticated');
-                var x ="";
-                // var isAuthenticated = userRating.dataset.isAuthenticated;
-                $.each(data, function(key, value ) {
-                    x = x + "<h4> " + value + "</h4>";
-                });
-                // or with jQuery
-                
-                document.getElementById("demo").innerHTML = x;
-            });
-
-        </script> -->
-
-        <script type="text/javascript">
-            function loadImages() {
-                document.addEventListener('DOMContentLoaded', function() {
-                        var userRating = document.querySelector('.js-files');
-                        var data = $('.js-files').data('isAuthenticated');
-                        var im_ls ="";
-                        // var isAuthenticated = userRating.dataset.isAuthenticated;
-
-                        // var im_ls = '<div class="container"> \n';
-                        // im_ls = im_ls + '<div id="cycler"> \n';
-                        
-                        $.each(data, function(key, value ) {
-                            if (value.indexOf(".jpg") >= 0) {
-                                if (key == 1) {
-                                    im_ls = im_ls + '<img class="active image" src="' + value + '" > \n'
-                                }
-                                else {
-                                im_ls = im_ls + '<img class="image" src="' + value + '" > \n'
-                                }
-                            }
-                        });
-
-                        // im_ls = im_ls + '</div> \n </div>'
-                        // or with jQuery
-                        
-                        // $("").append(im_ls)
-                        document.getElementById("cycler").innerHTML = im_ls;
-                    });
-            }
-            loadImages()
     
-        </script>
-
-        
-        <!-- <script type="text/javascript">
-            var files = "<?php echo json_encode($out) ?>";
-            var x ="", i;
-            for (i=1; i<=6; i++) {
-            x = x + "<h" + i + ">Heading " + i + "</h" + i + ">";
-            }
-            document.getElementById("demo").innerHTML = x;
-
-            for (var i = 0; i < files.length; i++){
-            document.write("<br><br>array index: " + i);
-            var obj = files[i];
-            for (var key in obj){
-                var value = obj[key];
-                
-                document.write("<br> - " + key + ": " + value);
-            }
-            }
-        </script> -->
-
-        <script type="text/javascript">
-            function cycleImages(){
-                var $active = $('#cycler .active');
-                var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
-                $next.css('z-index',2);//move the next image up the pile
-                $active.fadeOut(1500,function(){//fade out the top image
-                    $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
-                    $next.css('z-index',3).addClass('active');//make the next image the top one
-                });
-                }
-        
-            $(document).ready(function(){
-            // run every 4s
-            setInterval('cycleImages()', 7000);
-            })</script>
-            
-    </scripts>
-</body>";s:5:"mtime";i:1598489908;s:6:"markup";s:4140:"<body>
-    <head>
-        <!-- jQuery 1.8 or later, 33 KB -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-        <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
-        <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
-
-    </head>
-
-    <div id="container">
-        <div id="cycler"> </div>
-    </div>
-
-    <div class="js-files" data-is-authenticated="{{ this.page.photoFiles|json_encode|e('html_attr') }}">
-        <!-- ... -->
-    </div>
-
-    <scripts>
-
-        <!-- <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-                var userRating = document.querySelector('.js-files');
-                var data = $('.js-files').data('isAuthenticated');
-                var x ="";
-                // var isAuthenticated = userRating.dataset.isAuthenticated;
-                $.each(data, function(key, value ) {
-                    x = x + "<h4> " + value + "</h4>";
-                });
-                // or with jQuery
-                
-                document.getElementById("demo").innerHTML = x;
-            });
-
-        </script> -->
-
-        <script type="text/javascript">
-            function loadImages() {
-                document.addEventListener('DOMContentLoaded', function() {
-                        var userRating = document.querySelector('.js-files');
-                        var data = $('.js-files').data('isAuthenticated');
-                        var im_ls ="";
-                        // var isAuthenticated = userRating.dataset.isAuthenticated;
-
-                        // var im_ls = '<div class="container"> \n';
-                        // im_ls = im_ls + '<div id="cycler"> \n';
-                        
-                        $.each(data, function(key, value ) {
-                            if (value.indexOf(".jpg") >= 0) {
-                                if (key == 1) {
-                                    im_ls = im_ls + '<img class="active image" src="' + value + '" > \n'
-                                }
-                                else {
-                                im_ls = im_ls + '<img class="image" src="' + value + '" > \n'
-                                }
-                            }
-                        });
-
-                        // im_ls = im_ls + '</div> \n </div>'
-                        // or with jQuery
-                        
-                        // $("").append(im_ls)
-                        document.getElementById("cycler").innerHTML = im_ls;
-                    });
-            }
-            loadImages()
     
-        </script>
+</body>
 
+<scripts>
+    <script type="text/javascript">
+
+        var slider = $('#lightSlider').lightSlider({
+        controls: false,
+        gallery: true,
+        // item: 5,
+        slideMargin: 10,
+        // thumbItem: 9,
+        mode: "fade",
+        loop: true,
+        speed: 2000,
+        keyPress: true,
+        autoWidth: false,
+    
+    });
+        $('#goToPrevSlide').on('click', function () {
+        slider.goToPrevSlide();
+    });
+        $('#goToNextSlide').on('click', function () {
+            slider.goToNextSlide();
+    });
+    </script>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+    
+        setTimeout(function(){
+            element.classList.remove('loading');
+        }, index * 500);
+
+    });
+    </script>
+
+    <script type="text/javascript">
+    $("#gallery_toggle").click(function(){
+    // var secondPosition=$("div.box").position();
+    var firstPosition=$("ul.lSPager.lSGallery").offset();
+    var gal = document.querySelector('ul.lSPager.lSGallery');
+    var space = innerHeight - gal.offsetTop - gal.offsetHeight;
+ 
+    // var topSecond =secondPosition.top.toString()+'px';
+    var space_str = space.toString()+'px';
+    var t_ms = 700;
+      
+    if(space > 0)
+    {
+      $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-80px"}, t_ms, function() {});
+      $("img.active.image_2").animate({"max-height": "70%"});
+      
+   
+    }else
+    {
+      $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
+       $("img.active.image_2").animate({"max-height": "60%"}, t_ms);
+    }
+  
+    });
+    </script>
+
+    
+
+</scripts>
+";s:5:"mtime";i:1598498664;s:6:"markup";s:2401:"<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
+</head>
+
+<body>
+
+    <div class="row">   
+        <div class="col" >
+            <button type="button" id="goToPrevSlide" class="leftbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+
+        <div class="col" >
+            <button type="button" id="goToNextSlide" class="rightbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
         
-        <!-- <script type="text/javascript">
-            var files = "<?php echo json_encode($out) ?>";
-            var x ="", i;
-            for (i=1; i<=6; i++) {
-            x = x + "<h" + i + ">Heading " + i + "</h" + i + ">";
-            }
-            document.getElementById("demo").innerHTML = x;
+    </div>
 
-            for (var i = 0; i < files.length; i++){
-            document.write("<br><br>array index: " + i);
-            var obj = files[i];
-            for (var key in obj){
-                var value = obj[key];
-                
-                document.write("<br> - " + key + ": " + value);
-            }
-            }
-        </script> -->
+    
+    
+</body>
 
-        <script type="text/javascript">
-            function cycleImages(){
-                var $active = $('#cycler .active');
-                var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
-                $next.css('z-index',2);//move the next image up the pile
-                $active.fadeOut(1500,function(){//fade out the top image
-                    $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
-                    $next.css('z-index',3).addClass('active');//make the next image the top one
-                });
-                }
-        
-            $(document).ready(function(){
-            // run every 4s
-            setInterval('cycleImages()', 7000);
-            })</script>
-            
-    </scripts>
-</body>";s:4:"code";s:428:"function onStart()
+<scripts>
+    <script type="text/javascript">
+
+        var slider = $('#lightSlider').lightSlider({
+        controls: false,
+        gallery: true,
+        // item: 5,
+        slideMargin: 10,
+        // thumbItem: 9,
+        mode: "fade",
+        loop: true,
+        speed: 2000,
+        keyPress: true,
+        autoWidth: false,
+    
+    });
+        $('#goToPrevSlide').on('click', function () {
+        slider.goToPrevSlide();
+    });
+        $('#goToNextSlide').on('click', function () {
+            slider.goToNextSlide();
+    });
+    </script>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+    
+        setTimeout(function(){
+            element.classList.remove('loading');
+        }, index * 500);
+
+    });
+    </script>
+
+    <script type="text/javascript">
+    $("#gallery_toggle").click(function(){
+    // var secondPosition=$("div.box").position();
+    var firstPosition=$("ul.lSPager.lSGallery").offset();
+    var gal = document.querySelector('ul.lSPager.lSGallery');
+    var space = innerHeight - gal.offsetTop - gal.offsetHeight;
+ 
+    // var topSecond =secondPosition.top.toString()+'px';
+    var space_str = space.toString()+'px';
+    var t_ms = 700;
+      
+    if(space > 0)
+    {
+      $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-80px"}, t_ms, function() {});
+      $("img.active.image_2").animate({"max-height": "70%"});
+      
+   
+    }else
+    {
+      $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
+       $("img.active.image_2").animate({"max-height": "60%"}, t_ms);
+    }
+  
+    });
+    </script>
+
+    
+
+</scripts>";s:4:"code";s:749:"function onStart()
 {
-    $sub_dir = "home_page/";
     $files = array();
-    $path = './storage/app/media/' . $sub_dir;
+    $path = './storage/app/media/';
     $dir = opendir($path);
 
     while(false != ($file = readdir($dir))) {
         if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
-            $files[] = $path . $file; // put in array.
+            $files[] = $file; // put in array.
         }
     }
     closedir($dir);
-    $this->page["photoFiles"] = $files;
-}";s:5:"title";s:4:"Home";s:3:"url";s:9:"/home-old";s:6:"layout";s:7:"default";}}
+
+    echo '<ul id="lightSlider">';
+        foreach($files as $file) {
+
+            $fp = $path . $file;
+            echo '<li data-thumb="'.$fp.'">
+                <button id="gallery_toggle">
+                    <div class="middlepane" >
+                        <img src="'.$fp.'" class="active image_2"/>
+                    </div>
+                </button>
+            </li>';
+        }
+    echo '</ul>';
+
+}";s:5:"title";s:7:"GALLERY";s:3:"url";s:8:"/gallery";s:6:"layout";s:7:"default";}}

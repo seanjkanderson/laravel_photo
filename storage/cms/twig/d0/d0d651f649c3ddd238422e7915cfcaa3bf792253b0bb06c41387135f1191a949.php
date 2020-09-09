@@ -44,49 +44,30 @@ class __TwigTemplate_551903ab411efcdd185879e15c6d78beea560e15753a1b3449cffacc163
     </p1>
     
 
-    <p2></p2> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-        </p></p></p2>
+    <p2></p2> 
+        <p>
+        Phil Anderson is a landscape photographer primarily shooting in the diverse landscapes of western North America. With a focus on the minimal, he creates images to distill the moment and connect the viewer with the land. 
+        </p>
+    
+        <p>
+        From the rivers and hills of his home in the foothills of the Sierra to the unmapped dirt roads of Nevada, Phil finds projects that create a sense of place. A New York native, Phil has gravitated towards the West ever since his first roadtrip out to California when he was twelve.
+        </p>
+        
+        <p>
+        Phil started out with film photography in the 1980s and recently dove into the world of digital photography. With a strong remaining interest in the analog, prints are currently available for purchase by request.
+        </p>
+        
+        <h3> Awards </h3>
+        
+        <h5> International Color Awards 2020 </h5>
+        
+        <p>
+        - <a href=\"https://www.colorawards.com/winnersbook/2020/v2/#page=55\">First place - Landscape, Amateur</a>
+        <br>
+        - <a href=\"https://www.colorawards.com/winnersbook/2020/v2/#page=55\">Honorable mention - Landscape, Amateur</a>
+        </p>
+        
+        </p2>
 </body>";
     }
 
@@ -114,49 +95,30 @@ class __TwigTemplate_551903ab411efcdd185879e15c6d78beea560e15753a1b3449cffacc163
     </p1>
     
 
-    <p2></p2> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-         ed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.
-        </p></p></p2>
+    <p2></p2> 
+        <p>
+        Phil Anderson is a landscape photographer primarily shooting in the diverse landscapes of western North America. With a focus on the minimal, he creates images to distill the moment and connect the viewer with the land. 
+        </p>
+    
+        <p>
+        From the rivers and hills of his home in the foothills of the Sierra to the unmapped dirt roads of Nevada, Phil finds projects that create a sense of place. A New York native, Phil has gravitated towards the West ever since his first roadtrip out to California when he was twelve.
+        </p>
+        
+        <p>
+        Phil started out with film photography in the 1980s and recently dove into the world of digital photography. With a strong remaining interest in the analog, prints are currently available for purchase by request.
+        </p>
+        
+        <h3> Awards </h3>
+        
+        <h5> International Color Awards 2020 </h5>
+        
+        <p>
+        - <a href=\"https://www.colorawards.com/winnersbook/2020/v2/#page=55\">First place - Landscape, Amateur</a>
+        <br>
+        - <a href=\"https://www.colorawards.com/winnersbook/2020/v2/#page=55\">Honorable mention - Landscape, Amateur</a>
+        </p>
+        
+        </p2>
 </body>", "/Users/seananderson/Documents/websites/laravel_photo/themes/seaofdreams/pages/about.htm", "");
     }
 }

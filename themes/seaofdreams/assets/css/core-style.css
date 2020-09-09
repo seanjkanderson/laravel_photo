@@ -941,7 +941,9 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    cursor: url("../img/core-img/magnify.gif"), url("../img/core-img/magnify.cur"), default;
+    /* <div>Icons made by <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+*/
+    cursor: url("../img/core-img/oval.gif"), url("../img/core-img/oval.cur")  default;
 }
 
 .image_2_focused {
@@ -951,6 +953,67 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px;
+  }
+  
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .grid-container {
+    grid-template-columns: 100%;
+    }
+  }
+
+a.button {
+-webkit-appearance: button;
+-moz-appearance: button;
+appearance: button;
+
+text-decoration: none;
+color: initial;
+}
+
+.smoky-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.smoky-img {
+    border: none
+}
+
+
+.smoky-txt {
+    position: absolute;
+    color: rgb(224, 224, 224);
+    top: 50%;
+    left: 50%;
+    font-size: 33px;
+    transform: translate(-50%, -50%);
+    
+}
+
+.smoky-img:hover {
+    border: none;
+    background-color: black;
+    opacity: 70%;
+    
+}
+
+.smoky-txt:hover {
+    opacity: 70%;
 }
 
 
@@ -974,12 +1037,13 @@ img {
 
 .leftbutton:hover {
     border: none;
-    cursor: url("../img/core-img/left_arrow.gif"), default;
+    /* Icons made by <a href="https://www.flaticon.com/free-icon/next_709586" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
+    cursor: url("../img/core-img/left.gif"), url("../img/core-img/left.cur"), default;
 }
 
 .rightbutton:hover {
     border: none;
-    cursor: url("../img/core-img/right_arrow.gif"), default;
+    cursor: url("../img/core-img/right.gif"), default;
 }
 
 .leftbutton:focus, .rightbutton:focus {

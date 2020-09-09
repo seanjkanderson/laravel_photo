@@ -103,29 +103,29 @@ class __TwigTemplate_9e5517846021c43165822f6dbdd030b25cc0a13d02ae8140c1555791cce
     </script>
 
     <script type=\"text/javascript\">
-    \$(\"#gallery_toggle\").click(function(){
-    // var secondPosition=\$(\"div.box\").position();
-    var firstPosition=\$(\"ul.lSPager.lSGallery\").offset();
-    var gal = document.querySelector('ul.lSPager.lSGallery');
-    var space = innerHeight - gal.offsetTop - gal.offsetHeight;
- 
-    // var topSecond =secondPosition.top.toString()+'px';
-    var space_str = space.toString()+'px';
-    var t_ms = 700;
-      
-    if(space > 0)
-    {
-      \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"-80px\"}, t_ms, function() {});
-      \$(\"img.active.image_2\").animate({\"max-height\": \"70%\"});
-      
-   
-    }else
-    {
-      \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"20px\"}, t_ms, function() {});
-       \$(\"img.active.image_2\").animate({\"max-height\": \"60%\"}, t_ms);
-    }
-  
-    });
+        \$(\"#gallery_toggle\").click(function(){
+        // var secondPosition=\$(\"div.box\").position();
+        var firstPosition=\$(\"ul.lSPager.lSGallery\").offset();
+        var gal = document.querySelector('ul.lSPager.lSGallery');
+        var space = innerHeight - gal.offsetTop - gal.offsetHeight;
+    
+        // var topSecond =secondPosition.top.toString()+'px';
+        var space_str = space.toString()+'px';
+        var t_ms = 700;
+        
+        if(space > 0)
+        {
+        \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"-80px\"}, t_ms, function() {});
+        \$(\"img.active.image_2\").animate({\"max-height\": \"70%\"});
+        
+    
+        }else
+        {
+        \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"20px\"}, t_ms, function() {});
+        \$(\"img.active.image_2\").animate({\"max-height\": \"60%\"}, t_ms);
+        }
+    
+        });
     </script>
 
     
@@ -213,29 +213,29 @@ class __TwigTemplate_9e5517846021c43165822f6dbdd030b25cc0a13d02ae8140c1555791cce
     </script>
 
     <script type=\"text/javascript\">
-    \$(\"#gallery_toggle\").click(function(){
-    // var secondPosition=\$(\"div.box\").position();
-    var firstPosition=\$(\"ul.lSPager.lSGallery\").offset();
-    var gal = document.querySelector('ul.lSPager.lSGallery');
-    var space = innerHeight - gal.offsetTop - gal.offsetHeight;
- 
-    // var topSecond =secondPosition.top.toString()+'px';
-    var space_str = space.toString()+'px';
-    var t_ms = 700;
-      
-    if(space > 0)
-    {
-      \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"-80px\"}, t_ms, function() {});
-      \$(\"img.active.image_2\").animate({\"max-height\": \"70%\"});
-      
-   
-    }else
-    {
-      \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"20px\"}, t_ms, function() {});
-       \$(\"img.active.image_2\").animate({\"max-height\": \"60%\"}, t_ms);
-    }
-  
-    });
+        \$(\"#gallery_toggle\").click(function(){
+        // var secondPosition=\$(\"div.box\").position();
+        var firstPosition=\$(\"ul.lSPager.lSGallery\").offset();
+        var gal = document.querySelector('ul.lSPager.lSGallery');
+        var space = innerHeight - gal.offsetTop - gal.offsetHeight;
+    
+        // var topSecond =secondPosition.top.toString()+'px';
+        var space_str = space.toString()+'px';
+        var t_ms = 700;
+        
+        if(space > 0)
+        {
+        \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"-80px\"}, t_ms, function() {});
+        \$(\"img.active.image_2\").animate({\"max-height\": \"70%\"});
+        
+    
+        }else
+        {
+        \$(\"ul.lSPager.lSGallery\").animate({\"position\": \"fixed\", \"bottom\":\"20px\"}, t_ms, function() {});
+        \$(\"img.active.image_2\").animate({\"max-height\": \"60%\"}, t_ms);
+        }
+    
+        });
     </script>
 
     

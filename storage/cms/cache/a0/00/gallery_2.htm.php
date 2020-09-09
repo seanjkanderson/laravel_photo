@@ -1,9 +1,9 @@
 <?php 
-class Cms5f47053775df6573173423_9431e584b3ec7d3e66d33ec6141dbff4Class extends Cms\Classes\PageCode
+class Cms5f57dc8f76f63281382730_46288bfb825ceb6a8eecd438160ca81bClass extends Cms\Classes\PageCode
 {
 public function onStart()
 {
-    $sub_dir = "home_page/";
+    $sub_dir = "";
     $files = array();
     $path = './storage/app/media/' . $sub_dir;
     $dir = opendir($path);

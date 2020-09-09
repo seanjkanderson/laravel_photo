@@ -2,65 +2,79 @@ title = "Home"
 url = "/"
 layout = "default"
 ==
-
-<?
 function onStart()
 {
+    $sub_dir = "home_page/";
+    $files = array();
+    $path = './storage/app/media/' . $sub_dir;
+    $dir = opendir($path);
 
-$files = array();
-$path = './storage/app/media/';
-$dir = opendir($path);
-
-while(false != ($file = readdir($dir))) {
-    if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
-        $files[] = $file; // put in array.
-    }
-}
-closedir($dir);
-
-echo '<div class="container">';
-    echo '<div id="cycler">';
-    foreach($files as $file) {
-
-        $fp = $path . $file;
-        if (str_contains($fp, '.jpg')) {
-            echo "'.$fp.'";
-            echo '<img class="image" src="'.$fp.'" >';
+    while(false != ($file = readdir($dir))) {
+        if(str_contains(strtolower($file), '.jpg') or str_contains(strtolower($file), '.jpeg')) {
+            $files[] = $path . $file; // put in array.
         }
-        
     }
-    echo '</div>';
-echo '</div>';
+    closedir($dir);
+    $this->page["photoFiles"] = $files;
 }
-?>
 ==
+<body>
+    <head>
+        <!-- jQuery 1.8 or later, 33 KB -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+        <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+        <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script> 
+        <script src="{{ '/assets/javascript/project-common.js'|theme }}"></script>            
 
-<head>
-    <!-- jQuery 1.8 or later, 33 KB -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
 
-    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
-    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+    <div id="container">
+        <div id="cycler"> </div>
+    </div>
 
-</head>
+    <div class="js-files" data-is-authenticated="{{ this.page.photoFiles|json_encode|e('html_attr') }}">
+        <!-- ... -->
+    </div>
 
+    <scripts>
 
-<scripts>
-    <script type="text/javascript">
-        function cycleImages(){
-            var $active = $('#cycler .active');
-            var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
-            $next.css('z-index',2);//move the next image up the pile
-            $active.fadeOut(1500,function(){//fade out the top image
-                $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
-                $next.css('z-index',3).addClass('active');//make the next image the top one
-            });
-            }
-    
-        $(document).ready(function(){
-        // run every 4s
-        setInterval('cycleImages()', 4000);
-        })</script>
+        <script> loadImages('.js-files', 'cycler') </script>
         
-</scripts>
+        <!-- <script type="text/javascript">
+            var files = "<?php echo json_encode($out) ?>";
+            var x ="", i;
+            for (i=1; i<=6; i++) {
+            x = x + "<h" + i + ">Heading " + i + "</h" + i + ">";
+            }
+            document.getElementById("demo").innerHTML = x;
+
+            for (var i = 0; i < files.length; i++){
+            document.write("<br><br>array index: " + i);
+            var obj = files[i];
+            for (var key in obj){
+                var value = obj[key];
+                
+                document.write("<br> - " + key + ": " + value);
+            }
+            }
+        </script> -->
+
+        <script type="text/javascript">
+            function cycleImages(){
+                var $active = $('#cycler .active');
+                var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+                $next.css('z-index',2);//move the next image up the pile
+                $active.fadeOut(1500,function(){//fade out the top image
+                    $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+                    $next.css('z-index',3).addClass('active');//make the next image the top one
+                });
+                }
+        
+            $(document).ready(function(){
+            // run every 4s
+            setInterval('cycleImages()', 7000);
+            })</script>
+            
+    </scripts>
+</body>

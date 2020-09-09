@@ -1,32 +1,19 @@
 <?php 
-class Cms5f46a401213b2469120125_071ee35b7a49ae368fb0ff01bb08d119Class extends Cms\Classes\PageCode
+class Cms5f57c9a4aa576623109323_641a4509b9c116726ae567d9094f5499Class extends Cms\Classes\PageCode
 {
 public function onStart()
 {
+    $sub_dir = "home_page/";
+    $files = array();
+    $path = './storage/app/media/' . $sub_dir;
+    $dir = opendir($path);
 
-$files = array();
-$path = './storage/app/media/';
-$dir = opendir($path);
-
-while(false != ($file = readdir($dir))) {
-    if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
-        $files[] = $file; // put in array.
-    }
-}
-closedir($dir);
-
-echo '<div class="container">';
-    echo '<div id="cycler">';
-    foreach($files as $file) {
-
-        $fp = $path . $file;
-        if (str_contains($fp, '.jpg')) {
-            echo "'.$fp.'";
-            echo '<img class="image" src="'.$fp.'" >';
+    while(false != ($file = readdir($dir))) {
+        if(str_contains(strtolower($file), '.jpg') or str_contains(strtolower($file), '.jpeg')) {
+            $files[] = $path . $file; // put in array.
         }
-        
     }
-    echo '</div>';
-echo '</div>';
+    closedir($dir);
+    $this->page["photoFiles"] = $files;
 }
 }

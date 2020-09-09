@@ -2,6 +2,42 @@ title = "PORTFOLIO"
 url = "/portfolio"
 layout = "inner-scroll"
 ==
+function onStart()
+{
+    session_start();
+    $sub_dir = "";
+    $files = array();
+    $path = './storage/app/media/' . $sub_dir;
+    $dir = opendir($path);
+
+    while(false != ($file = readdir($dir))) {
+        if(!str_contains(strtolower($file), '.jpg') and !str_contains(strtolower($file), '.jpeg') and !str_contains(strtolower($file), 'home') and strlen($file) > 3) {
+            $temp_path = $path . $file; // put in array.
+            $temp_dir = opendir($temp_path);
+            
+            $flag = true;
+            // Look through subdirectory to get either cover.jpg or the first image from the directory
+            while(false != ($sub_file = readdir($temp_dir))) {
+                if((str_contains(strtolower($sub_file), '.jpg') or str_contains(strtolower($sub_file), '.jpeg')) and str_contains(strtolower($sub_file), 'cover')) {
+                    $files[] = $temp_path . '/' . $sub_file; // put in array.
+                    $names[] = $file;
+                    $flag = false;
+                }
+            }
+            
+            if($flag) {
+                $sub_files = scandir ($temp_path);
+                $files[] = $temp_path . '/' . $sub_files[2];
+                $names[] = $file;
+            }
+            
+            
+        }
+    }
+    closedir($dir);
+    $this->page["photoFiles"] = [$files, $names];
+}
+==
 
 <head>
     <!-- jQuery 1.8 or later, 33 KB -->
@@ -15,112 +51,26 @@ layout = "inner-scroll"
 
     <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
     <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
-
+    <script src="{{ '/assets/javascript/project-common.js'|theme }}"></script>            
 </head>
 
 <body>
-    <div class="row portfolio-column">
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a href="{{ 'gallery'|page }}"> HELLO HELLO HELLO </a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p2.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p3.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item weddings life">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p4.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item weddings">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p5.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p6.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item studio">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p7.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item studio life">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p8.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item fashion">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="{{ '/assets/img/bg-img/1.jpg'|theme }}"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p10.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item studio life">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p11.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item fashion">
-            <img src="{{ '/assets/img/bg-img/1.jpg'|theme }}" alt="">
-            <div class="hover_overlay">
-                <a class="gallery_img" href="img/bg-img/p12.jpg"><i class="fa fa-eye"></i></a>
-            </div>
-        </div>
-    </div>
+       <div id="aggregator"></div>
 </body>
+
+<div class="js-files" data-is-authenticated="{{ this.page.photoFiles|json_encode|e('html_attr') }}">
+    <!-- ... -->
+</div>
+
+<div class="gallery" data-is-authenticated="{{ 'gallery'|page }}">
+    <!-- ... -->
+</div>
 
 
 <scripts>
+
+    <script> loadPortfolioCovers('.js-files', 'gallery', 'aggregator') </script>
+
     <script type="text/javascript">
         $('.box-wrapper').each(function(index, element) {
 
@@ -130,4 +80,5 @@ layout = "inner-scroll"
 
     });
     </script>
+
 </scripts>

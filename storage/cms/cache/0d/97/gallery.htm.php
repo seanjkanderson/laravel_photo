@@ -1,14 +1,18 @@
 <?php 
-class Cms5f46cdb237510715753762_92d3c7352666110d9168a9ec22472b64Class extends Cms\Classes\PageCode
+class Cms5f59043bb2d7c455902406_c0414b9024574bdb0f65875bb85001e1Class extends Cms\Classes\PageCode
 {
 public function onStart()
 {
+    $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $parts = parse_url($url);
+    parse_str($parts['query'], $query);
     $files = array();
-    $path = './storage/app/media/';
+    $folder = $query['collection'];
+    $path = './storage/app/media/' . $folder . '/';
     $dir = opendir($path);
 
     while(false != ($file = readdir($dir))) {
-        if(($file != ".") and ($file != "..") and ($file != "index.php") and ($file != "undefined")) {
+        if( str_contains(strtolower($file), '.jpg') or str_contains(strtolower($file), '.jpeg')) {
             $files[] = $file; // put in array.
         }
     }

@@ -58,154 +58,35 @@ class __TwigTemplate_92d737a2c40178e0979c7754ba5090d865adf20042090dfdd774d6f72a5
         // line 12
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/javascript/lightslider.js");
         echo "\"></script>            
-
+    <script src=\"";
+        // line 13
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/javascript/project-common.js");
+        echo "\"></script>            
 </head>
 
 <body>
-    <div class=\"row portfolio-column\">
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item\">
-            <img src=\"";
-        // line 21
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a href=\"";
-        // line 23
-        echo $this->extensions['Cms\Twig\Extension']->pageFilter("gallery");
-        echo "\"> HELLO HELLO HELLO </a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item\">
-            <img src=\"";
-        // line 29
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p2.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits\">
-            <img src=\"";
-        // line 37
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p3.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item weddings life\">
-            <img src=\"";
-        // line 45
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p4.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item weddings\">
-            <img src=\"";
-        // line 53
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p5.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits\">
-            <img src=\"";
-        // line 61
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p6.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item studio\">
-            <img src=\"";
-        // line 69
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p7.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item studio life\">
-            <img src=\"";
-        // line 77
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p8.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item fashion\">
-            <img src=\"";
-        // line 85
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"";
-        // line 87
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits\">
-            <img src=\"";
-        // line 93
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p10.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item studio life\">
-            <img src=\"";
-        // line 101
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p11.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item fashion\">
-            <img src=\"";
-        // line 109
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/img/bg-img/1.jpg");
-        echo "\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p12.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-    </div>
+       <div id=\"aggregator\"></div>
 </body>
+
+<div class=\"js-files\" data-is-authenticated=\"";
+        // line 20
+        echo twig_escape_filter($this->env, json_encode(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 20), "photoFiles", [], "any", false, false, false, 20)), "html_attr");
+        echo "\">
+    <!-- ... -->
+</div>
+
+<div class=\"gallery\" data-is-authenticated=\"";
+        // line 24
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("gallery");
+        echo "\">
+    <!-- ... -->
+</div>
 
 
 <scripts>
+
+    <script> loadPortfolioCovers('.js-files', 'gallery', 'aggregator') </script>
+
     <script type=\"text/javascript\">
         \$('.box-wrapper').each(function(index, element) {
 
@@ -215,6 +96,7 @@ class __TwigTemplate_92d737a2c40178e0979c7754ba5090d865adf20042090dfdd774d6f72a5
 
     });
     </script>
+
 </scripts>";
     }
 
@@ -230,7 +112,7 @@ class __TwigTemplate_92d737a2c40178e0979c7754ba5090d865adf20042090dfdd774d6f72a5
 
     public function getDebugInfo()
     {
-        return array (  198 => 109,  187 => 101,  176 => 93,  167 => 87,  162 => 85,  151 => 77,  140 => 69,  129 => 61,  118 => 53,  107 => 45,  96 => 37,  85 => 29,  76 => 23,  71 => 21,  59 => 12,  55 => 11,  50 => 9,  46 => 8,  37 => 1,);
+        return array (  80 => 24,  73 => 20,  63 => 13,  59 => 12,  55 => 11,  50 => 9,  46 => 8,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -247,112 +129,26 @@ class __TwigTemplate_92d737a2c40178e0979c7754ba5090d865adf20042090dfdd774d6f72a5
 
     <link  href=\"{{ '/assets/css/lightslider.css'|theme }}\" rel=\"stylesheet\">
     <script src=\"{{ '/assets/javascript/lightslider.js'|theme }}\"></script>            
-
+    <script src=\"{{ '/assets/javascript/project-common.js'|theme }}\"></script>            
 </head>
 
 <body>
-    <div class=\"row portfolio-column\">
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a href=\"{{ 'gallery'|page }}\"> HELLO HELLO HELLO </a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p2.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p3.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item weddings life\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p4.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item weddings\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p5.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p6.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item studio\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p7.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item studio life\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p8.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item fashion\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p10.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item studio life\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p11.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-
-        <!-- Single Item -->
-        <div class=\"col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item fashion\">
-            <img src=\"{{ '/assets/img/bg-img/1.jpg'|theme }}\" alt=\"\">
-            <div class=\"hover_overlay\">
-                <a class=\"gallery_img\" href=\"img/bg-img/p12.jpg\"><i class=\"fa fa-eye\"></i></a>
-            </div>
-        </div>
-    </div>
+       <div id=\"aggregator\"></div>
 </body>
+
+<div class=\"js-files\" data-is-authenticated=\"{{ this.page.photoFiles|json_encode|e('html_attr') }}\">
+    <!-- ... -->
+</div>
+
+<div class=\"gallery\" data-is-authenticated=\"{{ 'gallery'|page }}\">
+    <!-- ... -->
+</div>
 
 
 <scripts>
+
+    <script> loadPortfolioCovers('.js-files', 'gallery', 'aggregator') </script>
+
     <script type=\"text/javascript\">
         \$('.box-wrapper').each(function(index, element) {
 
@@ -362,6 +158,7 @@ class __TwigTemplate_92d737a2c40178e0979c7754ba5090d865adf20042090dfdd774d6f72a5
 
     });
     </script>
+
 </scripts>", "/Users/seananderson/Documents/websites/laravel_photo/themes/seaofdreams/pages/portfolio.htm", "");
     }
 }
