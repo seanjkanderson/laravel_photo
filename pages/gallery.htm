@@ -10,6 +10,7 @@ function onStart()
     parse_str($parts['query'], $query);
     $files = array();
     $folder = $query['collection'];
+    echo 'FOLDER: ' . $folder;
     $path = './storage/app/media/' . $folder . '/';
     $dir = opendir($path);
 
