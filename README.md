@@ -1,32 +1,55 @@
-# Installation wizard for October
+Demo Theme
+==========
 
-The wizard installation is a recommended way to install October. It is simpler than the command-line installation and doesn't require any special skills.
+OctoberCMS demo theme that demonstrates the basic core functionality and utilizes the accompanying demo plugin. It is a great theme to copy when building a site from scratch. 
 
-1. Prepare a directory on your server that is empty. It can be a sub-directory, domain root or a sub-domain.
-1. [Download the installer archive file](https://github.com/octobercms/install/archive/master.zip).
-1. Unpack the installer archive to the prepared directory.
-1. Grant writing permissions on the installation directory and all its subdirectories and files.
-1. Navigate to the install.php script in your web browser.
-1. Follow the installation instructions.
+The theme acts as a reference implementation for default component markup when distributing plugins.
 
-## Minimum System Requirements
+Have fun!
 
-October CMS has a few system requirements:
+## Clean up instructions
 
-* PHP version 7.2 or higher
-* PDO PHP Extension (and relevant driver for the database you want to connect to)
-* cURL PHP Extension
-* OpenSSL PHP Extension
-* Mbstring PHP Extension
-* ZipArchive PHP Extension
-* GD PHP Extension
-* SimpleXML PHP Extension
+If you clone this theme to use as a starting point. You may follow these instructions to clean up:
 
-Some OS distributions may require you to manually install some of the required PHP extensions.
+1. Delete the `pages/ajax.htm` and `pages/plugins.htm` files.
+2. Delete the `partials/calcresult.htm` partial file.
+3. Delete the `partials/explain/` directory and contents.
+4. Delete the `content/placeholder/` directory and contents.
 
-When using Ubuntu, the following command can be run to install all required extensions:
+## Combining CSS and JavaScript
 
-```bash
-sudo apt-get update &&
-sudo apt-get install php php-ctype php-curl php-xml php-fileinfo php-gd php-json php-mbstring php-mysql php-sqlite3 php-zip
-```
+This theme doesn't combine assets for performance reasons. To combine the stylesheets, replace the following lines in the default layout. When combining with this theme, we recommend enabling the config `enableAssetDeepHashing` in the file **config/cms.php**.
+
+Uncombined stylesheets:
+
+    <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+
+Combined stylesheets:
+
+    <link href="{{ [
+        '@framework.extras',
+        'assets/less/vendor.less',
+        'assets/less/theme.less'
+    ]|theme }}" rel="stylesheet">
+
+> **Note**: October also includes an SCSS compiler, if you prefer.
+
+Uncombined JavaScript:
+
+    <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+    <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+    <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+    {% framework extras %}
+
+Combined JavaScript:
+
+    <script src="{{ [
+        '@jquery',
+        '@framework',
+        '@framework.extras',
+        'assets/vendor/bootstrap.js',
+        'assets/javascript/app.js'
+    ]|theme }}"></script>
+
+> **Important**: Make sure you keep the `{% styles %}` and `{% scripts %}` placeholder tags as these are used by plugins for injecting assets.
