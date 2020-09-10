@@ -6,6 +6,7 @@ layout = "default"
 function onStart()
 {   
     $folder = $_GET['collection'];
+    echo "FOLDER" . $folder;
     $path = './storage/app/media/' . $folder . '/';
     $dir = opendir($path);
 
