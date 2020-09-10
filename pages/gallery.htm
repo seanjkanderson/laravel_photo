@@ -6,6 +6,7 @@ layout = "default"
 function onStart()
 {
     $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    echo $url;
     $parts = parse_url($url);
     parse_str($parts['query'], $query);
     $files = array();
