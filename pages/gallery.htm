@@ -4,12 +4,8 @@ layout = "default"
 ==
 <?
 function onStart()
-{
-    $uri = "$_SERVER[REQUEST_URI]";
-    $parts = parse_url($uri);
-    parse_str($parts['query'], $query);
-    $files = array();
-    $folder = $query['collection'];
+{   
+    $folder = $_GET['collection'];
     $path = './storage/app/media/' . $folder . '/';
     $dir = opendir($path);
 
