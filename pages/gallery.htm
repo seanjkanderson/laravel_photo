@@ -5,13 +5,11 @@ layout = "default"
 <?
 function onStart()
 {
-    $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    print_r($url);
-    $parts = parse_url($url);
+    $uri = "$_SERVER[REQUEST_URI]";
+    $parts = parse_url($uri);
     parse_str($parts['query'], $query);
     $files = array();
     $folder = $query['collection'];
-    echo 'FOLDER: ' . $folder;
     $path = './storage/app/media/' . $folder . '/';
     $dir = opendir($path);
 
@@ -22,7 +20,37 @@ function onStart()
     }
     closedir($dir);
 
-    
+    echo '<ul id="lightSlider">';
+        foreach($files as $file) {
+
+            $fp = $path . $file;
+
+            if(strpos($file, 'cover') !== false){
+                $ext = strpos($file, '.');
+                $underscore = strpos($file, '_');
+                $image_name = substr($file, $underscore+1, $ext - $underscore - 1);
+            } else{
+                $ext = strpos($file, '.');
+                $image_name = substr($file, 0, $ext);
+                $image_name = str_replace("_", " ", $image_name);
+
+                
+
+            }
+
+            echo '<li data-thumb="'.$fp.'">
+                <button class="gallery_toggle empty_btn">
+                    <div class="middlepane" >
+                        <img src="'.$fp.'" class="active image_2"/>
+                    </div>
+                    <div class="gallery-caption">
+                        <p style="opacity: 0%;">'. strtoupper($image_name).'</p>
+                    </div>
+                    
+                </button>
+            </li>';
+        }
+    echo '</ul>';
 
 }
 ?>
