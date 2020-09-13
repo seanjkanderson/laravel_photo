@@ -7,6 +7,8 @@ function onStart()
     session_start();
     $sub_dir = "";
     $files = array();
+    $names = array();
+    $names_proper = array();
     $path = './storage/app/media/' . $sub_dir;
     $dir = opendir($path);
 
@@ -28,6 +30,7 @@ function onStart()
             if($flag) {
                 $sub_files = scandir ($temp_path);
                 $files[] = $temp_path . '/' . $sub_files[2];
+                $names_proper[] = $file;
                 $file = str_replace("_", " ", $file);
                 $names[] = $file;
             }
@@ -36,7 +39,7 @@ function onStart()
         }
     }
     closedir($dir);
-    $this->page["photoFiles"] = [$files, $names];
+    $this->page["photoFiles"] = [$files, $names, $names_proper];
 }
 ==
 

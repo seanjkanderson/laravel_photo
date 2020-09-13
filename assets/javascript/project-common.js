@@ -48,14 +48,16 @@ function loadPortfolioCovers(handle, gallery, target_id) {
             var data = $(handle).data('isAuthenticated');
             var files = data[0];
             var names = data[1];
+            var proper_names = data[2];
             var im_ls = '<div class="grid-container"> \n';
 
             // Iterate over each file in the array
             $.each(files, function(key, value ) {
                     collection_name = names[key].toUpperCase()
+                    proper_name = proper_names[key]
                     im_ls += '<div class="grid-item"> \n <div id="send-session" > \n'
                     im_ls += '<div class="smoky-container">'
-                    im_ls += '<a href=' + gallery + '?collection=' + collection_name + '>\n'
+                    im_ls += '<a href=' + gallery + '?collection=' + proper_name + '>\n'
                     im_ls += '<img src="' + value + '" alt="" id="send-session" class="button smoky-img"> \n <p class="smoky-txt"> ' 
                     + collection_name + '</p> </a>  </div> \n </div>'
                     im_ls += '\n </div> '
