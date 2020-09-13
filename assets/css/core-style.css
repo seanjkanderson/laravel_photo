@@ -941,7 +941,8 @@ img {
     position: fixed;
     text-align: center;
     font-size: 50px;
-    left: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     bottom: 20px;
     z-index: 10000;
 }
@@ -999,6 +1000,7 @@ color: initial;
 .smoky-container {
     position: relative;
     text-align: center;
+    display: inline;
     color: white;
 }
 
@@ -1009,7 +1011,7 @@ color: initial;
 
 .smoky-txt {
     position: absolute;
-    color: rgb(224, 224, 224);
+    color: white;
     top: 50%;
     left: 50%;
     font-size: 33px;
@@ -1026,6 +1028,10 @@ color: initial;
 
 .smoky-txt:hover {
     opacity: 70%;
+}
+
+.p {
+    text-align: center;
 }
 
 
@@ -1114,6 +1120,7 @@ leftbutton:active, .rightbutton:active {
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
 }
+
 
 .navbar-nav li {
     background-color: transparent;

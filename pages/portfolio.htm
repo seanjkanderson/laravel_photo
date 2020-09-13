@@ -28,6 +28,7 @@ function onStart()
             if($flag) {
                 $sub_files = scandir ($temp_path);
                 $files[] = $temp_path . '/' . $sub_files[2];
+                $file = str_replace("_", " ", $file);
                 $names[] = $file;
             }
             
