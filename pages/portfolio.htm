@@ -22,8 +22,11 @@ function onStart()
             while(false != ($sub_file = readdir($temp_dir))) {
                 if((str_contains(strtolower($sub_file), '.jpg') or str_contains(strtolower($sub_file), '.jpeg')) and str_contains(strtolower($sub_file), 'cover')) {
                     $files[] = $temp_path . '/' . $sub_file; // put in array.
+                    $names_proper[] = $file;
+                    $file = str_replace("_", " ", $file);
                     $names[] = $file;
                     $flag = false;
+                    
                 }
             }
             
