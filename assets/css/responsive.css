@@ -1,4 +1,4 @@
-@media only screen and (min-width: 48em) { /* Added by SA */
+@media (min-width: 48em) { /* Added by SA */
 
     .header .header {
         top: 10px;

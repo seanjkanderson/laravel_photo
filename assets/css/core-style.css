@@ -478,6 +478,14 @@ padding-bottom: 2.5rem;    /* Footer height */
     color: rgb(0, 0, 0)
 }
 
+.menu-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 /* Start of new header */
 
 .navbar2 {
@@ -579,6 +587,7 @@ padding-bottom: 2.5rem;    /* Footer height */
     display: block;
     padding: 20px 20px;
     text-decoration: none;
+    background: rgba(179, 179, 179, 0.459);
   }
   
   
