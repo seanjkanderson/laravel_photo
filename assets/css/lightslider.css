@@ -306,6 +306,10 @@
 .lSSlideOuter.lSrtl .lightSlider > *,  .lSSlideOuter.lSrtl .lSGallery li {
     float: right !important;
 }
+
+li .slide .active {
+    max-height: 100px;
+}
 /* Rtl */
 
 @-webkit-keyframes rightEnd {
