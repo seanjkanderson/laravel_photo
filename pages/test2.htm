@@ -1,10 +1,13 @@
 title = "PORTFOLIO"
-url = "/portfolio"
+url = "/portfolio3"
 layout = "inner-scroll"
 
 [Galleries]
+galleryOrder = "random"
 results = 10
 galleryPage = "gallery"
+==
+
 ==
 
 <head>
@@ -23,22 +26,22 @@ galleryPage = "gallery"
 </head>
 
 <body>
-       <div id="aggregator">
-        {% for my_gallery in galleries %}
-        <div class="grid-item">
-            <div id="send-session" >
-                {% if "_" not in my_gallery.name %}
-                    <div class="smoky-container">
-                        <a href="{{ my_gallery.url }}">
-                        <img src="{{ my_gallery.images[0].path }}" alt="" id="send-session" class="button smoky-img"> 
-                        <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
-                    </div>
-                {% endif %}
+
+
+{% for my_gallery in galleries %}
+    <p> {{my_gallery.url}}</p>
+    <div class="grid-item">
+        <div id="send-session" >
+            <div class="smoky-container">
+                <a href="{{ 'gallery'|page }}/{{my_gallery.name}}">
+                <img src="{{ my_gallery.images[0].path }}" alt="" id="send-session" class="button smoky-img"> 
+                <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
             </div>
         </div>
-        {% endfor %}
-       </div>
+    </div>
+    {% endfor %}
 </body>
+
 
 
 

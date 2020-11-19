@@ -1,56 +1,13 @@
 title = "GALLERY"
-url = "/gallery"
+url = "/gallery/:slug"
 layout = "default"
+
+[Gallery]
+markup = "user"
+idGallery = "{{ :slug }}"
+
 ==
-<?
-function onStart()
-{   
-    $folder = strtolower($_GET['collection']);
-    $path = './storage/app/media/' . $folder . '/';
-    $dir = opendir($path);
 
-    while(false != ($file = readdir($dir))) {
-        if( str_contains(strtolower($file), '.jpg') or str_contains(strtolower($file), '.jpeg')) {
-            $files[] = $file; // put in array.
-        }
-    }
-    closedir($dir);
-
-    echo '<ul id="lightSlider">';
-        foreach($files as $file) {
-
-            $fp = $path . $file;
-
-            if(strpos($file, 'cover') !== false){
-                $ext = strpos($file, '.');
-                $underscore = strpos($file, '_');
-                $image_name = substr($file, $underscore+1, $ext - $underscore - 1);
-            } else{
-                $ext = strpos($file, '.');
-                $image_name = substr($file, 0, $ext);
-                $image_name = str_replace("_", " ", $image_name);
-
-                
-
-            }
-
-            echo '<li data-thumb="'.$fp.'">
-                <button class="gallery_toggle empty_btn">
-                    <div class="middlepane" >
-                        <img src="'.$fp.'" class="active image_2"/>
-                    </div>
-                    <!-- <div class="gallery-caption">
-                        <p style="opacity: 0%; top: 50%; color: transparent;">'. strtoupper($image_name).'</p>
-                    </div> -->
-                    
-                </button>
-            </li>';
-        }
-    echo '</ul>';
-
-}
-?>
-==
 
 <head>
     <!-- jQuery 1.8 or later, 33 KB -->
@@ -62,6 +19,24 @@ function onStart()
 </head>
 
 <body>
+
+    <ul id="lightSlider">
+
+        {% for image in gallery.images %}
+            <li data-thumb="{{ image.path }}">
+                <button class="gallery_toggle empty_btn">
+                    <div class="middlepane" >
+                        <img title="{{image.title}}" alt="{{image.description}}" src="{{ image.path }}" class="active image_2"/>
+                    </div>
+                    <!-- <div class="gallery-caption">
+                        <p style="opacity: 0%; top: 50%; color: transparent;">'. strtoupper($image_name).'</p>
+                    </div> -->
+                    
+                </button>
+            </li>
+        {% endfor %}
+
+    </ul>
 
     <div class="row">   
         <div class="col" >

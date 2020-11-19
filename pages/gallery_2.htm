@@ -1,15 +1,13 @@
 title = "GALLERY"
-url = "/gallery-2"
+url = "/gallery/:slug"
 layout = "default"
+
+[Gallery]
+markup = "user"
+idGallery = "{{ :slug }}"
+
 ==
-<?
-function onStart()
-{   
-    $folder = $_GET['collection'];
-    echo "FOLDER" . $folder;
-}
-?>
-==
+
 
 <head>
     <!-- jQuery 1.8 or later, 33 KB -->
@@ -21,6 +19,38 @@ function onStart()
 </head>
 
 <body>
+
+    <ul id="lightSlider">
+
+        {% for image in gallery.images %}
+            <li data-thumb="{{ image.path }}">
+                <button class="gallery_toggle empty_btn">
+                    <div class="middlepane" >
+                        <img title="{{image.title}}" alt="{{image.description}}" src="{{ image.path }}" class="active image_2"/>
+                    </div>
+                    <!-- <div class="gallery-caption">
+                        <p style="opacity: 0%; top: 50%; color: transparent;">'. strtoupper($image_name).'</p>
+                    </div> -->
+                    
+                </button>
+            </li>;
+        {% endfor %}
+
+    </ul>
+
+    <div class="row">   
+        <div class="col" >
+            <button type="button" id="goToPrevSlide" class="leftbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+
+        <div class="col" >
+            <button type="button" id="goToNextSlide" class="rightbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+        
+    </div>
+
     
     
 </body>
@@ -73,7 +103,7 @@ function onStart()
         if(space > 0)
         {
         $("p").animate({"opacity": "100%"}, t_ms, function() {});
-        $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-80px"}, t_ms, function() {});
+        $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-120px"}, t_ms, function() {});
         $("img.active.image_2").animate({"max-height": "70%"});
         
     

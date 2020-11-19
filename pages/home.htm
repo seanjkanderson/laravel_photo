@@ -1,6 +1,10 @@
 title = "Home"
 url = "/"
 layout = "default"
+
+[Gallery]
+markup = "user"
+idGallery = "_home"
 ==
 function onStart()
 {
@@ -33,7 +37,7 @@ function onStart()
         <div id="cycler"> </div>
     </div>
 
-    <div class="js-files" data-is-authenticated="{{ this.page.photoFiles|json_encode|e('html_attr') }}">
+    <div class="js-files" data-is-authenticated="{{ gallery.images|json_encode|e('html_attr') }}">
         <!-- ... -->
     </div>
 

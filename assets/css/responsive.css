@@ -1,4 +1,4 @@
-@media (min-width: 48em) { /* Added by SA */
+@media (min-width: 700px) { /* Added by SA */
 
     .header .header {
         top: 10px;
@@ -19,6 +19,12 @@
     }
 
   }
+
+@media only screen and (max-width: 600px) {
+    
+    .image_2 {
+        max-width: 80%;
+    }
 
 @media only screen and (min-width: 992px) {
     /* .social-sidebar-area,
