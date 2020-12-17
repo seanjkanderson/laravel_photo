@@ -1,5 +1,5 @@
-title = "GALLERY"
-url = "/gallery/:slug"
+title = "GALLERY2"
+url = "/gallery2/:slug"
 layout = "default"
 
 [Gallery]
@@ -18,22 +18,22 @@ idGallery = "{{ :slug }}"
 
 </head>
 
-<body>
+<body> 
 
     <ul id="lightSlider">
 
         {% for image in gallery.images %}
-            <li data-thumb="{{ image.path }}">
-                <button class="gallery_toggle empty_btn">
-                    <div class="middlepane" >
-                        <img title="{{image.title}}" alt="{{image.description}}" src="{{ image.path }}" class="active image_2"/>
-                    </div>
-                    <!-- <div class="gallery-caption">
-                        <p style="opacity: 0%; top: 50%; color: transparent;">'. strtoupper($image_name).'</p>
-                    </div> -->
+            <li data-thumb="{{ image.path | resize(100) }}">
+                <div class="middlepane" >
+                    <img src="{{ image.path | resize(500) }}" class="active image_2"/>
+                    <button class="gallery_toggle empty_btn"></button>
+                </div>
+                <!-- <div class="gallery-caption">
+                    <p style="opacity: 0%; top: 50%; color: transparent;">'. strtoupper($image_name).'</p>
+                </div> -->
                     
-                </button>
-            </li>;
+                
+            </li>
         {% endfor %}
 
     </ul>
@@ -51,12 +51,35 @@ idGallery = "{{ :slug }}"
         
     </div>
 
+    <div class="middlepane">
+        <img src="https://media.giphy.com/media/cjnnH0h3cfBTORaUnp/giphy.gif" class="active image_2 opacity:0.5"/>
+    </div>
+
+    <!-- <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div> -->
+
     
     
 </body>
 
 <scripts>
+
+    <script>
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        $(window).on("load",function(){
+            setTimeout($(".loader-wrapper").fadeOut("slow"),10000);
+          
+        });
+    </script>
+
     <script type="text/javascript">
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        
+        my_speed = 2000;
+        if(isSafari) {
+            var my_speed = 0;
+        }
 
         var slider = $('#lightSlider').lightSlider({
         controls: false,
@@ -66,7 +89,7 @@ idGallery = "{{ :slug }}"
         // thumbItem: 9,
         mode: "fade",
         loop: true,
-        speed: 2000,
+        speed: this.my_speed,
         keyPress: true,
         autoWidth: false,
     
@@ -90,6 +113,11 @@ idGallery = "{{ :slug }}"
     </script>
 
     <script type="text/javascript">
+        const element = document.querySelector('.middlepane');
+        const style = getComputedStyle(element);
+        var initial_focus = style.getPropertyValue('width');
+        var initial_focus = parseFloat(initial_focus);
+
         $(".gallery_toggle").click(function(){
         // var secondPosition=$("div.box").position();
         var firstPosition=$("ul.lSPager.lSGallery").offset();
@@ -100,18 +128,22 @@ idGallery = "{{ :slug }}"
         var space_str = space.toString()+'px';
         var t_ms = 700;
         
+        
+        var detail_focus = initial_focus * 1.10;
+        var detail_focus = detail_focus.toString() + "px";
+        
         if(space > 0)
         {
         $("p").animate({"opacity": "100%"}, t_ms, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-120px"}, t_ms, function() {});
-        $("img.active.image_2").animate({"max-height": "70%"});
+        $(".middlepane").animate({"width": detail_focus});
         
     
         }else
         {
         $("p").animate({"opacity": "0%"}, t_ms, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
-        $("img.active.image_2").animate({"max-height": "60%"}, t_ms);
+        $(".middlepane").animate({"width": initial_focus}, t_ms);
         }
     
         });

@@ -1150,11 +1150,11 @@ footer {
 
 .gallery_area {
     height: calc(100% - 275px);
-    width: calc(100% - 600px);
+    width: calc(100% - 400px);
     overflow-y: scroll;
     position: fixed;
     z-index: 1;
-    top: 150px;
+    top: 120px;
     left: 300px;
     right: 200px;
     padding-right: 45px;
@@ -1162,43 +1162,128 @@ footer {
 }
 
 .gallery-caption {
-    position: fixed;
+    position: absolute;
     text-align: center;
-    font-size: 50px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: 1px;
+    /* width: 100%; */
+    left: 0;
+    right: 0;
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    top: 0%;
     z-index: 10000;
 }
 
-.image_2 {
+
+.gallery_container {
     position: fixed;
-    max-width: 100%;
-    max-height: 60%;
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /* z-index: 1000; */
+    /* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+*/
+    cursor: url("../img/core-img/grid.gif"), default;
+  }
+
+.middlepane {
+    position: fixed;
+    width: 35%;
+    height: 70%;
+    background-color: transparent;
+    border-collapse: collapse;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000;
+}
+
+.empty_btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    color: transparent;
+    cursor: url("../img/core-img/grid.gif"), default;
+}
+
+.middlepane .image_2 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* z-index: 1000; */
     /* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 */
     cursor: url("../img/core-img/grid.gif"), default;
 }
 
-.image_2_focused {
+.fade-in {
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+    -moz-animation: fadeIn ease 5s;
+    -o-animation: fadeIn ease 5s;
+    -ms-animation: fadeIn ease 5s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  .fade-out {
+    opacity: 0%;
+  }
+
+
+/* .image_2_focused {
     position: fixed;
     max-width: 100%;
     max-height: 60%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
 .grid-container {
     display: inline-grid;
     grid-template-columns: 50% 50%;
     padding: 10px;
   }
-  
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    grid-gap: 1.1rem;
+    justify-items: center;
+    margin: 0;
+    padding: 0;
+}
+
 .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -1213,6 +1298,29 @@ footer {
     }
   }
 
+/* Simple responsive grid */
+
+#photos {
+    /* Prevent vertical gaps */
+    line-height: 0;
+     
+    -webkit-column-count: 5;
+    -webkit-column-gap:   0px;
+    -moz-column-count:    5;
+    -moz-column-gap:      0px;
+    column-count:         4;
+    column-gap:           8px;  
+  }
+
+/* @media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  } */
+  
+
 a.button {
 -webkit-appearance: button;
 -moz-appearance: button;
@@ -1223,14 +1331,19 @@ color: initial;
 }
 
 .smoky-container {
+    width: 100% !important;
+    height: auto !important;
     position: relative;
     text-align: center;
+    vertical-align: middle;
     display: inline;
     color: white;
 }
 
 .smoky-img {
-    border: none
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 8px;
 }
 
 
@@ -1239,7 +1352,7 @@ color: initial;
     color: white;
     top: 50%;
     left: 50%;
-    font-size: 33px;
+    font-size: 2vw;
     transform: translate(-50%, -50%);
     
 }
@@ -1255,8 +1368,11 @@ color: initial;
     opacity: 70%;
 }
 
-.p {
-    text-align: center;
+.gallery-caption .p {
+    font-family: Arial, Helvetica, sans-serif; 
+    font-style: italic; 
+    font-size: 1.25rem; 
+    color: black;
 }
 
 
@@ -1329,12 +1445,6 @@ leftbutton:active, .rightbutton:active {
     top: 50%;
     right: -15%;
     transform: translate(-50%, -50%);
-}
-
-.empty_btn {
-    background: none;
-    border: none;
-    color: white;
 }
 
 .portfolio-menu button {
@@ -1447,15 +1557,68 @@ leftbutton:active, .rightbutton:active {
   left: 50%;
   transform: translate(-50%, -50%); */
 
-.middlepane {
-    width: 50%;
-    height: 100%;
-    float: left;
-    background-color: royalblue;
-    border-collapse: collapse;
+/* :: 11.0 Blog & Contact Area CSS */
+
+.contact_box {
+    font-size: 10;
+    background-color: teal;
 }
 
-/* :: 11.0 Blog & Contact Area CSS */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+    color: black;
+    background-color: rgb(146, 146, 146);
+    border-color: rgb(146, 146, 146);
+    /* font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    font-family: proxima-nova;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px; */
+}
+
+.btn-primary:hover {
+    color: white;
+    
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-message {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color:white;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
 
 .instagram_profile {
     /* CSS styles here */
@@ -1916,3 +2079,46 @@ body {
 		opacity: 1; 
 	} 
 } 
+
+/* Loader */
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #242f3f;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+@keyframes loader {
+  0% { transform: rotate(0deg);}
+  25% { transform: rotate(180deg);}
+  50% { transform: rotate(180deg);}
+  75% { transform: rotate(360deg);}
+  100% { transform: rotate(360deg);}
+}
+@keyframes loader-inner {
+  0% { height: 0%;}
+  25% { height: 0%;}
+  50% { height: 100%;}
+  75% { height: 100%;}
+  100% { height: 0%;}
+}
+

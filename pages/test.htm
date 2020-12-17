@@ -1,32 +1,59 @@
-title = "GALLERY"
-url = "/test/:slug"
-layout = ""
+title = "PORTFOLIO"
+url = "/portfolio2"
+layout = "inner-scroll"
 
-[Gallery]
-markup = "user"
-idGallery = "test_gallery_2"
-
+[Galleries]
+results = 10
+galleryPage = "gallery"
 ==
 
+<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+    <!-- Fotorama from CDNJS, 19 KB -->
+    <!-- <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> -->
+    <!-- <link  href="{{ '/assets/css/fotorama.dev.css'|theme }}" rel="stylesheet"> -->
+    <!-- <script src="{{ '/assets/javascript/fotorama.dev.js'|theme }}"></script> -->
+
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+    <script src="{{ '/assets/javascript/project-common.js'|theme }}"></script>            
+</head>
 
 <body>
-
-    <h1> {{ slug }}</h1>
-
-    <div class="wrapper">
-        <h3>{{gallery.name}}</h3>
-        <div class="cp-sidebar-content gallery">
-            <ul>
-            {% for image in gallery.images %}
-                <li>
-                <img title="{{image.title}}" alt="{{image.description}}" src="{{ image.path }}"></a>
-                </li>
-            {% endfor %}
-            </ul>
-        </div>
+    <!-- <div id="aggregator"> -->
+    <div class="gallery-grid" >
+    {% for my_gallery in galleries %}
+    
+        {% if "_" not in my_gallery.name %}
+        
+            <div class="smoky-container">
+                <a href="{{ my_gallery.url }}">
+                <img src="{{ my_gallery.images[0].path }}" alt="" class="smoky-img"> 
+                <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
+            </div>
+        
+        {% endif %}
+        
+    
+    {% endfor %}
     </div>
 
-    
+    <!-- </div> -->
 </body>
 
+<scripts>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+
+    setTimeout(function(){
+        element.classList.remove('loading');
+    }, index * 500);
+
+    });
+    </script>
+
+</scripts>

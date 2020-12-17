@@ -23,24 +23,26 @@ galleryPage = "gallery"
 </head>
 
 <body>
-       <div id="aggregator">
-        {% for my_gallery in galleries %}
-        <div class="grid-item">
-            <div id="send-session" >
-                {% if "_" not in my_gallery.name %}
-                    <div class="smoky-container">
-                        <a href="{{ my_gallery.url }}">
-                        <img src="{{ my_gallery.images[0].path }}" alt="" id="send-session" class="button smoky-img"> 
-                        <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
-                    </div>
-                {% endif %}
+    <!-- <div id="aggregator"> -->
+    <div class="gallery-grid" >
+    {% for my_gallery in galleries %}
+    
+        {% if "_" not in my_gallery.name %}
+        
+            <div class="smoky-container">
+                <a href="{{ my_gallery.url }}">
+                <img src="{{ my_gallery.images[0].path }}" alt="" class="smoky-img"> 
+                <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
             </div>
-        </div>
-        {% endfor %}
-       </div>
+        
+        {% endif %}
+        
+    
+    {% endfor %}
+    </div>
+
+    <!-- </div> -->
 </body>
-
-
 
 <scripts>
 

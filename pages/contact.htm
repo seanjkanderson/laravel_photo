@@ -2,6 +2,8 @@ title = "CONTACT"
 url = "/contact"
 layout = "inner-scroll"
 
+[contactForm]
+
 ==
 
 <head>
@@ -21,41 +23,29 @@ layout = "inner-scroll"
 </head>
 
 <body>
-        
 
     <br>
-    <p2> xyz@philandersonphotography.com </p2>
 
-    <p> </p>
+    <p1> You may contact me here with any questions or comments. </p1>
+
+    <br>
+    <br>
+
+    {% component 'contactForm' %}
+    <br> 
+    <br>
 
     <a href="https://instagram.com/philandersonimages"> Connect with me on Instagram </a>
+    <a href="https://instagram.com/philandersonimages">
+        <!-- Icons made by "https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+        <img alt="philandersonimages" src="{{ 'assets/img/core-img/instagram.png'|theme}}" width="50" height="50">
+    </a>
 
 
+    
+
+    
     <!-- <div id="instagram-feed-demo" class="instagram_feed"></div> -->
 
     
 </body>
-
-<scripts>
-    <script type="text/javascript">
-        (function($){
-		$(window).on('load', function(){
-			$.instagramFeed({
-				'username': 'philandersonimages',
-				'container': "#instagram-feed-demo",
-				'display_profile': true,
-				'display_biography': false,
-				'display_gallery': true,
-				'get_raw_json': false,
-				'callback': null,
-				'styling': true,
-				'items': 6,
-				'items_per_row': 3,
-				'margin': 1 
-			});
-		});
-	})(jQuery);
-    </script>
-    
-        
-</scripts>
