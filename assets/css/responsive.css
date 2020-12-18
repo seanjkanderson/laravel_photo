@@ -156,6 +156,7 @@
     }
 
     .footer {
+        visibility: hidden;
         display: none;
     }
 }
