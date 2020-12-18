@@ -7,11 +7,11 @@ function loadImages(handle, target_id) {
 
             // Iterate over each file in the array
             $.each(data, function(key, value) {
-                    if (key == 1) {
+                    if (key == 0) {
                         im_ls = im_ls + '<img class="active image" src="' + value.path + '" > \n'
                     }
                     else {
-                    im_ls = im_ls + '<img class="image" src="' + value.path + '" > \n'
+                    im_ls = im_ls + '<img class="image" data-src="' + value.path + '" > \n'
                     }
                 }
             );

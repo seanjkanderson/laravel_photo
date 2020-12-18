@@ -26,7 +26,11 @@ idGallery = "{{ :slug }}"
             <li data-thumb="{{ image.path | resize(100) }}">
                 <div class="middlepane" >
                         <div class="fade-in">
-                            <img src="{{ image.path | resize(500) }}" class="active image_2"/>
+                            {% if image.index < 2 %}
+                                <img src="{{ image.path | resize(500) }}" class="active image_2"/>
+                            {% else %}
+                                <img data-src="{{ image.path | resize(500) }}" class="active image_2"/>
+                            {% endif %}
                         </div>
                         <button class="gallery_toggle empty_btn"></button>
                         <div class="gallery-caption">
@@ -53,11 +57,11 @@ idGallery = "{{ :slug }}"
         
     </div>
 
-    <div class="middlepane">
+    <!-- <div class="middlepane">
         <div class="fade-out">
         <img src="https://media.giphy.com/media/cjnnH0h3cfBTORaUnp/giphy.gif" class="active image_2" style="opacity:0.5; width: 75%;"/>
         </div>
-    </div>
+    </div> -->
 
     <!-- <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
@@ -69,13 +73,6 @@ idGallery = "{{ :slug }}"
 
 <scripts>
 
-    <script>
-        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        $(window).on("load",function(){
-            setTimeout($(".loader-wrapper").fadeOut("slow"),10000);
-          
-        });
-    </script>
 
     <script type="text/javascript">
         var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -96,6 +93,13 @@ idGallery = "{{ :slug }}"
         speed: this.my_speed,
         keyPress: true,
         autoWidth: false,
+
+        onBeforeStart: function (slider) {
+            for (var i = 1; i <= 2; i++) {
+                var img = slider.find('li:nth-child(' + i + ') img');
+                img.attr('src', img.attr('data-src'));
+            }
+        },
     
     });
         $('#goToPrevSlide').on('click', function () {

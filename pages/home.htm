@@ -43,6 +43,13 @@ function onStart()
 
     <scripts>
 
+        <!-- <script> document.addEventListener("touchstart", function(e) {
+            console.log(e.defaultPrevented);  // will be false
+            e.preventDefault();   // does nothing since the listener is passive
+            console.log(e.defaultPrevented);  // still false
+        });
+        </script> -->
+
         <script> loadImages('.js-files', 'cycler') </script>
 
         <script type="text/javascript">
@@ -50,9 +57,16 @@ function onStart()
                 var $active = $('#cycler .active');
                 var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
                 $next.css('z-index',2);//move the next image up the pile
+                var img_src = $next[0].dataset.src;
+                if($next[0].src == "") {
+                        $next[0].setAttribute('src', img_src);//make the next image the top one
+                    }
                 $active.fadeOut(1500,function(){//fade out the top image
                     $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+                    
                     $next.css('z-index',3).addClass('active');//make the next image the top one
+                    
+                    
                 });
                 }
         
