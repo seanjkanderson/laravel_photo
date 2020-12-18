@@ -26,7 +26,7 @@ idGallery = "{{ :slug }}"
             <li data-thumb="{{ image.path | resize(100) }}">
                 <div class="middlepane" >
                         <div class="fade-in">
-                            {% if image.index < 2 %}
+                            {% if image.firstIndex %}
                                 <img src="{{ image.path | resize(500) }}" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw" class="active image_2"/>
                             {% else %}
                                 <img data-src="{{ image.path | resize(500) }}" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw" class="active image_2"/>
@@ -57,11 +57,9 @@ idGallery = "{{ :slug }}"
         
     </div>
 
-    <!-- <div class="middlepane">
-        <div class="fade-out">
-        <img src="https://media.giphy.com/media/cjnnH0h3cfBTORaUnp/giphy.gif" class="active image_2" style="opacity:0.5; width: 75%;"/>
-        </div>
-    </div> -->
+    <div class="middlepane_2">
+        <img src="https://media.giphy.com/media/q15kbCtGFqwx8wYx1n/giphy.gif" class="active image_2" style="width: 75%;"/>
+    </div>
 
     <!-- <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
@@ -72,6 +70,13 @@ idGallery = "{{ :slug }}"
 </body>
 
 <scripts>
+
+    <script type="text/javascript">
+        $("#lightSlider").delay(0).fadeOut("fast");
+        $(".middlepane_2").delay(3000).fadeOut("slow");
+        $("#lightSlider").delay(2000).fadeIn("slow");
+
+    </script>
 
 
     <script type="text/javascript">

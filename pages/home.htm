@@ -22,84 +22,102 @@ function onStart()
     $this->page["photoFiles"] = $files;
 }
 ==
+
+<style>
+    #rpreloader {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:white; /* change if the mask should have another color then white */
+    z-index:99999; /* makes sure it stays on top */
+    }
+
+</style>
+
 <body>
-    <head>
-        <!-- jQuery 1.8 or later, 33 KB -->
-        <!-- <script rel="preload" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 
-        <!-- <link  rel="preload" href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet"> -->
-        <!-- <script rel="preload" src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>             -->
-
-    </head>
-
-    <div id="container">
-        <div id="cycler"> </div>
+    <div id="rpreloader">
+        <!-- {% for image in gallery.images %}
+            {% if image.index == 0 %} -->
+                <div class="container">
+                    <img src="https://media.giphy.com/media/q15kbCtGFqwx8wYx1n/giphy.gif" class="image">
+                </div>
+            <!-- {% endif %}
+        {% endfor %} -->
     </div>
+    
+    <div id="content">
+        <div id="container">
+            <div id="cycler"> </div>
+        </div>
 
-    <div class="js-files" data-is-authenticated="{{ gallery.images|json_encode|e('html_attr') }}">
-        <!-- ... -->
+        <div class="js-files" data-is-authenticated="{{ gallery.images|json_encode|e('html_attr') }}">
+            <!-- ... -->
+        </div>
     </div>
-
-    <scripts>
-
-        <script type="text/javascript">
-            function loadImages(handle, target_id) {
-                document.addEventListener('DOMContentLoaded', function() {
-                        // var userRating = document.querySelector(handle);
-                        var data = $(handle).data('isAuthenticated');
-                        var im_ls ="";
-
-                        // Iterate over each file in the array
-                        $.each(data, function(key, value) {
-                                if (key == 0) {
-                                    im_ls = im_ls + '<img class="active image" src="' + value.path + '" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw"> \n'
-                                }
-                                else {
-                                im_ls = im_ls + '<img class="image" data-src="' + value.path + '" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw"> \n'
-                                }
-                            }
-                        );
-
-                        document.getElementById(target_id).innerHTML = im_ls;
-                    });
-            }
-        </script>
-
-        <!-- <script> document.addEventListener("touchstart", function(e) {
-            console.log(e.defaultPrevented);  // will be false
-            e.preventDefault();   // does nothing since the listener is passive
-            console.log(e.defaultPrevented);  // still false
-        });
-        </script> -->
-
-        <script> loadImages('.js-files', 'cycler') </script>
-
-        <script type="text/javascript">
-            function cycleImages(){
-                var $active = $('#cycler .active');
-                var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
-                $next.css('z-index',2);//move the next image up the pile
-                var img_src = $next[0].dataset.src;
-                if($next[0].src == "") {
-                        $next[0].setAttribute('src', img_src);//make the next image the top one
-                    }
-                $active.fadeOut(1500,function(){//fade out the top image
-                    $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
-                    
-                    $next.css('z-index',3).addClass('active');//make the next image the top one
-                    
-                    
-                });
-                }
-        
-            $(document).ready(function(){
-            // run every 4s
-            setInterval('cycleImages()', 7000);
-            })
-        </script>
-
-        
-            
-    </scripts>
 
 </body>
+
+<scripts>
+
+    <script type="text/javascript">
+        $("#content").delay(0).fadeOut("fast");
+        $("#rpreloader").delay(3000).fadeOut("slow");
+        $("#content").delay(000).fadeIn("slow");
+
+    </script>
+
+    <script type="text/javascript">
+        function loadImages(handle, target_id) {
+            document.addEventListener('DOMContentLoaded', function() {
+                    // var userRating = document.querySelector(handle);
+                    var data = $(handle).data('isAuthenticated');
+                    var im_ls ="";
+
+                    // Iterate over each file in the array
+                    $.each(data, function(key, value) {
+                            if (key == 0) {
+                                im_ls = im_ls + '<img class="active image" src="' + value.path + '" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw"> \n'
+                            }
+                            else {
+                            im_ls = im_ls + '<img class="image" data-src="' + value.path + '" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw"> \n'
+                            }
+                        }
+                    );
+
+                    document.getElementById(target_id).innerHTML = im_ls;
+                });
+        }
+    </script>
+
+    <script> loadImages('.js-files', 'cycler') </script>
+
+    <script type="text/javascript">
+        function cycleImages(){
+            var $active = $('#cycler .active');
+            var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+            $next.css('z-index',2);//move the next image up the pile
+            var img_src = $next[0].dataset.src;
+            if($next[0].src == "") {
+                    $next[0].setAttribute('src', img_src);//make the next image the top one
+                }
+            $active.fadeOut(1500,function(){//fade out the top image
+                $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+                
+                $next.css('z-index',3).addClass('active');//make the next image the top one
+                
+                
+            });
+            }
+    
+        // $(document).ready(function(){
+        // run every 4s
+        // setInterval('cycleImages()', 7000);
+        // })
+    </script>
+
+    
+        
+</scripts>
