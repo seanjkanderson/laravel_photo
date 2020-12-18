@@ -11,10 +11,10 @@ idGallery = "{{ :slug }}"
 
 <head>
     <!-- jQuery 1.8 or later, 33 KB -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 
-    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
-    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+    <link rel="preload" href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script rel="preload" src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
 
 </head>
 
