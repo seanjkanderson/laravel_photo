@@ -27,9 +27,8 @@ function onStart()
         <!-- jQuery 1.8 or later, 33 KB -->
         <!-- <script rel="preload" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 
-        <link  rel="preload" href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
-        <script rel="preload" src="{{ '/assets/javascript/lightslider.js'|theme }}"></script> 
-        <script rel="preload" src="{{ '/assets/javascript/project-common.js'|theme }}"></script>            
+        <!-- <link  rel="preload" href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet"> -->
+        <!-- <script rel="preload" src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>             -->
 
     </head>
 
@@ -42,6 +41,29 @@ function onStart()
     </div>
 
     <scripts>
+
+        <script type="text/javascript">
+            function loadImages(handle, target_id) {
+                document.addEventListener('DOMContentLoaded', function() {
+                        // var userRating = document.querySelector(handle);
+                        var data = $(handle).data('isAuthenticated');
+                        var im_ls ="";
+
+                        // Iterate over each file in the array
+                        $.each(data, function(key, value) {
+                                if (key == 0) {
+                                    im_ls = im_ls + '<img class="active image" src="' + value.path + '" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw"> \n'
+                                }
+                                else {
+                                im_ls = im_ls + '<img class="image" data-src="' + value.path + '" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw"> \n'
+                                }
+                            }
+                        );
+
+                        document.getElementById(target_id).innerHTML = im_ls;
+                    });
+            }
+        </script>
 
         <!-- <script> document.addEventListener("touchstart", function(e) {
             console.log(e.defaultPrevented);  // will be false
@@ -73,7 +95,11 @@ function onStart()
             $(document).ready(function(){
             // run every 4s
             setInterval('cycleImages()', 7000);
-            })</script>
+            })
+        </script>
+
+        
             
     </scripts>
+
 </body>

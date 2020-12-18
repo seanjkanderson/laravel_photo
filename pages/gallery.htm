@@ -13,8 +13,8 @@ idGallery = "{{ :slug }}"
     <!-- jQuery 1.8 or later, 33 KB -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 
-    <link rel="preload" href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
-    <script rel="preload" src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+    <link href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
 
 </head>
 
@@ -27,9 +27,9 @@ idGallery = "{{ :slug }}"
                 <div class="middlepane" >
                         <div class="fade-in">
                             {% if image.index < 2 %}
-                                <img src="{{ image.path | resize(500) }}" class="active image_2"/>
+                                <img src="{{ image.path | resize(500) }}" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw" class="active image_2"/>
                             {% else %}
-                                <img data-src="{{ image.path | resize(500) }}" class="active image_2"/>
+                                <img data-src="{{ image.path | resize(500) }}" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw" class="active image_2"/>
                             {% endif %}
                         </div>
                         <button class="gallery_toggle empty_btn"></button>
