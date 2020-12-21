@@ -1,15 +1,11 @@
 title = "Home"
 url = "/"
 layout = "default"
-description = "Phil Anderson - Northern California-based | Minimalist landscape images of Western North America."
-is_hidden = 0
 
 [Gallery]
-idGallery = "_home"
 markup = "user"
-slug = "{{ :slug }}"
+idGallery = "_home"
 ==
-<?php
 function onStart()
 {
     $sub_dir = "home_page/";
@@ -25,8 +21,8 @@ function onStart()
     closedir($dir);
     $this->page["photoFiles"] = $files;
 }
-?>
 ==
+
 <style>
     #rpreloader {
     position: fixed;
@@ -116,10 +112,10 @@ function onStart()
             });
             }
     
-        // $(document).ready(function(){
+        $(document).ready(function(){
         // run every 4s
-        // setInterval('cycleImages()', 7000);
-        // })
+        setInterval('cycleImages()', 4000);
+        })
     </script>
 
     
