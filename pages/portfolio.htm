@@ -28,7 +28,7 @@ galleryPage = "gallery"
 <body>
     <!-- <div id="aggregator"> -->
     <div class="gallery-grid" >
-    {% for my_gallery in galleries %}
+    {% for my_gallery in galleries|sort((a, b) => a.slug <=> b.slug) %}
     
         {% if "_" not in my_gallery.name %}
         
