@@ -71,6 +71,12 @@ slug = "{{ :slug }}"
     
 </body>
 
+<footer id="layout-footer">
+    <footer>
+        <p style="font-size: 12px;">&#169; Philip Anderson. All rights reserved.</p>
+    </footer>
+</footer>
+
 <scripts>
 
     <!-- <script> $(".footer").delay(0).fadeOut("fast");</script> -->
@@ -99,12 +105,17 @@ slug = "{{ :slug }}"
             var my_speed = 0;
         }
 
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var thumbHeight = 0.10;
+        var numThumbs = Math.floor(w / (thumbHeight*h));
+
         var slider = $('#lightSlider').lightSlider({
         controls: false,
         gallery: true,
         // item: 5,
         slideMargin: 10,
-        // thumbItem: 9,
+        thumbItem: numThumbs,
         mode: "fade",
         loop: true,
         speed: this.my_speed,
@@ -153,14 +164,13 @@ slug = "{{ :slug }}"
         var space_str = space.toString()+'px';
         var t_ms = 700;
         
-        
         var detail_focus = initial_focus * 1.10;
         var detail_focus = detail_focus.toString() + "px";
         
         if(space > 0)
         {
         $("p").animate({"opacity": "0%"}, t_ms*.2, function() {});
-        $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-120px"}, t_ms, function() {});
+        $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-140px"}, t_ms, function() {});
         $(".middlepane").animate({"width": detail_focus});
         
     
