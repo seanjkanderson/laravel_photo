@@ -72,6 +72,7 @@ slug = "{{ :slug }}"
 </body>
 
 <footer id="layout-footer">
+
     <footer>
         <p style="font-size: 12px;">&#169; Philip Anderson. All rights reserved.</p>
     </footer>
@@ -83,23 +84,14 @@ slug = "{{ :slug }}"
 
     <script type="text/javascript">
         var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        var isFirefox = typeof InstallTrigger !== 'undefined';
-        // Edge 20+
-        var isEdge = !isIE && !!window.StyleMedia;
-
-        // Chrome 1 - 79
         var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+        var isFirefox = typeof InstallTrigger !== 'undefined';
 
-        // Edge (based on chromium) detection
-        var isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
-        // Opera 8.0+
-        var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-        
-        var w = window.innerWidth;
         var fadespeed = 4500;
         var fadein = 3000;
-        if(isChrome || isEdgeChromium || isEdge || isFireFox) {
-            var fadespeed = 4500;
+
+        if(isChrome || isFirefox) {
+            var fadespeed = 3000;
             var fadein = 2000;
         }
         $("#lightSlider").delay(0).fadeOut("fast");
@@ -111,10 +103,11 @@ slug = "{{ :slug }}"
 
     <script type="text/javascript">
         var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        
-        my_speed = 2000;
-        if(isSafari) {
-            var my_speed = 0;
+        var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+        var isFirefox = typeof InstallTrigger !== 'undefined';
+        my_speed = 0;
+        if(isChrome || isFirefox) {
+            var my_speed = 2000;
         }
 
         var w = window.innerWidth;
