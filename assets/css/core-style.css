@@ -1373,9 +1373,9 @@ color: initial;
 .smoky-txt {
     position: absolute;
     color: black;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    /* -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    /* -webkit-text-stroke-width: 1px; */
+    /* -webkit-text-stroke-color: black; */
     top: 50%;
     left: 50%;
     font-size: 2vw;
