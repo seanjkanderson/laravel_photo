@@ -1174,15 +1174,22 @@ footer {
 }
 
 .gallery-caption {
-    position: absolute;
+    position: fixed;
     text-align: center;
     /* width: 100%; */
     left: 0;
     right: 0;
     /* left: 50%; */
     /* transform: translate(-50%, -50%); */
-    top: 0;
+    top: 110px;
     z-index: 10000;
+}
+
+.gallery-caption .p {
+    font-family: Arial, Helvetica, sans-serif; 
+    font-style: italic; 
+    font-size: 1.25rem; 
+    color: black;
 }
 
 
@@ -1393,14 +1400,6 @@ color: initial;
 .smoky-txt:hover {
     opacity: 70%;
 }
-
-.gallery-caption .p {
-    font-family: Arial, Helvetica, sans-serif; 
-    font-style: italic; 
-    font-size: 1.25rem; 
-    color: black;
-}
-
 
 
 /* .span_bar {

@@ -46,9 +46,6 @@ slug = "{{ :slug }}"
                             <!-- {% endif %} -->
                         </div>
                         <button class="gallery_toggle empty_btn"></button>
-                        <div class="gallery-caption">
-                            <p> {{ gallery.description }} </p>
-                        </div>
                     
                 </div>  
                 
@@ -56,6 +53,10 @@ slug = "{{ :slug }}"
         {% endfor %}
 
     </ul>
+
+    <div class="gallery-caption">
+        <p> {{ gallery.description }} </p>
+    </div>
 
     
 
