@@ -1181,7 +1181,7 @@ footer {
     right: 0;
     /* left: 50%; */
     /* transform: translate(-50%, -50%); */
-    top: 110px;
+    top: max(calc((50vh - 17.5vw)/2),80px);
     z-index: 10000;
 }
 
