@@ -57,6 +57,13 @@
     grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
 }
 
+.image {
+    max-width: min(80%,500px);
+    max-height: min(70%, 500px);
+}
+
+}
+
 @media only screen and (max-width: 750px) {
     .gallery-grid {
     grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
@@ -170,5 +177,3 @@
         display: none;
     } */
 }
-
-    
