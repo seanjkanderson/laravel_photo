@@ -128,10 +128,10 @@
         font-size: 14px;
     }
 
-    /* footer {
+    .site-footer {
         position: relative;
-        margin-bottom: 10px;
-    } */
+        margin-bottom: 20px;
+    }
 
     .gallery_area {
         height: auto;

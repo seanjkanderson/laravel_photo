@@ -1131,13 +1131,7 @@ transform: rotate(-45deg);
     background-color: white;
 }
 
-.site-footer, .page-wrap:after {
-    height: 30px; 
-  }
-
-
-
-.pagewrap {
+#pagewrap {
     min-height: 100%;
     /* equal to footer height */
     margin-bottom: -80px; 
@@ -1147,6 +1141,7 @@ transform: rotate(-45deg);
     content: "";
     display: block;
   }
+
 
 
 /* .footer-area {
