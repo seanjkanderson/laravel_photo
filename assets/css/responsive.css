@@ -130,6 +130,7 @@
 
     footer {
         position: relative;
+        margin-bottom: 10px;
     }
 
     .gallery_area {
@@ -142,7 +143,7 @@
         left: 60px;
         right: 15px;
         padding-right: 15px;
-        margin-bottom: 150px;
+        margin-bottom: 120px;
     }
 
     .gallery_menu {
