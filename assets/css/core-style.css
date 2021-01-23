@@ -1123,7 +1123,7 @@ transform: rotate(-45deg);
 
 /* :: 9.0 Footer Area CSS */
 
-footer {
+.site-footer {
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -1131,11 +1131,23 @@ footer {
     background-color: white;
 }
 
-#pagewrap {
+.site-footer, .page-wrap:after {
+    height: 30px; 
+  }
+
+
+
+.pagewrap {
     min-height: 100%;
     /* equal to footer height */
     margin-bottom: -80px; 
 }
+
+.page-wrap:after {
+    content: "";
+    display: block;
+  }
+
 
 /* .footer-area {
     position: absolute;
