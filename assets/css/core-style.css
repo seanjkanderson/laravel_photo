@@ -1131,6 +1131,12 @@ footer {
     background-color: white;
 }
 
+#pagewrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -80px; 
+}
+
 /* .footer-area {
     position: absolute;
     z-index: 100;
