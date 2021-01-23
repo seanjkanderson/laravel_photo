@@ -29,14 +29,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
-
-    /* .gallery-caption {
-        top: -15px;
-    } */
-
-
-    
-
   }
 
 @media only screen and (max-width: 900px) {
