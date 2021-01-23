@@ -131,6 +131,7 @@
     footer {
         position: fixed;
         bottom: -45px;
+        height: 80px;
     }
 
     .gallery_area {
