@@ -54,6 +54,7 @@
 }
 
 .gallery-grid {
+<<<<<<< HEAD
     grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
 }
 
@@ -66,8 +67,9 @@
 
 @media only screen and (max-width: 750px) {
     .gallery-grid {
+=======
+>>>>>>> parent of 6f99343... responsive
     grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
-}
 }
 
 @media only screen and (max-width: 600px) {

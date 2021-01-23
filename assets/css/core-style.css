@@ -900,8 +900,8 @@ transform: rotate(-45deg);
 
 .image {
     position: absolute;
-    max-width: min(50%,500px);
-    max-height: min(60%, 500px);
+    max-width: 80%;
+    max-height: 70%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
