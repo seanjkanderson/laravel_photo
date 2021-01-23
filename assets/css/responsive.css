@@ -132,6 +132,8 @@
         position: fixed;
         bottom: -45px;
         height: 80px;
+        background-color: white;
+        z-index: 9999;
     }
 
     .gallery_area {
