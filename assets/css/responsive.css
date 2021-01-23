@@ -34,9 +34,6 @@
         top: -15px;
     } */
 
-
-    
-
   }
 
 @media only screen and (max-width: 900px) {
@@ -54,7 +51,6 @@
 }
 
 .gallery-grid {
-<<<<<<< HEAD
     grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
 }
 
@@ -67,9 +63,8 @@
 
 @media only screen and (max-width: 750px) {
     .gallery-grid {
-=======
->>>>>>> parent of 6f99343... responsive
     grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
+}
 }
 
 @media only screen and (max-width: 600px) {
@@ -99,6 +94,8 @@
         bottom: 0px;
         left: 5px;
     }
+
+}
 
 
 @media only screen and (min-width: 992px) {
@@ -160,12 +157,6 @@
     
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    /* .modal-dialog {
-        width: 320px;
-    } */
-}
-
 @media only screen and (max-width: 450px) {
     
     .gallery_area {
@@ -184,4 +175,4 @@
         visibility: hidden;
         display: none;
     } */
-}
+    }
