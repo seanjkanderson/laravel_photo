@@ -128,11 +128,6 @@
         font-size: 14px;
     }
 
-    .site-footer {
-        position: relative;
-        margin-bottom: 20px;
-    }
-
     .gallery_area {
         height: auto;
         width: calc(100% - 90px);
