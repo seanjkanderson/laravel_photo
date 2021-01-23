@@ -1182,7 +1182,7 @@ footer {
     /* left: 50%; */
     /* transform: translate(-50%, -50%); */
     top: max(calc((50vh - 17.5vw)/2),80px);
-    z-index: 1;
+    z-index: 10000;
 }
 
 .gallery-caption .p {
