@@ -900,8 +900,8 @@ transform: rotate(-45deg);
 
 .image {
     position: absolute;
-    max-width: min(50%,500px);
-    max-height: min(60%, 500px);
+    max-width: min(50%,5in);
+    max-height: min(60%, 5in);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1124,9 +1124,10 @@ transform: rotate(-45deg);
 
 footer {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     width: 100%;
     height: 1.25rem;
+    left: 5px;
     background-color: white;
 }
 
@@ -1749,29 +1750,6 @@ leftbutton:active, .rightbutton:active {
     transition-duration: 500ms;
 }
 
-.contact-form-area form .form-control:focus {
-    box-shadow: none;
-    border-color: #1d1d1d;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
-.contact-form-area form textarea.form-control {
-    height: 200px;
-}
-
-.map-area {
-    position: relative;
-    z-index: 1;
-    padding-bottom: 100px;
-}
-
-#googleMap {
-    width: 100%;
-    height: 485px;
-    position: relative;
-    z-index: 1;
-}
 
 .contact-core-info {
     position: absolute;
