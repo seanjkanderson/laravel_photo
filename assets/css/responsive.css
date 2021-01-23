@@ -129,7 +129,7 @@
     }
 
     footer {
-        position: relative;
+        position: fixed;
         bottom: -45px;
     }
 
@@ -149,26 +149,4 @@
         margin-bottom: 30px;
     }
     
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    /* .modal-dialog {
-        width: 320px;
-    } */
-}
-
-@media only screen and (max-width: 450px) {
-    
-    .gallery_area {
-        top: 50px;
-    }
-
-    .smoky-txt {
-        font-size: 4vw;
-    }
-
-    .p {
-        color: transparent;
-    }
-
 }
