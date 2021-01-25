@@ -1131,7 +1131,7 @@ transform: rotate(-45deg);
     background-color: white;
 }
 
-#pagewrap {
+.pagewrap {
     min-height: 100%;
     /* equal to footer height */
     margin-bottom: -80px; 
