@@ -901,8 +901,8 @@ transform: rotate(-45deg);
 
 .image {
     position: absolute;
-    max-width: min(50%,5in);
-    max-height: min(60%, 5in);
+    max-width: min(50%,540px);
+    max-height: min(60%, 540px);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -927,7 +927,13 @@ transform: rotate(-45deg);
 #cycler img{
     position:absolute;
     z-index:1;
-    background-color:white
+    background-color:white;
+    image-rendering: optimizeSpeed;             /*                     */
+    image-rendering: -moz-crisp-edges;          /* Firefox             */
+    image-rendering: -o-crisp-edges;            /* Opera               */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed       */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
 }
 #cycler img.active{
     z-index:3
@@ -1231,6 +1237,12 @@ transform: rotate(-45deg);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    image-rendering: optimizeSpeed;             /*                     */
+    image-rendering: -moz-crisp-edges;          /* Firefox             */
+    image-rendering: -o-crisp-edges;            /* Opera               */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed       */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
 }
 
 .middlepane_2 {
@@ -1256,7 +1268,7 @@ transform: rotate(-45deg);
 
 .middlepane .image_2 {
     position: absolute;
-    width: 100%;
+    width: min(100%,540px);
     height: auto;
     top: 50%;
     left: 50%;
