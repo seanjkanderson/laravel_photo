@@ -141,6 +141,10 @@
         margin-bottom: 30px;
     }
 
+    .galler-caption {
+        top: max(calc((50vh - 23vw)/2),80px);
+    }
+
     .middlepane {
         width: 80%;
     }
