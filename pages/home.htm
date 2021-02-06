@@ -9,9 +9,8 @@ idGallery = "_home"
 function onStart()
 {   
     $tracker = themes_path("seaofdreams/assets/PiwikTracker.php");
-    require_once $tracker;
-    MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
-    
+    echo $tracker;
+
     $sub_dir = "home_page/";
     $files = array();
     $path = './storage/app/media/' . $sub_dir;
