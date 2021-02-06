@@ -142,7 +142,7 @@
     }
 
     .galler-caption {
-        top: max(calc((50vh - 23vw)/2),80px);
+        top: max(calc((50vh - 35vw)/2),80px);
     }
 
     .middlepane {
