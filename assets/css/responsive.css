@@ -141,8 +141,8 @@
         margin-bottom: 30px;
     }
 
-    .galler-caption {
-        top: max(calc((50vh - 45vw)/2),80px);
+    .gallery-caption {
+        top: max(calc((50vh - 25vw)/2),80px);
     }
 
     .middlepane {
