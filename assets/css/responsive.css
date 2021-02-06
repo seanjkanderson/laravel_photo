@@ -142,9 +142,15 @@
     }
 
     .gallery-caption {
-        top: max(calc((50vh - 45vw)/2),80px);
-        line-height: .8;
+        top: max(calc((50vh - 40vw)/2),80px);
+        
     }
+
+    .gallery-caption .p {
+        line-height: .7;
+        font-size: 1.1rem;
+    }
+
 
     .middlepane {
         width: 80%;
