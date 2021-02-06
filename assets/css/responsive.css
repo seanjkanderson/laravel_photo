@@ -64,10 +64,6 @@
 
 @media only screen and (max-width: 600px) {
 
-    .middlepane {
-        width: 60%;
-    }
-
     .gallery_area {
         height: calc(100% - 380px);
         width: calc(100% - 180px);
@@ -130,7 +126,7 @@
 
     .gallery_area {
         height: auto;
-        width: calc(100% - 40px);
+        width: calc(100% - 90px);
         overflow-y: auto;
         position: relative;
         z-index: 1;
@@ -143,6 +139,10 @@
 
     .gallery_menu {
         margin-bottom: 30px;
+    }
+
+    .middlepane {
+        width: 75%;
     }
     
 }
