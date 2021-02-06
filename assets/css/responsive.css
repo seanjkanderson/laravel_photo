@@ -142,7 +142,7 @@
     }
 
     .gallery-caption {
-        top: max(calc((50vh - 25vw)/2),80px);
+        top: max(calc((50vh - 45vw)/2),80px);
     }
 
     .middlepane {
