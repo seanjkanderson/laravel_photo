@@ -142,7 +142,8 @@
     }
 
     .gallery-caption {
-        top: max(calc((50vh - 50vw)/2),80px);
+        top: max(calc((50vh - 45vw)/2),80px);
+        line-height: .8;
     }
 
     .middlepane {
