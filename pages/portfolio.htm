@@ -20,14 +20,21 @@ galleryPage = "gallery"
     MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
 } -->
 <head>
-    <!-- jQuery 1.8 or later, 33 KB -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-
-    <!-- Fotorama from CDNJS, 19 KB -->
-    <!-- <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> -->
-    <!-- <link  href="{{ '/assets/css/fotorama.dev.css'|theme }}" rel="stylesheet"> -->
-    <!-- <script src="{{ '/assets/javascript/fotorama.dev.js'|theme }}"></script> -->
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="//matomo.philandersonphotography.com/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
 
     <link  rel="preload" href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
     <script rel="preload" src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
