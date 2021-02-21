@@ -9,15 +9,19 @@ idGallery = "_home"
 function onStart()
 {   
     $path= $this->controller->themeUrl('assets/MatomoTracker.php');
-    $tracker = themes_path("seaofdreams/assets/PiwikTracker.php");
+    $path2 = themes_path("seaofdreams/assets/MatomoTracker.php");
+    echo $path;
     if (file_exists($path)) {
         require_once $path;
         MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
+        echo 'first';
     } 
-    elseif (file_exists($tracker)) {
-        require_once $tracker;
+    elseif (file_exists($path2)) {
+        require_once $path2;
         MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
+        echo 'second';
     }
+    echo 'done';
     
 }
 ==
