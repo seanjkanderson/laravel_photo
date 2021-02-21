@@ -15,7 +15,6 @@ function onStart()
     $path= $this->controller->themeUrl('assets/MatomoTracker.php');
     $path2 = themes_path('seaofdreams/assets/MatomoTracker.php');
     $path3 = '/var/www/html/themes/laravel_photo/assets/MatomoTracker.php';
-    echo $path;
     if (file_exists($path)) {
         require_once $path;
         MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
