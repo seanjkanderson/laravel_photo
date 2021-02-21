@@ -1,61 +1,44 @@
-title = "PORTFOLIO"
-url = "/portfolio2"
-layout = "inner-scroll"
-is_hidden = 1
+title = "Home"
+url = "/test"
+layout = ""
 
-[Galleries]
-galleryOrder = "random"
-results = 10
+[Gallery]
 markup = "user"
-galleryPage = "gallery"
+idGallery = "_home"
 ==
-<head>
-    <!-- jQuery 1.8 or later, 33 KB -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+function onStart()
+{   
+    try {
+        $tracker = themes_path("seaofdreams/assets/MatomoTracker.php");
+        require_once $tracker;
+        MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
+    } catch (Error $e) {
+        require_once(getcwd() . '/themes/seaofdreams/assets/MatomoTracker.php');
+        MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
+    }
+    
+}
+==
 
-    <!-- Fotorama from CDNJS, 19 KB -->
-    <!-- <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> -->
-    <!-- <link  href="{{ '/assets/css/fotorama.dev.css'|theme }}" rel="stylesheet"> -->
-    <!-- <script src="{{ '/assets/javascript/fotorama.dev.js'|theme }}"></script> -->
+<style>
+    #rpreloader {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:white; /* change if the mask should have another color then white */
+    z-index:99999; /* makes sure it stays on top */
+    }
 
-    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
-    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
-    <script src="{{ '/assets/javascript/project-common.js'|theme }}"></script>            
-</head>
+</style>
 
 <body>
-    <!-- <div id="aggregator"> -->
-    <div class="gallery-grid" >
-    {% for my_gallery in galleries %}
-    
-        {% if "_" not in my_gallery.name %}
-        
-            <div class="smoky-container">
-                <a href="{{ my_gallery.url }}">
-                <img src="{{ my_gallery.images[0].path }}" alt="" class="smoky-img"> 
-                <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
-            </div>
-        
-        {% endif %}
-        
-    
-    {% endfor %}
-    </div>
 
-    <!-- </div> -->
+
 </body>
 
 <scripts>
-
-    <script type="text/javascript">
-        $('.box-wrapper').each(function(index, element) {
-
-    setTimeout(function(){
-        element.classList.remove('loading');
-    }, index * 500);
-
-    });
-    </script>
-
+    
+        
 </scripts>
