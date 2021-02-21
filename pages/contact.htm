@@ -6,26 +6,7 @@ is_hidden = 0
 
 [contactForm]
 ==
-function onStart()
-{   
-    $path= $this->controller->themeUrl('assets/MatomoTracker.php');
-    $path2 = themes_path('seaofdreams/assets/MatomoTracker.php');
-    $path3 = '/var/www/html/themes/laravel_photo/assets/MatomoTracker.php';
-    if (file_exists($path)) {
-        require_once $path;
-        MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
-    } 
-    elseif (file_exists($path2)) {
-        require_once $path2;
-        MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
-    }
-    elseif (file_exists($path3)) {
-        require_once $path3;
-        MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
-    }
-    
-}
-==
+
 <head>
     <!-- jQuery 1.8 or later, 33 KB -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
