@@ -8,12 +8,14 @@ idGallery = "_home"
 ==
 function onStart()
 {   
-    try {
-        $tracker = themes_path("seaofdreams/assets/MatomoTracker.php");
-        require_once $tracker;
+    $path= $this->controller->themeUrl('assets/MatomoTracker.php');
+    $tracker = themes_path("seaofdreams/assets/PiwikTracker.php");
+    if (file_exists($path)) {
+        require_once $path;
         MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
-    } catch (Error $e) {
-        require_once(getcwd() . '/themes/seaofdreams/assets/MatomoTracker.php');
+    } 
+    elseif (file_exists($tracker)) {
+        require_once $tracker;
         MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
     }
     
