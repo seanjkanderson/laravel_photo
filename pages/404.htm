@@ -11,19 +11,15 @@ function onStart()
     if (file_exists($path)) {
         require_once $path;
         MatomoTracker::$URL = 'https://matomo.philandersonphotography.com/';
-        echo 'first';
     } 
     elseif (file_exists($path2)) {
         require_once $path2;
         MatomoTracker::$URL = 'https://matomo.philandersonphotography.com/';
-        echo 'second';
     }
     elseif (file_exists($path3)) {
         require_once $path3;
         MatomoTracker::$URL = 'https://matomo.philandersonphotography.com/';
-        echo 'third';
     }
-    echo 'done';
     
 }
 ==
