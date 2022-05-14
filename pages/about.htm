@@ -1,49 +1,9 @@
 title = "ABOUT"
 url = "/about"
 layout = "inner-scroll"
-description = "Phil Anderson - Northern California-based | Minimalist landscape images of Western North America."
+description = "Sean Anderson - Time is fleeting | Movement is essential"
 is_hidden = 0
 ==
-function onStart()
-{   
-    $path= $this->controller->themeUrl('assets/MatomoTracker.php');
-    $path2 = themes_path('seaofdreams/assets/MatomoTracker.php');
-    $path3 = '/var/www/html/themes/laravel_photo/assets/MatomoTracker.php';
-
-    if (file_exists($path)) {
-        require_once $path;
-        MatomoTracker::$URL = 'https://matomo.philandersonphotography.com/';
-    } 
-    elseif (file_exists($path2)) {
-        require_once $path2;
-        MatomoTracker::$URL = 'https://matomo.philandersonphotography.com/';
-    }
-    elseif (file_exists($path3)) {
-        require_once $path3;
-        MatomoTracker::$URL = 'https://matomo.philandersonphotography.com/';
-    }
-    
-}
-==
-
-<head>
-    <!-- Matomo -->
-    <script type="text/javascript">
-        var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(['trackPageView']);
-        _paq.push(['disableCookies']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-        var u="//matomo.philandersonphotography.com/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '1']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-        })();
-    </script>
-    <!-- End Matomo Code -->
-</head>
 
 <body> 
 
@@ -54,53 +14,20 @@ function onStart()
     
 
     <p>
-        My first memories growing up are being out in the world. I grew up in a country of hills and weather,
-        contours and uncertain light, blizzards blown south from Canada, gauzy summer days, sudden thunder
-        storms, wind, and cloud trains: the light was always changing. Living on the edge of a small factory
-        town, the surrounding countryside was expansive and took me in. I became part of it, and it became
-        part of me. I believe this is what happens to anyone that spends time walking in and observing their
-        own given or cherished landscape, large or small. Landscapes are an intimate part of us. They become
-        part of our nervous system and emotions.
-    </p>
-
-    <p>
-        Photography to me is - …beauty…solitude…meditation…expression… and grace. Maybe grace most of
-        all, a moment or place illuminated in time, a sought after gift or understanding in which you realize you
-        are not simply an observer, but at one with this mysterious world. It is a way of seeing and seeing
-        again, finding deeper connections to the world around us. The novelist, Norman Maclean, wrote, “I am
-        haunted by waters.” I find myself haunted by landscapes.
-    </p>
-    
-    <p>
-        I primarily photograph in the diverse landscapes of North America with a mostly minimalist view,
-        although I try not to be dictated by any particular style or approach. I try to create images that distill my
-        emotions and connect the viewer with the land.
+        Sean makes digital images as a creative outlet. Painting, drawing, and more broadly mixed media 
+        served as his creative media growing up, but through his outdoor experiences, his father's 
+        photographic influences, and a fast-moving world, he has transitioned to primarily using 
+        photography for artistic self-expression. Born and raised in the foothills of the Sierra Nevada, 
+        Sean enjoys playing and photographing in big landscapes. 
     </p>
    
-    <p>
-        Thank you for your time and allowing me to share my world with you.
-    </p>
     <br>
     <p>
-        Phil Anderson   2021
+        Sean Anderson
     </p>
     
     <br>
     <br>
     <br>
-    <h5> Awards </h5>
-    
-    <p>- International Color Awards 2020 Landscape, Amateur - First place
-    <br>
-    - International Color Awards 2020 Landscape, Amateur - Honorable mention
-    <br>
-    - Black and White Spider Awards 2020 - one nomination 
-    <br>
-    - FAPA  5th Annual Fine Art Photography Awards - five nominations
-    <br>
-    - International Photography Awards 2019 - ten honorable mentions
-    <br>
-    - Black and White Spider Awards 2019 - five nominations 
-    </p>
 
 </body>

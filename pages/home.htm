@@ -66,7 +66,7 @@ function onStart()
         <!-- {% for image in gallery.images %}
             {% if image.index == 0 %} -->
                 <div class="container">
-                    <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image">
+                    <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image_shdwlss">
                 </div>
             <!-- {% endif %}
         {% endfor %} -->
@@ -88,7 +88,7 @@ function onStart()
 
     <script type="text/javascript">
         $("#content").delay(0).fadeOut("fast");
-        $("#rpreloader").delay(3000).fadeOut("slow");
+        $("#rpreloader").delay(0).fadeOut("slow");
         $("#content").delay(000).fadeIn("slow");
 
     </script>
@@ -98,18 +98,8 @@ function onStart()
             document.addEventListener('DOMContentLoaded', function() {
                     // var userRating = document.querySelector(handle);
                     var data = $(handle).data('isAuthenticated');
-                    var im_ls ="";
-
-                    // Iterate over each file in the array
-                    $.each(data, function(key, value) {
-                            if (key == 0) {
-                                im_ls = im_ls + '<img class="active image" src="' + value.path + '"> \n'
-                            }
-                            else {
-                            im_ls = im_ls + '<img class="image" src="' + value.path + '"> \n'
-                            }
-                        }
-                    );
+                    const random = Math.floor(Math.random() * data.length);
+                    var im_ls ='<img class="active image" src="' + data[random].path + '">';
 
                     document.getElementById(target_id).innerHTML = im_ls;
                 });
@@ -118,7 +108,7 @@ function onStart()
 
     <script> loadImages('.js-files', 'cycler') </script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function cycleImages(){
             var $active = $('#cycler .active');
             var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
@@ -140,7 +130,7 @@ function onStart()
         // run every 4s
         setInterval('cycleImages()', 4000);
         })
-    </script>
+    </script> -->
 
     
         
