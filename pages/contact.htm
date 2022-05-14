@@ -4,28 +4,7 @@ layout = "inner-scroll"
 description = "Phil Anderson - Northern California-based | Minimalist landscape images of Western North America."
 is_hidden = 0
 
-[contactForm]
 ==
-function onStart()
-{   
-    $path= $this->controller->themeUrl('assets/MatomoTracker.php');
-    $path2 = themes_path('seaofdreams/assets/MatomoTracker.php');
-    $path3 = '/var/www/html/themes/laravel_photo/assets/MatomoTracker.php';
-
-    if (file_exists($path)) {
-        require_once $path;
-        MatomoTracker::$URL = 'https://matomo.philandersonphotography.com/';
-    } 
-    elseif (file_exists($path2)) {
-        require_once $path2;
-        MatomoTracker::$URL = 'https://matomo.philandersonphotography.com/';
-    }
-    elseif (file_exists($path3)) {
-        require_once $path3;
-        MatomoTracker::$URL = 'https://matomo.philandersonphotography.com/';
-    }
-    
-}
 ==
 <head>
     <!-- jQuery 1.8 or later, 33 KB -->
@@ -67,12 +46,12 @@ function onStart()
 
     <br>
 
-    <p1> You may contact me here with any questions or comments. </p1>
+    <p1> You may contact me with any questions or comments. </p1>
 
     <br>
     <br>
-
-    {% component 'contactForm' %}
+    <u>Email:</u>  info [at] philandersonphotography.com
+    <!-- {% component 'contactForm' %} -->
     <br> 
     <br>
 
