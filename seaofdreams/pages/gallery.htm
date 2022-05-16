@@ -1,7 +1,7 @@
 title = "GALLERY"
 url = "/gallery/:slug"
 layout = "default-footerless"
-description = "Phil Anderson - Northern California-based | Minimalist landscape images of Western North America."
+description = "Sean Anderson - Time is fleeting | Movement is essential"
 is_hidden = 0
 
 [Gallery]
@@ -9,8 +9,6 @@ idGallery = "{{ :slug }}"
 markup = "user"
 slug = "{{ :slug }}"
 ==
-==
-
 <head>
     <!-- jQuery 1.8 or later, 33 KB -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -54,7 +52,7 @@ slug = "{{ :slug }}"
     <ul id="lightSlider">
 
         {% for image in gallery.images %}
-            <li data-thumb="{{ image.path | resize(100) }}">
+            <li data-thumb="{{ image.path }}">
                 <div class="middlepane" >
                         <div class="fade-in">
                             <!-- {% if image.firstIndex %} -->
@@ -190,14 +188,14 @@ slug = "{{ :slug }}"
         {
         $("p").animate({"opacity": "0%"}, t_ms*.2, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-140px"}, t_ms, function() {});
-        $(".middlepane").animate({"width": detail_focus});
+        // $(".middlepane").animate({"width": detail_focus});
         
     
         }else
         {
         $("p").animate({"opacity": "100%"}, t_ms*.2, function() {});
         $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
-        $(".middlepane").animate({"width": initial_focus}, t_ms);
+        // $(".middlepane").animate({"width": initial_focus}, t_ms);
         }
     
         });

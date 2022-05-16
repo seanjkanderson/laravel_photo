@@ -34,7 +34,16 @@
 @media only screen and (max-width: 900px) {
 
 .middlepane {
-    width: 60%;
+    width: 80%;
+}
+
+.header .menu {
+    background-color: whitesmoke;
+  }
+
+.dropdown {
+    display: block;
+    float: none;
 }
 
 .gallery_area {
