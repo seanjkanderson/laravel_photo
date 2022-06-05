@@ -1,0 +1,79 @@
+title = "PORTFOLIO"
+url = "/portfolio"
+layout = "inner-scroll"
+description = "Phil Anderson - Northern California-based | Minimalist landscape images of Western North America."
+is_hidden = 0
+
+[Galleries]
+galleryOrder = "random"
+results = 10
+markup = "user"
+galleryPage = "gallery"
+==
+==
+
+<!-- function onStart()
+{
+    // -- Matomo Tracking API init -- 
+    $tracker = themes_path("seaofdreams/assets/PiwikTracker.php");
+    require_once $tracker;
+    MatomoTracker::$URL = 'http://matomo.philandersonphotography.com/';
+} -->
+<head>
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['disableCookies']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="//matomo.philandersonphotography.com/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <link  rel="preload" href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script rel="preload" src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+    <script rel="preload" src="{{ '/assets/javascript/project-common.js'|theme }}"></script>            
+</head>
+
+<body>
+    <!-- <div id="aggregator"> -->
+    <div class="gallery-grid" >
+    {% for my_gallery in galleries|sort((a, b) => a.slug <=> b.slug) %}
+    
+        {% if "_" not in my_gallery.name %}
+        
+            <div class="smoky-container">
+                <a href="{{ my_gallery.url }}">
+                <img src="{{ my_gallery.images[0].path | resize(500) }}" alt="" class="smoky-img"> 
+                <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
+            </div>
+        
+        {% endif %}
+        
+    
+    {% endfor %}
+    </div>
+
+    <!-- </div> -->
+</body>
+
+<scripts>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+
+    setTimeout(function(){
+        element.classList.remove('loading');
+    }, index * 500);
+
+    });
+    </script>
+
+</scripts>

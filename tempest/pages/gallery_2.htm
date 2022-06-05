@@ -1,0 +1,154 @@
+title = "GALLERY2"
+url = "/gallery2/:slug"
+layout = "default"
+description = "Phil Anderson - Northern California-based | Minimalist landscape images of Western North America."
+is_hidden = 1
+
+[Gallery]
+idGallery = "{{ :slug }}"
+markup = "user"
+slug = "{{ :slug }}"
+==
+<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
+</head>
+
+<body> 
+
+    <ul id="lightSlider">
+
+        {% for image in gallery.images %}
+            <li data-thumb="{{ image.path | resize(100) }}">
+                <div class="middlepane" >
+                    <img src="{{ image.path | resize(500) }}" class="active image_2"/>
+                    <button class="gallery_toggle empty_btn"></button>
+                </div>
+                <!-- <div class="gallery-caption">
+                    <p style="opacity: 0%; top: 50%; color: transparent;">'. strtoupper($image_name).'</p>
+                </div> -->
+                    
+                
+            </li>
+        {% endfor %}
+
+    </ul>
+
+    <div class="row">   
+        <div class="col" >
+            <button type="button" id="goToPrevSlide" class="leftbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+
+        <div class="col" >
+            <button type="button" id="goToNextSlide" class="rightbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+        
+    </div>
+
+    <div class="middlepane">
+        <img src="https://media.giphy.com/media/cjnnH0h3cfBTORaUnp/giphy.gif" class="active image_2 opacity:0.5"/>
+    </div>
+
+    <!-- <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div> -->
+
+    
+    
+</body>
+
+<scripts>
+
+    <script>
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        $(window).on("load",function(){
+            setTimeout($(".loader-wrapper").fadeOut("slow"),10000);
+          
+        });
+    </script>
+
+    <script type="text/javascript">
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        
+        my_speed = 2000;
+        if(isSafari) {
+            var my_speed = 0;
+        }
+
+        var slider = $('#lightSlider').lightSlider({
+        controls: false,
+        gallery: true,
+        // item: 5,
+        slideMargin: 10,
+        // thumbItem: 9,
+        mode: "fade",
+        loop: true,
+        speed: this.my_speed,
+        keyPress: true,
+        autoWidth: false,
+    
+    });
+        $('#goToPrevSlide').on('click', function () {
+        slider.goToPrevSlide();
+    });
+        $('#goToNextSlide').on('click', function () {
+            slider.goToNextSlide();
+    });
+    </script>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+    
+        setTimeout(function(){
+            element.classList.remove('loading');
+        }, index * 500);
+
+    });
+    </script>
+
+    <script type="text/javascript">
+        const element = document.querySelector('.middlepane');
+        const style = getComputedStyle(element);
+        var initial_focus = style.getPropertyValue('width');
+        var initial_focus = parseFloat(initial_focus);
+
+        $(".gallery_toggle").click(function(){
+        // var secondPosition=$("div.box").position();
+        var firstPosition=$("ul.lSPager.lSGallery").offset();
+        var gal = document.querySelector('ul.lSPager.lSGallery');
+        var space = innerHeight - gal.offsetTop - gal.offsetHeight;
+    
+        // var topSecond =secondPosition.top.toString()+'px';
+        var space_str = space.toString()+'px';
+        var t_ms = 700;
+        
+        
+        var detail_focus = initial_focus * 1.10;
+        var detail_focus = detail_focus.toString() + "px";
+        
+        if(space > 0)
+        {
+        $("p").animate({"opacity": "100%"}, t_ms, function() {});
+        $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-120px"}, t_ms, function() {});
+        $(".middlepane").animate({"width": detail_focus});
+        
+    
+        }else
+        {
+        $("p").animate({"opacity": "0%"}, t_ms, function() {});
+        $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
+        $(".middlepane").animate({"width": initial_focus}, t_ms);
+        }
+    
+        });
+    </script>
+
+    
+
+</scripts>

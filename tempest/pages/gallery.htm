@@ -1,0 +1,206 @@
+title = "GALLERY"
+url = "/gallery/:slug"
+layout = "default-footerless"
+description = "Sean Anderson - Time is fleeting | Movement is essential"
+is_hidden = 0
+
+[Gallery]
+idGallery = "{{ :slug }}"
+markup = "user"
+slug = "{{ :slug }}"
+==
+<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['disableCookies']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="//matomo.philandersonphotography.com/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+</head>
+
+<body> 
+
+    <div class="row">   
+        <div class="col" >
+            <button type="button" id="goToPrevSlide" class="leftbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+
+        <div class="col" >
+            <button type="button" id="goToNextSlide" class="rightbutton"><span class="caret pull-right"></span>
+            </button>
+        </div>
+        
+    </div>
+
+    <ul id="lightSlider">
+
+        {% for image in gallery.images %}
+            <li data-thumb="{{ image.path }}">
+                <div class="middlepane" >
+                        <div class="fade-in">
+                            <!-- {% if image.firstIndex %} -->
+                            <!-- <img src="{{ image.path | resize(500) }}" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw" class="active image_2"/> -->
+                            <!-- {% else %} -->
+                        <img src="{{ image.path }}" class="active image_2"/>
+                            <!-- {% endif %} -->
+                        </div>
+                        <button class="gallery_toggle empty_btn"></button>
+                    
+                </div>  
+                
+            </li>
+        {% endfor %}
+
+    </ul>
+
+    <div class="gallery-caption">
+        <p> {{ gallery.description }} </p>
+    </div>
+
+    
+
+    <div class="middlepane_2">
+        <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="active image_2"/>
+    </div>
+
+    <!-- <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div> -->
+
+    
+    
+</body>
+
+<scripts>
+
+    <!-- <script> $(".footer").delay(0).fadeOut("fast");</script> -->
+
+    <script type="text/javascript">
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+        var isFirefox = typeof InstallTrigger !== 'undefined';
+
+        var fadespeed = 4500;
+        var fadein = 3000;
+
+        if(isChrome || isFirefox) {
+            var fadespeed = 3000;
+            var fadein = 2000;
+        }
+        $("#lightSlider").delay(0).fadeOut("fast");
+        $(".gallery-caption").delay(0).fadeOut("fast");
+        $(".middlepane_2").delay(fadespeed).fadeOut("slow");
+        $("#lightSlider").delay(fadein).fadeIn("slow");
+        $(".gallery-caption").delay(fadein).fadeIn("slow");
+
+    </script>
+
+
+    <script type="text/javascript">
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+        var isFirefox = typeof InstallTrigger !== 'undefined';
+        my_speed = 0;
+        if(isChrome || isFirefox) {
+            var my_speed = 2000;
+        }
+
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var thumbHeight = 0.10;
+        var numThumbs = Math.floor(w / (thumbHeight*h));
+
+        var slider = $('#lightSlider').lightSlider({
+        controls: false,
+        gallery: true,
+        // item: 5,
+        slideMargin: 10,
+        thumbItem: numThumbs,
+        mode: "fade",
+        loop: true,
+        speed: this.my_speed,
+        keyPress: true,
+        autoWidth: false,
+
+        // onBeforeStart: function (slider) {
+        //     for (var i = 1; i <= 2; i++) {
+        //         var img = slider.find('li:nth-child(' + i + ') img');
+        //         img.attr('src', img.attr('data-src'));
+        //     }
+        // },
+    
+    });
+        $('#goToPrevSlide').on('click', function () {
+        slider.goToPrevSlide();
+    });
+        $('#goToNextSlide').on('click', function () {
+            slider.goToNextSlide();
+    });
+    </script>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+    
+        setTimeout(function(){
+            element.classList.remove('loading');
+        }, index * 500);
+
+    });
+    </script>
+
+    <script type="text/javascript">
+        const element = document.querySelector('.middlepane');
+        const style = getComputedStyle(element);
+        var initial_focus = style.getPropertyValue('width');
+        var initial_focus = parseFloat(initial_focus);
+
+        $(".gallery_toggle").click(function(){
+        // var secondPosition=$("div.box").position();
+        var firstPosition=$("ul.lSPager.lSGallery").offset();
+        var gal = document.querySelector('ul.lSPager.lSGallery');
+        var space = innerHeight - gal.offsetTop - gal.offsetHeight;
+    
+        // var topSecond =secondPosition.top.toString()+'px';
+        var space_str = space.toString()+'px';
+        var t_ms = 700;
+        
+        var detail_focus = initial_focus * 1.10;
+        var detail_focus = detail_focus.toString() + "px";
+        
+        if(space > 0)
+        {
+        $("p").animate({"opacity": "0%"}, t_ms*.2, function() {});
+        $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"-140px"}, t_ms, function() {});
+        // $(".middlepane").animate({"width": detail_focus});
+        
+    
+        }else
+        {
+        $("p").animate({"opacity": "100%"}, t_ms*.2, function() {});
+        $("ul.lSPager.lSGallery").animate({"position": "fixed", "bottom":"20px"}, t_ms, function() {});
+        // $(".middlepane").animate({"width": initial_focus}, t_ms);
+        }
+    
+        });
+    </script>
+
+    
+
+</scripts>
