@@ -138,19 +138,24 @@
         line-height: 1.5;
     }
 
+    ul {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
     .main_back {
         background: #afafaf ;
     }
 
     .gallery_area {
         height: auto;
-        width: 100%;
+        width: 90%;
         overflow-y: auto;
         position: relative;
         z-index: 1;
         top: 100px;
-        left: 60px;
-        right: 15px;
+        left: 15px;
+        right: 60px;
         padding-right: 15px;
         margin-bottom: 120px;
     }
@@ -168,6 +173,8 @@
         line-height: .7;
         font-size: 1.1rem;
     }
+
+    
 
 
     .middlepane {
