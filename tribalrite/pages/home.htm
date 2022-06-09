@@ -1,0 +1,100 @@
+title = "Home"
+url = "/"
+layout = "default"
+description = "Sean Anderson - Time is fleeting | Movement is essential"
+
+[Gallery]
+markup = "user"
+idGallery = "_home"
+==
+==
+
+
+<style>
+    #rpreloader {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:white; /* change if the mask should have another color then white */
+    z-index:99999; /* makes sure it stays on top */
+    }
+
+</style>
+
+<body>
+
+    <div id="rpreloader">
+        <!-- {% for image in gallery.images %}
+            {% if image.index == 0 %} -->
+                <div class="container">
+                    <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image_shdwlss">
+                </div>
+            <!-- {% endif %}
+        {% endfor %} -->
+    </div>
+    
+    <div id="content">
+        <div id="container">
+            <div id="cycler"> </div>
+        </div>
+
+        <div class="js-files" data-is-authenticated="{{ gallery.images|json_encode|e('html_attr') }}">
+            <!-- ... -->
+        </div>
+    </div>
+
+</body>
+
+<scripts>
+
+    <script type="text/javascript">
+        $("#content").delay(0).fadeOut("fast");
+        $("#rpreloader").delay(0).fadeOut("slow");
+        $("#content").delay(000).fadeIn("slow");
+
+    </script>
+
+    <script type="text/javascript">
+        function loadImages(handle, target_id) {
+            document.addEventListener('DOMContentLoaded', function() {
+                    // var userRating = document.querySelector(handle);
+                    var data = $(handle).data('isAuthenticated');
+                    const random = Math.floor(Math.random() * data.length);
+                    var im_ls ='<img class="active image" src="' + data[random].path + '">';
+
+                    document.getElementById(target_id).innerHTML = im_ls;
+                });
+        }
+    </script>
+
+    <script> loadImages('.js-files', 'cycler') </script>
+
+    <!-- <script type="text/javascript">
+        function cycleImages(){
+            var $active = $('#cycler .active');
+            var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+            $next.css('z-index',2);//move the next image up the pile
+            var img_src = $next[0].dataset.src;
+            if($next[0].src == "") {
+                    $next[0].setAttribute('src', img_src);//make the next image the top one
+                }
+            $active.fadeOut(1500,function(){//fade out the top image
+                $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+                
+                $next.css('z-index',3).addClass('active');//make the next image the top one
+                
+                
+            });
+            }
+    
+        $(document).ready(function(){
+        // run every 4s
+        setInterval('cycleImages()', 4000);
+        })
+    </script> -->
+
+    
+        
+</scripts>

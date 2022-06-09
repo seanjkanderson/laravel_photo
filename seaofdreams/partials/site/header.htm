@@ -1,45 +1,23 @@
 ==
 <!-- Nav -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <a href='https://pngtree.com/so/icons'>icons png from pngtree.com</a> -->
-    <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/logo-icon.png'|theme }}">
-    <meta name="description" content="Sean Anderson - Time is fleeting | Movement is essential">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <script rel="preload" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-</head>
-
-<!-- Header Area Start -->
-
-<header class="header">
-  <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/logo-icon.png'|theme }}">
-  <div class="menu-wrap"></div>
-    <!-- <a href="{{ 'home'|page }}" class="logo">PHIL ANDERSON</a> -->
-    <a href="{{ 'home'|page }}"> <img src="{{ 'assets/img/core-img/sean-logo.png'|theme }}" class='logo-fade'> </a> 
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <ul class="menu active">
-      <!-- <li><a href="{{ 'home'|page }}">HOME</a></li> -->
-      <li><a href="{{ 'portfolio'|page }}">PORTFOLIO</a></li>
-      <li><a href="{{ 'about'|page }}">ABOUT</a></li>
-      <li><a href="{{ 'contact'|page }}">CONTACT</a></li>
-    </ul>
-  </div>
-</header>
-
-<header class="header">
-    <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/logo-icon.png'|theme }}">
-      <!-- <a href="{{ 'home'|page }}" class="logo">PHIL ANDERSON</a> -->
-      <a href="{{ 'home'|page }}"> <img src="{{ 'assets/img/core-img/sean-logo.png'|theme }}" class='logo-fade'> </a> 
-      <input class="menu-btn" type="checkbox" id="menu-btn" />
-      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-      <ul class="menu active">
-        <li><a href="{{ 'home'|page }}">HOME</a></li>
-        <li><a href="{{ 'portfolio'|page }}">PORTFOLIO</a></li>
-        <li><a href="{{ 'about'|page }}">ABOUT</a></li>
-        <li><a href="{{ 'contact'|page }}">CONTACT</a></li>
-    </ul>
-</header>
+<nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ 'home'|page }}">October Demo</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="separator hidden-xs"></li>
+                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
+                <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">AJAX framework</a></li>
+                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
