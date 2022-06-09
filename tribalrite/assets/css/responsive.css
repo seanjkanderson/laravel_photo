@@ -138,6 +138,10 @@
         line-height: 1.5;
     }
 
+    .main_back {
+        background: #afafaf ;
+    }
+
     .gallery_area {
         height: auto;
         width: 100%;
