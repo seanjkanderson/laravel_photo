@@ -685,6 +685,12 @@ max-height: 240px;
 top: 1%;
 } */
 
+.casting {
+    max-width: 45%;
+    max-height: 40%;
+    display: inline-block;
+}
+
 .header .menu-btn:checked ~ .menu-icon .navicon {
 background: transparent;
 }
