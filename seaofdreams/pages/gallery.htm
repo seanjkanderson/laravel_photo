@@ -46,16 +46,18 @@ slug = "{{ :slug }}"
                             <!-- {% else %} -->
                         <img src="{{ image.path }}" class="active image_2"/>
                             <!-- {% endif %} -->
+                        
+                        </div>
+                        
+                        <button class="gallery_toggle empty_btn"></button>
+                        
                         <div class="image-description">
                             <p> {{ image.description }} </p>
                         </div>
-                        
-                        </div>
-                        <button class="gallery_toggle empty_btn"></button>
-
                           
                     
                 </div>  
+                
                 
             </li>
         {% endfor %}
@@ -65,6 +67,7 @@ slug = "{{ :slug }}"
     <div class="gallery-caption">
         <p> {{ gallery.description }} </p>
     </div>
+    
 
     
 
