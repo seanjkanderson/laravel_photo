@@ -1232,7 +1232,7 @@ transform: rotate(-45deg);
     right: 0;
     /* left: 50%; */
     /* transform: translate(-50%, -50%); */
-    bottom: -10px;
+    bottom: 10px;
     z-index: 1;
 }
 
