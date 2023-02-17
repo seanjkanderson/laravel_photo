@@ -1439,12 +1439,13 @@ color: initial;
     width: 100% !important;
     height: auto !important;
     margin-top: 8px;
+    opacity: 40%;
 }
 
 
 .smoky-txt {
     position: absolute;
-    color: white;
+    color: black;
     /* -webkit-text-fill-color: white; /* Will override color (regardless of order) */
     /* -webkit-text-stroke-width: 1px; */
     /* -webkit-text-stroke-color: black; */
@@ -1457,7 +1458,7 @@ color: initial;
 
 .smoky-img:hover {
     border: none;
-    background-color: black;
+    background-color: red;
     opacity: 70%;
     
 }
