@@ -1451,7 +1451,7 @@ color: initial;
     /* -webkit-text-stroke-color: black; */
     top: 50%;
     left: 50%;
-    font-size: 2vw;
+    font-size: 18px;
     transform: translate(-50%, -50%);
     line-height: 0.75cm;
     
