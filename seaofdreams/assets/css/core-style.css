@@ -1372,7 +1372,7 @@ transform: rotate(-45deg);
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
     grid-gap: 1.1rem;
     justify-items: center;
     margin: 0;
@@ -1453,6 +1453,7 @@ color: initial;
     left: 50%;
     font-size: 2vw;
     transform: translate(-50%, -50%);
+    line-height: 0.75cm;
     
 }
 
