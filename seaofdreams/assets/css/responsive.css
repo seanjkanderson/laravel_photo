@@ -124,6 +124,9 @@
         font-size: 14px;
         line-height: 1.5;
     } */
+    .smoky-txt {
+        line-height: 0.5cm;
+    }    
 
     .gallery_area {
         height: auto;
