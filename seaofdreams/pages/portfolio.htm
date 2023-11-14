@@ -35,7 +35,7 @@ galleryPage = "gallery"
         
             <div class="smoky-container">
                 <a href="{{ my_gallery.url }}">
-                <img src="{{ my_gallery.images[0].path | resize(500) }}" alt="" class="smoky-img"> 
+                <img src="{{ my_gallery.images[0].path | resize(500) }}" alt="" class="smoky-img" loading="lazy"> 
                 <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
             </div>
         

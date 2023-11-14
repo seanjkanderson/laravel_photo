@@ -44,7 +44,7 @@ slug = "{{ :slug }}"
                             <!-- {% if image.firstIndex %} -->
                             <!-- <img src="{{ image.path | resize(500) }}" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw" class="active image_2"/> -->
                             <!-- {% else %} -->
-                        <img src="{{ image.path }}" class="active image_2"/>
+                        <img src="{{ image.path }}" class="active image_2" loading="lazy"/>
                             <!-- {% endif %} -->
                         
                         </div>
@@ -72,7 +72,7 @@ slug = "{{ :slug }}"
     
 
     <div class="middlepane_2">
-        <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="active image_2"/>
+        <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="active image_2" loading="lazy"/>
     </div>
 
     <!-- <div class="loader-wrapper">

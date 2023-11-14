@@ -30,7 +30,7 @@ idGallery = "_home"
         <!-- {% for image in gallery.images %}
             {% if image.index == 0 %} -->
                 <div class="container">
-                    <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image">
+                    <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image" loading="lazy">
                 </div>
             <!-- {% endif %}
         {% endfor %} -->
@@ -67,10 +67,10 @@ idGallery = "_home"
                     // Iterate over each file in the array
                     $.each(data, function(key, value) {
                             if (key == 0) {
-                                im_ls = im_ls + '<img class="active image" src="' + value.path + '"> \n'
+                                im_ls = im_ls + '<img class="active image" src="' + value.path + '" loading="lazy"> \n'
                             }
                             else {
-                            im_ls = im_ls + '<img class="image" src="' + value.path + '"> \n'
+                            im_ls = im_ls + '<img class="image" src="' + value.path + '" loading="lazy"> \n'
                             }
                         }
                     );
