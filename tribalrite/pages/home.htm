@@ -29,7 +29,7 @@ idGallery = "_home"
         <!-- {% for image in gallery.images %}
             {% if image.index == 0 %} -->
                 <div class="container">
-                    <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image_shdwlss">
+                    <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image_shdwlss" loading="lazy">
                 </div>
             <!-- {% endif %}
         {% endfor %} -->
@@ -62,7 +62,7 @@ idGallery = "_home"
                     // var userRating = document.querySelector(handle);
                     var data = $(handle).data('isAuthenticated');
                     const random = Math.floor(Math.random() * data.length);
-                    var im_ls ='<img class="active image" src="' + data[random].path + '">';
+                    var im_ls ='<img class="active image" src="' + data[random].path + '" loading="lazy">';
 
                     document.getElementById(target_id).innerHTML = im_ls;
                 });
