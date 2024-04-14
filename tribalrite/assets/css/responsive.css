@@ -1,31 +1,186 @@
-/* Define base dimensions */
-:root {
-    --base-size: 2048px; /* Base size for scaling images */
-}
+@media (min-width: 950px) { /* Added by SA */
 
-.image {
-    width: calc(var(--base-size) / 4); /* Example: Set width as a fraction of 2048 */
-    height: calc(var(--base-size) / 4); /* Maintain aspect ratio by using the same factor */
-}
+    .header .header {
+        top: 10px;
+    }
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
 
-/* Adjustments for different screen sizes */
-@media (max-width: 1200px) {
-    .image {
-        width: calc(var(--base-size) / 8);
-        height: calc(var(--base-size) / 8);
+    .gallery_area {
+        position: fixed;
+        overflow-y: scroll;
+        position: fixed;
+        z-index: 1;
+        top: 50%;
+        height: calc(100% - 275px);
+        width: calc(100% - 400px);
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 900px) {
+
+    .middlepane {
+        width: 80%;
+    }
+
+    .header .menu {
+        background-color: whitesmoke;
+    }
+
+    .dropdown {
+        display: block;
+        float: none;
+    }
+
+    .gallery_area {
+        height: calc(100% - 380px);
+        width: calc(100% - 180px);
+        left: 120px;
+        right: 60px;
+        padding-right: 45px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    }
+
     .image {
-        width: calc(var(--base-size) / 16);
-        height: calc(var(--base-size) / 16);
+        max-width: min(80%,500px);
+        max-height: min(70%, 500px);
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
+}
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .gallery_area {
+        height: calc(100% - 380px);
+        width: calc(100% - 180px);
+        left: 120px;
+        right: 60px;
+        padding-right: 45px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    }
+
+    .smoky-txt {
+        font-size: 3vw;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0px;
+        left: 5px;
     }
 }
 
-@media (max-width: 480px) {
-    .image {
-        width: calc(var(--base-size) / 32);
-        height: calc(var(--base-size) / 32);
+
+@media only screen and (min-width: 992px) {
+
+    .header .logo-fade {
+        max-width: 40vw;
     }
+
+    .gallery_area {
+        height: calc(100% - 380px);
+        width: calc(100% - 180px);
+        left: 120px;
+        right: 60px;
+        padding-right: 45px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .header .logo-fade {
+        max-width: 45vw;
+    }
+
+    .gallery_area {
+        height: calc(100% - 380px);
+        width: calc(100% - 10px);
+        left: 100px;
+        right: 30px;
+        padding-right: 30px;
+    }
+
+    .middlepane {
+        width: 90%;
+    }
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    ul {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .main_back {
+        background: #afafaf ;
+    }
+
+    .gallery_area {
+        height: auto;
+        width: 90%;
+        overflow-y: auto;
+        position: relative;
+        z-index: 1;
+        top: 100px;
+        left: 15px;
+        right: 60px;
+        padding-right: 15px;
+        margin-bottom: 120px;
+    }
+
+    .gallery_menu {
+        margin-bottom: 30px;
+    }
+
+    .gallery-caption {
+        top: max(calc((50vh - 33vw)/2),80px);
+        
+    }
+
+    .gallery-caption .p {
+        line-height: .7;
+        font-size: 1.1rem;
+    }
+
+    
+
+
+    .middlepane {
+        width: 100%;
+    }
+    
 }
