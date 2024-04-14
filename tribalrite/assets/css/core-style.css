@@ -38,10 +38,10 @@
     --base-h2: 700px;
 
     /* Calculate width and height, rounded to the nearest multiple of 40 */
-    --image_w: calc(round(min(80vw, var(--base-w)) / 40) * 40);
-    --image_h: calc(round(min(70vh, var(--base-h)) / 40) * 40);
-    --image_w2: calc(round(min(80vw, var(--base-w2)) / 40) * 40);
-    --image_h2: calc(round(min(75vh, var(--base-h2)) / 40) * 40);
+    --image_w: calc(round(min(80%, var(--base-w)) / 40) * 40);
+    --image_h: calc(round(min(70%, var(--base-h)) / 40) * 40);
+    --image_w2: calc(round(min(80%, var(--base-w2)) / 40) * 40);
+    --image_h2: calc(round(min(75%, var(--base-h2)) / 40) * 40);
 }
 
 * {
