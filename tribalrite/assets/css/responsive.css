@@ -1,4 +1,4 @@
-@media (min-width: 950px) { /* Added by SA */
+@media (min-width: 1024px) { /* Added by SA */
 
     .header .header {
         top: 10px;
@@ -47,8 +47,8 @@
     }
 
     .gallery_area {
-        height: calc(100% - 380px);
-        width: calc(100% - 180px);
+        height: calc(100% - 360px);
+        width: calc(100% - 160px);
         left: 120px;
         right: 60px;
         padding-right: 45px;
