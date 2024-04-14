@@ -30,18 +30,13 @@
 
 /* :: 3.0 Common/Base CSS */
 
-:root {
-    /* Define base size limits */
-    --base-w: 700px;
-    --base-h: 700px;
-    --base-w2: 900px;
-    --base-h2: 700px;
-
-    /* Calculate width and height, rounded to the nearest multiple of 40 */
-    --image_w: calc(round(min(80%, var(--base-w)) / 40) * 40);
-    --image_h: calc(round(min(70%, var(--base-h)) / 40) * 40);
-    --image_w2: calc(round(min(80%, var(--base-w2)) / 40) * 40);
-    --image_h2: calc(round(min(75%, var(--base-h2)) / 40) * 40);
+:root{
+    /* 50w, 60h for square */
+    /* */
+    --image_w: min(80%,720px);
+    --image_h: min(70%, 720px);
+    --image_w2: min(80%,920px);
+    --image_h2: min(75%, 720px);
 }
 
 * {
