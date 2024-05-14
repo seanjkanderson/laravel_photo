@@ -33,10 +33,10 @@
 :root{
     /* 50w, 60h for square */
     /* */
-    --image_w: min(80%,720px);
-    --image_h: min(70%, 720px);
-    --image_w2: min(80%,920px);
-    --image_h2: min(75%, 720px);
+    --image_w: min(80%,700px);
+    --image_h: min(70%, 700px);
+    --image_w2: min(80%,900px);
+    --image_h2: min(75%, 700px);
 }
 
 * {
