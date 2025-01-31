@@ -1192,7 +1192,7 @@ display: block;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 50%);
+    /* box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 50%); */
     /* z-index: 1000; */
     /* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 */
