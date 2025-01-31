@@ -1326,16 +1326,22 @@ color: initial;
 .smoky-txt {
     position: absolute;
     color: white;
-    /* -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-    /* -webkit-text-stroke-width: 1px; */
-    /* -webkit-text-stroke-color: black; */
     text-align: center;
-    font-size: clamp(2vw, 2.5rem); /* Adaptive font size */
-    max-width: 80%; /* Ensures the text doesn't extend too wide */
-    white-space: nowrap;
-    line-height: 1.2; /* Adjusts text spacing */
-    padding: 5px; /* Adds some spacing for better readability */
+
+    /* Allow text to wrap, but shrink long words */
+    font-size: min(2vw, 2.5rem);
+    max-width: 90%;
+    word-wrap: break-word; /* Ensures sentences wrap */
+    overflow-wrap: break-word; /* Alternative for better support */
+
+    /* Prevents long words from breaking into a new line */
+    display: inline-block;
+    white-space: normal;
     
+    /* Dynamic font scaling for long words */
+    word-break: keep-all;
+
+    /* Centering */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
