@@ -963,6 +963,42 @@ display: block;
     background-size: contain;
 }
 
+#rpreloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white; /* Mask color */
+    z-index: 99999; /* Makes sure it stays on top */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+#rpreloader .container {
+    text-align: center;
+}
+
+#rpreloader img {
+    max-width: 100%; /* Ensure the GIF scales properly */
+    height: auto;
+}
+
+.middlepane_2 {
+    position: fixed;
+    width: 35%;
+    height: 70%;
+    background-color: transparent;
+    border-collapse: collapse;
+    display: flex; /* Enables flexbox to center the content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
     /* position: absolute;
     top: 0;
     left: 0;
