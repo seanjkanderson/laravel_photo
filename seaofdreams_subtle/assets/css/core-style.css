@@ -1207,7 +1207,7 @@ display: block;
     background: none;
     border: none;
     color: transparent;
-    cursor: url("../img/core-img/grid.gif"), default;
+    cursor: default;
 }
 
 .middlepane .image_2 {
