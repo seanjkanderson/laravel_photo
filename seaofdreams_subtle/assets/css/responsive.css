@@ -164,10 +164,6 @@
         margin-bottom: 30px;
     }
 
-    .gallery-caption {
-        top: max(calc((50vh - 33vw)/2),80px);
-        
-    }
 
     .gallery-caption .p {
         line-height: .7;
