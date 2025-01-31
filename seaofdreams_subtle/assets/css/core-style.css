@@ -1175,6 +1175,9 @@ display: block;
     height: var(--image_h2);
     background-color: transparent;
     border-collapse: collapse;
+    display: flex; /* Enables flexbox to center the content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1184,6 +1187,12 @@ display: block;
     image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
     image-rendering: optimize-contrast;         /* CSS3 Proposed       */
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
+}
+
+.middlepane img {
+    max-width: 100%; /* Prevents image from overflowing */
+    max-height: 100%; /* Prevents image from overflowing */
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
 }
 
 .middlepane_2 {
