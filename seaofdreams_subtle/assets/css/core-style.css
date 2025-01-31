@@ -1192,6 +1192,9 @@ display: block;
     height: 70%;
     background-color: transparent;
     border-collapse: collapse;
+    display: flex; /* Enables flexbox to center the content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
