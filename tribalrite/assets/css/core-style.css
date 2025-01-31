@@ -985,7 +985,7 @@ display: block;
     height: auto;
 }
 
-.middlepane_2 {
+.middlepane {
     position: fixed;
     width: 35%;
     height: 70%;
