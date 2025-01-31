@@ -1120,7 +1120,7 @@ display: block;
     right: 0;
     /* left: 50%; */
     /* transform: translate(-50%, -50%); */
-    bottom: calc((100vh - var(--image_h2)) / 2);
+    bottom: calc((100vh - (50% + var(--image_h2) / 2)) / 2);
     z-index: 1;
 }
 
