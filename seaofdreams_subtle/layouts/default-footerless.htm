@@ -1,0 +1,65 @@
+description = "Default layout without footer"
+==
+<!DOCTYPE html>
+<html style="max-width: 100%; overflow-x: hidden;">
+
+    <div class="main-container">
+        <head>
+            <meta charset="utf-8">
+            <title>Phil Anderson Photography | {{ this.page.title }}</title>
+            <!-- <meta name="description" content="{{ this.page.meta_description }}"> -->
+            <meta name="title" content="{{ this.page.meta_title }}">
+            <meta name="author" content="Phil Anderson">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="generator" content="Phil Anderson">
+            <meta name="description" content="Phil Anderson - Northern California-based | Minimalist landscape images of Western North America.">
+            <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/logo-icon.png'|theme }}">
+            <link href="{{ 'assets/css/core-style.css'|theme }}" rel="stylesheet">
+            <link href="{{ 'assets/css/responsive.css'|theme }}" rel="stylesheet">
+            {% styles %}
+        </head>
+    
+        <header class="header">
+            <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/logo-icon.png'|theme }}">
+              <!-- <a href="{{ 'home'|page }}" class="logo">PHIL ANDERSON</a> -->
+              <a href="{{ 'home'|page }}"> <img src="{{ 'assets/img/core-img/phil-logo.png'|theme }}" class='logo-fade'> </a> 
+              <input class="menu-btn" type="checkbox" id="menu-btn" />
+              <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+              <ul class="menu active">
+                <li><a href="{{ 'home'|page }}">HOME</a></li>
+                <li><a href="{{ 'portfolio'|page }}">PORTFOLIO</a></li>
+                <li><a href="{{ 'about'|page }}">ABOUT</a></li>
+                <li><a href="{{ 'contact'|page }}">CONTACT</a></li>
+            </ul>
+        </header>
+
+        <body>
+
+            <!-- Header -->
+            <header id="layout-header">
+                {% partial 'site/header-main' %}
+            </header>
+
+            <!-- Content -->
+            {% page %}
+
+            <!-- Scripts -->
+            <!-- jQuery (Necessary for All JavaScript Plugins) -->
+            <script src="{{ 'assets/javascript/jquery/jquery-2.2.4.min.js'|theme }}"></script>
+            <!-- Popper js -->
+            <script src="{{ 'assets/javascript/popper.min.js'|theme}}"></script>
+            <!-- Bootstrap js -->
+            <script src="{{ 'assets/javascript/bootstrap.min.js'|theme}}"></script>
+            <!-- Plugins js -->
+            <script src="{{ 'assets/javascript/plugins.js'|theme}}"></script>
+            <!-- Active js -->
+            <script src="{{ 'assets/javascript/active.js'|theme}}"></script>
+            {% framework extras %}
+            {% scripts %}
+
+
+
+        </body>
+
+</div>
+</html>

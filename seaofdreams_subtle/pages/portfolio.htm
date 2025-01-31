@@ -1,0 +1,56 @@
+title = "PORTFOLIO"
+url = "/portfolio"
+layout = "inner-scroll"
+description = "Phil Anderson - Northern California-based | Minimalist landscape images of Western North America."
+is_hidden = 0
+
+[Galleries]
+galleryOrder = "random"
+results = 100
+markup = "user"
+galleryPage = "gallery"
+==
+==
+
+<head>
+
+    <link  rel="preload" href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script rel="preload" src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+    <script rel="preload" src="{{ '/assets/javascript/project-common.js'|theme }}"></script>            
+</head>
+
+<body>
+    <!-- <div id="aggregator"> -->
+    <div class="gallery-grid" >
+    {% for my_gallery in galleries|sort((a, b) => a.slug <=> b.slug) %}
+    
+        {% if "_" not in my_gallery.name %}
+        
+            <div class="smoky-container">
+                <a href="{{ my_gallery.url }}">
+                <img src="{{ my_gallery.images[0].path | resize(500) }}" alt="" class="smoky-img" loading="lazy"> 
+                <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
+            </div>
+        
+        {% endif %}
+        
+    
+    {% endfor %}
+    </div>
+
+    <!-- </div> -->
+</body>
+
+<scripts>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+
+    setTimeout(function(){
+        element.classList.remove('loading');
+    }, index * 500);
+
+    });
+    </script>
+
+</scripts>
