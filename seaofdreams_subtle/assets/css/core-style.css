@@ -1327,21 +1327,14 @@ color: initial;
     position: absolute;
     color: white;
     text-align: center;
-
-    /* Allow text to wrap, but shrink long words */
-    font-size: min(2vw, 2.5rem);
-    max-width: 90%;
-    word-wrap: break-word; /* Ensures sentences wrap */
-    overflow-wrap: break-word; /* Alternative for better support */
-
-    /* Prevents long words from breaking into a new line */
-    display: inline-block;
-    white-space: normal;
+    font-size: clamp(1rem, 1.75vw, 2.5rem); /* Adaptive font size */
+    max-width: 80%; /* Ensures the text doesn't extend too wide */
+    word-wrap: break-word; /* Prevents text overflow */
+    overflow-wrap: break-word; /* Alternative for text breaking */
+    white-space: normal; /* Allows text wrapping */
+    line-height: 1.2; /* Adjusts text spacing */
+    padding: 5px; /* Adds some spacing for better readability */
     
-    /* Dynamic font scaling for long words */
-    word-break: keep-all;
-
-    /* Centering */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
