@@ -1330,11 +1330,9 @@ color: initial;
     /* -webkit-text-stroke-width: 1px; */
     /* -webkit-text-stroke-color: black; */
     text-align: center;
-    font-size: clamp(1rem, 2vw, 2.5rem); /* Adaptive font size */
+    font-size: clamp(2vw, 2.5rem); /* Adaptive font size */
     max-width: 80%; /* Ensures the text doesn't extend too wide */
-    word-wrap: break-word; /* Prevents text overflow */
-    overflow-wrap: break-word; /* Alternative for text breaking */
-    white-space: normal; /* Allows text wrapping */
+    white-space: nowrap;
     line-height: 1.2; /* Adjusts text spacing */
     padding: 5px; /* Adds some spacing for better readability */
     
