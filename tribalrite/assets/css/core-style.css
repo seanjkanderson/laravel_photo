@@ -985,20 +985,6 @@ display: block;
     height: auto;
 }
 
-.middlepane {
-    position: fixed;
-    width: 35%;
-    height: 70%;
-    background-color: transparent;
-    border-collapse: collapse;
-    display: flex; /* Enables flexbox to center the content */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
     /* position: absolute;
     top: 0;
     left: 0;
@@ -1191,6 +1177,9 @@ display: block;
     border-collapse: collapse;
     top: 50%;
     left: 50%;
+    display: flex; /* Enables flexbox to center the content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
     transform: translate(-50%, -50%);
     image-rendering: optimizeSpeed;             /*                     */
     image-rendering: -moz-crisp-edges;          /* Firefox             */
@@ -1199,6 +1188,7 @@ display: block;
     image-rendering: optimize-contrast;         /* CSS3 Proposed       */
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
 }
+
 
 .middlepane_2 {
     position: fixed;
