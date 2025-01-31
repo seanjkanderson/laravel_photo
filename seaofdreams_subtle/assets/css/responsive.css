@@ -164,6 +164,10 @@
         margin-bottom: 30px;
     }
 
+    .gallery-caption {
+        bottom: 20px;
+        
+    }
 
     .gallery-caption .p {
         line-height: .7;
