@@ -42,8 +42,15 @@ slug = "{{ :slug }}"
                             <!-- {% if image.firstIndex %} -->
                             <!-- <img src="{{ image.path | resize(500) }}" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw" class="active image_2"/> -->
                             <!-- {% else %} -->
-                        <img src="{{ image.path }}" class="active image_2" loading="lazy"/>
+                        <!-- <img src="{{ image.path }}" class="active image_2" loading="lazy"/> -->
                             <!-- {% endif %} -->
+                            <img 
+                            src="{{ image.path | resize(500) }}" 
+                            srcset="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(500) }} 500w" 
+                            sizes="(max-width: 500px) 100vw, 500px" 
+                            class="active image_2" 
+                            loading="lazy" 
+                        />
                         </div>
                         <button class="gallery_toggle empty_btn"></button>
                     
