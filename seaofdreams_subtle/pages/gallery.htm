@@ -10,12 +10,12 @@ markup = "user"
 slug = "{{ :slug }}"
 ==
 <head>
-    <!-- Load jQuery (Latest Version) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-    <!-- Load LightSlider (Must Be After jQuery) -->
     <link href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
-    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>    
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+
 </head>
 
 <body> 
@@ -94,12 +94,12 @@ slug = "{{ :slug }}"
         var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
         var isFirefox = typeof InstallTrigger !== 'undefined';
 
-        var fadespeed = 500;
-        var fadein = 500;
+        var fadespeed = 4500;
+        var fadein = 3000;
 
         if(isChrome || isFirefox) {
             var fadespeed = 3000;
-            var fadein = 500;
+            var fadein = 2000;
         }
         $("#lightSlider").delay(0).fadeOut("fast");
         $(".gallery-caption").delay(0).fadeOut("fast");
@@ -111,43 +111,45 @@ slug = "{{ :slug }}"
 
 
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function() {
-    // Ensure jQuery is loaded before initializing LightSlider
-    if (typeof jQuery === "undefined") {
-        console.error("jQuery is not loaded!");
-        return;
-    }
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+        var isFirefox = typeof InstallTrigger !== 'undefined';
+        my_speed = 0;
+        if(isChrome || isFirefox) {
+            var my_speed = 2000;
+        }
 
-    // Ensure LightSlider is available before initializing
-    if (typeof $.fn.lightSlider === "undefined") {
-        console.error("LightSlider is not loaded!");
-        return;
-    }
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var thumbHeight = 0.10;
+        var numThumbs = Math.floor(w / (thumbHeight*h));
 
-    let slider = $("#lightSlider").lightSlider({
+        var slider = $('#lightSlider').lightSlider({
         controls: false,
         gallery: true,
+        // item: 5,
         slideMargin: 10,
-        thumbItem: 5,
+        thumbItem: numThumbs,
         mode: "fade",
         loop: true,
-        speed: 2000,
+        speed: this.my_speed,
         keyPress: true,
         autoWidth: false,
+
+        // onBeforeStart: function (slider) {
+        //     for (var i = 1; i <= 2; i++) {
+        //         var img = slider.find('li:nth-child(' + i + ') img');
+        //         img.attr('src', img.attr('data-src'));
+        //     }
+        // },
+    
     });
-
-    // Ensure LightSlider is initialized before adding event listeners
-    if (slider) {
-        document.getElementById("goToPrevSlide").addEventListener("click", function() {
-            slider.goToPrevSlide();
-        });
-
-        document.getElementById("goToNextSlide").addEventListener("click", function() {
+        $('#goToPrevSlide').on('click', function () {
+        slider.goToPrevSlide();
+    });
+        $('#goToNextSlide').on('click', function () {
             slider.goToNextSlide();
-        });
-    }
-});
-
+    });
     </script>
 
     <script type="text/javascript">
