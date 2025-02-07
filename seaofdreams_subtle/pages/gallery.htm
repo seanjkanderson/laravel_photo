@@ -14,7 +14,9 @@ slug = "{{ :slug }}"
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
-    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>    
+            
+    <link rel="preload" as="image" href="{{ gallery.images[0].path | resize(500) }}">
 
 </head>
 
@@ -110,7 +112,7 @@ slug = "{{ :slug }}"
     </script>
 
 
-    <script type="text/javascript">
+    <script defer>
         var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
         var isFirefox = typeof InstallTrigger !== 'undefined';
