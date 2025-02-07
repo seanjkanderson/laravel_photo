@@ -113,45 +113,45 @@ slug = "{{ :slug }}"
 
 
     <script defer>
-        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-        var isFirefox = typeof InstallTrigger !== 'undefined';
-        my_speed = 0;
-        if(isChrome || isFirefox) {
-            var my_speed = 500;
+        document.addEventListener("DOMContentLoaded", function() {
+        let imagesLoaded = 0;
+        let images = JSON.parse(document.querySelector(".js-files").dataset.isAuthenticated);
+        let container = document.getElementById("cycler");
+
+        if (images.length > 0) {
+            images.forEach((image, index) => {
+                let img = document.createElement("img");
+                img.classList.add("image"); // All images start without active class
+                img.src = image.path;
+                img.loading = "lazy";
+
+                img.onload = () => {
+                    imagesLoaded++;
+                    if (imagesLoaded === 1) {
+                        document.getElementById("rpreloader").style.display = "none";
+                        document.getElementById("content").style.display = "block";
+
+                        // **Make the first image fade in after a small delay**
+                        setTimeout(() => {
+                            img.classList.add("active");
+                        }, 500); // 500ms delay before first image fades in
+                    }
+                };
+                container.appendChild(img);
+            });
         }
 
-        var w = window.innerWidth;
-        var h = window.innerHeight;
-        var thumbHeight = 0.10;
-        var numThumbs = Math.floor(w / (thumbHeight*h));
+        function cycleImages() {
+            let active = document.querySelector('#cycler .active');
+            let next = active.nextElementSibling || document.querySelector('#cycler img:first-child');
 
-        var slider = $('#lightSlider').lightSlider({
-        controls: false,
-        gallery: true,
-        // item: 5,
-        slideMargin: 10,
-        thumbItem: numThumbs,
-        mode: "fade",
-        loop: true,
-        speed: this.my_speed,
-        keyPress: true,
-        autoWidth: false,
+            active.classList.remove("active");
+            next.classList.add("active");
+        }
 
-        // onBeforeStart: function (slider) {
-        //     for (var i = 1; i <= 2; i++) {
-        //         var img = slider.find('li:nth-child(' + i + ') img');
-        //         img.attr('src', img.attr('data-src'));
-        //     }
-        // },
-    
+        setInterval(cycleImages, 4000);
     });
-        $('#goToPrevSlide').on('click', function () {
-        slider.goToPrevSlide();
-    });
-        $('#goToNextSlide').on('click', function () {
-            slider.goToNextSlide();
-    });
+
     </script>
 
     <script type="text/javascript">
