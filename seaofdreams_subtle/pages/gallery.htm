@@ -94,12 +94,12 @@ slug = "{{ :slug }}"
         var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
         var isFirefox = typeof InstallTrigger !== 'undefined';
 
-        var fadespeed = 4500;
-        var fadein = 3000;
+        var fadespeed = 2500;
+        var fadein = 1000;
 
         if(isChrome || isFirefox) {
-            var fadespeed = 3000;
-            var fadein = 2000;
+            var fadespeed = 2000;
+            var fadein = 1000;
         }
         $("#lightSlider").delay(0).fadeOut("fast");
         $(".gallery-caption").delay(0).fadeOut("fast");
