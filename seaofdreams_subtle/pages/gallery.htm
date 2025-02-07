@@ -10,14 +10,12 @@ markup = "user"
 slug = "{{ :slug }}"
 ==
 <head>
-    <!-- jQuery 1.8 or later, 33 KB -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Load jQuery (Latest Version) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!-- Load LightSlider (Must Be After jQuery) -->
     <link href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
     <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>    
-            
-    <link rel="preload" as="image" href="{{ gallery.images[0].path | resize(500) }}">
-
 </head>
 
 <body> 
