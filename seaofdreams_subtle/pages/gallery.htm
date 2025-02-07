@@ -114,6 +114,18 @@ slug = "{{ :slug }}"
 
     <script defer>
         document.addEventListener("DOMContentLoaded", function() {
+    // Ensure jQuery is loaded before initializing LightSlider
+    if (typeof jQuery === "undefined") {
+        console.error("jQuery is not loaded!");
+        return;
+    }
+
+    // Ensure LightSlider is available before initializing
+    if (typeof $.fn.lightSlider === "undefined") {
+        console.error("LightSlider is not loaded!");
+        return;
+    }
+
     let slider = $("#lightSlider").lightSlider({
         controls: false,
         gallery: true,
@@ -135,10 +147,9 @@ slug = "{{ :slug }}"
         document.getElementById("goToNextSlide").addEventListener("click", function() {
             slider.goToNextSlide();
         });
-    } else {
-        console.error("LightSlider failed to initialize.");
     }
 });
+
     </script>
 
     <script type="text/javascript">
