@@ -9,49 +9,44 @@ idGallery = "_home"
 ==
 
 <head>
-    <!-- Preload First Image -->
-    {% if gallery.images|length > 0 %}
-        <link rel="preload" as="image" href="{{ gallery.images[0].path | resize(500) }}">
-    {% endif %}
-    
-    <style>
-        /* Preloader */
-        #rpreloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: white;
-            z-index: 99999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Ensure images fit properly */
-        .image {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-    </style>
 </head>
 
+<style>
+    #rpreloader {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:white; /* change if the mask should have another color then white */
+    z-index:99999; /* makes sure it stays on top */
+    }
+
+</style>
+
 <body>
+
     <div id="rpreloader">
-        <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image" loading="eager">
+        <!-- {% for image in gallery.images %}
+            {% if image.index == 0 %} -->
+                <div class="container">
+                    <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image" loading="lazy">
+                </div>
+            <!-- {% endif %}
+        {% endfor %} -->
     </div>
     
-    <div id="content" style="display: none;">
+    <div id="content">
         <div id="container">
-            <div id="cycler"></div>
+            <div id="cycler"> </div>
         </div>
 
         <div class="js-files" data-is-authenticated="{{ gallery.images|json_encode|e('html_attr') }}">
-            <!-- Gallery JSON Data -->
+            <!-- ... -->
         </div>
     </div>
+
+</body>
 
 <script defer>
     document.addEventListener("DOMContentLoaded", function() {
@@ -89,5 +84,3 @@ idGallery = "_home"
         setInterval(cycleImages, 4000);
     });
 </script>
-
-</body>
