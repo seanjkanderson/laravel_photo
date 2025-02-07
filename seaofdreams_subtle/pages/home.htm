@@ -85,14 +85,12 @@ idGallery = "_home"
     }
 
     function cycleImages() {
-        let active = document.querySelector('#cycler .active');
-        let next = active.nextElementSibling || document.querySelector('#cycler img:first-child');
-        
-        active.classList.remove("active");
-        active.style.opacity = 0;
-        next.classList.add("active");
-        next.style.opacity = 1;
-    }
+    let active = document.querySelector('#cycler .active');
+    let next = active.nextElementSibling || document.querySelector('#cycler img:first-child');
+    
+    active.classList.remove("active");
+    next.classList.add("active");
+}
 
     setInterval(cycleImages, 4000);
 });

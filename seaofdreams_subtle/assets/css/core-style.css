@@ -838,6 +838,11 @@ display: block;
     z-index: 1000;
 }
 
+
+#cycler img.active {
+    opacity: 1; /* Make active image visible */
+}
+
 #cycler{
     /* position:relative; */
     margin: 0;
@@ -853,6 +858,8 @@ display: block;
     image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
     image-rendering: optimize-contrast;         /* CSS3 Proposed       */
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Smooth fade transition */
 }
 #cycler img.active{
     z-index:3
