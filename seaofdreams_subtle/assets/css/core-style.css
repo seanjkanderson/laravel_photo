@@ -1447,6 +1447,12 @@ color: initial;
     }
 }
 
+@media (max-width: 500px) {
+    .leftbutton::before, .rightbutton::before {
+        content: none;
+    }
+}
+
 .leftbutton:hover {
     border: none;
     /* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
