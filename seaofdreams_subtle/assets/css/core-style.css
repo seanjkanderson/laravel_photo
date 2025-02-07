@@ -1428,10 +1428,12 @@ color: initial;
 }
 
 .leftbutton::before {
+    left: 10px;
     background-image: url("../img/core-img/left.gif"); /* Replace with actual path */
 }
 
 .rightbutton::before {
+    right: 10px;
     background-image: url("../img/core-img/right.gif"); /* Replace with actual path */
 }
 
