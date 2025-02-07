@@ -1420,11 +1420,11 @@ color: initial;
 }
 
 .leftbutton::before {
-    background-image: url("../img/core-img/left-arrow.png"); /* Replace with actual path */
+    background-image: url("../img/core-img/left.gif"); /* Replace with actual path */
 }
 
 .rightbutton::before {
-    background-image: url("../img/core-img/right-arrow.png"); /* Replace with actual path */
+    background-image: url("../img/core-img/right.gif"); /* Replace with actual path */
 }
 
 
