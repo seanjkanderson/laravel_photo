@@ -1434,6 +1434,7 @@ color: initial;
     background-repeat: no-repeat;
     position: absolute;
     top: 50%;
+    z-index: 1001;
 }
 
 .leftbutton::before {
