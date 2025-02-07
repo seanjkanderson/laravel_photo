@@ -1398,10 +1398,11 @@ color: initial;
 .leftbutton, .rightbutton {
     position: fixed;
     top: 15%;
-    bottom: 15%;
-    width: 80%;
+    bottom: 0%;
+    width: 50%;
     background: none;
     border: none;
+    z-index: 1000;
 }
 
 .leftbutton:hover {
