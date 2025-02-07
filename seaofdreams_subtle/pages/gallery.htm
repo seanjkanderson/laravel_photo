@@ -91,7 +91,7 @@ slug = "{{ :slug }}"
 
     <!-- <script> $(".footer").delay(0).fadeOut("fast");</script> -->
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
         var isFirefox = typeof InstallTrigger !== 'undefined';
@@ -109,33 +109,38 @@ slug = "{{ :slug }}"
         $("#lightSlider").delay(fadein).fadeIn("slow");
         $(".gallery-caption").delay(fadein).fadeIn("slow");
 
+    </script> -->
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof $.fn.lightSlider === "undefined") {
+                console.error("LightSlider not loaded.");
+                return;
+            }
+    
+            var slider = $('#lightSlider').lightSlider({
+                controls: false,
+                gallery: true,
+                slideMargin: 10,
+                thumbItem: 5,
+                mode: "fade",
+                loop: true,
+                speed: 2000,
+                keyPress: true,
+                autoWidth: false,
+            });
+    
+            $('#goToPrevSlide').on('click', function () {
+                slider.goToPrevSlide();
+            });
+            $('#goToNextSlide').on('click', function () {
+                slider.goToNextSlide();
+            });
+        });
     </script>
 
-
-   <script defer>
-    document.addEventListener("DOMContentLoaded", function () {
-        var slider = $('#lightSlider').lightSlider({
-            controls: false,
-            gallery: true,
-            slideMargin: 10,
-            thumbItem: 5,
-            mode: "fade",
-            loop: true,
-            speed: 2000,
-            keyPress: true,
-            autoWidth: false,
-        });
-
-        $('#goToPrevSlide').on('click', function () {
-            slider.goToPrevSlide();
-        });
-        $('#goToNextSlide').on('click', function () {
-            slider.goToNextSlide();
-        });
-    });
-</script>
-
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $('.box-wrapper').each(function(index, element) {
     
         setTimeout(function(){
@@ -143,7 +148,7 @@ slug = "{{ :slug }}"
         }, index * 500);
 
     });
-    </script>
+    </script> -->
 
     <!-- <script type="text/javascript">
         const element = document.querySelector('.middlepane');
