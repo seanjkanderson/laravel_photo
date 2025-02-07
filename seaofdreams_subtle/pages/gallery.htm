@@ -15,7 +15,7 @@ slug = "{{ :slug }}"
 
     <link href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
     <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>    
-            
+
     <link rel="preload" as="image" href="{{ gallery.images[0].path | resize(500) }}">
 
 </head>
@@ -112,47 +112,28 @@ slug = "{{ :slug }}"
     </script>
 
 
-    <script defer>
-        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-        var isFirefox = typeof InstallTrigger !== 'undefined';
-        my_speed = 0;
-        if(isChrome || isFirefox) {
-            var my_speed = 2000;
-        }
-
-        var w = window.innerWidth;
-        var h = window.innerHeight;
-        var thumbHeight = 0.10;
-        var numThumbs = Math.floor(w / (thumbHeight*h));
-
+   <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
         var slider = $('#lightSlider').lightSlider({
-        controls: false,
-        gallery: true,
-        // item: 5,
-        slideMargin: 10,
-        thumbItem: numThumbs,
-        mode: "fade",
-        loop: true,
-        speed: this.my_speed,
-        keyPress: true,
-        autoWidth: false,
+            controls: false,
+            gallery: true,
+            slideMargin: 10,
+            thumbItem: 5,
+            mode: "fade",
+            loop: true,
+            speed: 2000,
+            keyPress: true,
+            autoWidth: false,
+        });
 
-        // onBeforeStart: function (slider) {
-        //     for (var i = 1; i <= 2; i++) {
-        //         var img = slider.find('li:nth-child(' + i + ') img');
-        //         img.attr('src', img.attr('data-src'));
-        //     }
-        // },
-    
-    });
         $('#goToPrevSlide').on('click', function () {
-        slider.goToPrevSlide();
-    });
+            slider.goToPrevSlide();
+        });
         $('#goToNextSlide').on('click', function () {
             slider.goToNextSlide();
+        });
     });
-    </script>
+</script>
 
     <script type="text/javascript">
         $('.box-wrapper').each(function(index, element) {
