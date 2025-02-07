@@ -50,37 +50,41 @@ idGallery = "_home"
 
 <script defer>
     document.addEventListener("DOMContentLoaded", function() {
-        let imagesLoaded = 0;
-        let images = JSON.parse(document.querySelector(".js-files").dataset.isAuthenticated);
-        let container = document.getElementById("cycler");
+    let imagesLoaded = 0;
+    let images = JSON.parse(document.querySelector(".js-files").dataset.isAuthenticated);
+    let container = document.getElementById("cycler");
 
-        if (images.length > 0) {
-            images.forEach((image, index) => {
-                let img = document.createElement("img");
-                img.classList.add(index === 0 ? "active image" : "image");
-                img.src = image.path;
-                img.loading = "lazy";
-                img.onload = () => {
-                    imagesLoaded++;
-                    if (imagesLoaded === 1) {
-                        document.getElementById("rpreloader").style.display = "none";
-                        document.getElementById("content").style.display = "block";
-                    }
-                };
-                container.appendChild(img);
-            });
-        }
+    if (images.length > 0) {
+        images.forEach((image, index) => {
+            let img = document.createElement("img");
+            if (index === 0) {
+                img.classList.add("active", "image"); // ✅ Fixed
+            } else {
+                img.classList.add("image"); // ✅ Fixed
+            }
+            img.src = image.path;
+            img.loading = "lazy";
+            img.onload = () => {
+                imagesLoaded++;
+                if (imagesLoaded === 1) {
+                    document.getElementById("rpreloader").style.display = "none";
+                    document.getElementById("content").style.display = "block";
+                }
+            };
+            container.appendChild(img);
+        });
+    }
 
-        function cycleImages() {
-            let active = document.querySelector('#cycler .active');
-            let next = active.nextElementSibling || document.querySelector('#cycler img:first-child');
-            
-            active.classList.remove("active");
-            active.style.opacity = 0;
-            next.classList.add("active");
-            next.style.opacity = 1;
-        }
+    function cycleImages() {
+        let active = document.querySelector('#cycler .active');
+        let next = active.nextElementSibling || document.querySelector('#cycler img:first-child');
+        
+        active.classList.remove("active");
+        active.style.opacity = 0;
+        next.classList.add("active");
+        next.style.opacity = 1;
+    }
 
-        setInterval(cycleImages, 4000);
-    });
+    setInterval(cycleImages, 4000);
+});
 </script>
