@@ -1403,6 +1403,36 @@ color: initial;
     background: none;
     border: none;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto; /* Ensures buttons remain clickable */
+}
+
+/* Adding arrow icons */
+.leftbutton::before,
+.rightbutton::before {
+    content: '';
+    width: 40px;  /* Adjust size as needed */
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.leftbutton::before {
+    background-image: url("../img/core-img/left-arrow.png"); /* Replace with actual path */
+}
+
+.rightbutton::before {
+    background-image: url("../img/core-img/right-arrow.png"); /* Replace with actual path */
+}
+
+
+@media (max-width: 768px) {
+    .leftbutton::before, .rightbutton::before {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .leftbutton:hover {
