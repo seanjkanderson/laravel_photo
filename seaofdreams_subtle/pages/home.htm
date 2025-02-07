@@ -48,8 +48,17 @@ idGallery = "_home"
 
 </body>
 
-<script defer>
-    document.addEventListener("DOMContentLoaded", function() {
+<scripts>
+
+    <script type="text/javascript">
+        $("#content").delay(0).fadeOut("fast");
+        $("#rpreloader").delay(3000).fadeOut("slow");
+        $("#content").delay(000).fadeIn("slow");
+
+    </script>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
     let imagesLoaded = 0;
     let images = JSON.parse(document.querySelector(".js-files").dataset.isAuthenticated);
     let container = document.getElementById("cycler");
@@ -87,4 +96,8 @@ idGallery = "_home"
 
     setInterval(cycleImages, 4000);
 });
-</script>
+    </script>
+
+    
+        
+</scripts>
