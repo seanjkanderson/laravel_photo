@@ -817,14 +817,14 @@ display: block;
     z-index: 1000;
 }
 
-.image {
+.home-image {
     position: absolute;
     max-width: var(--image_w);
     max-height: var(--image_h);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000;
+    /* z-index: 1000; */
     box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 50%);
 }
 
@@ -838,25 +838,157 @@ display: block;
     z-index: 1000;
 }
 
-#cycler{
-    /* position:relative; */
+.home-random-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;            /* maintain aspect ratio */
+    object-fit: contain;     /* fit inside container without cropping */
+    background-color: white;
+
+    /* Crisp rendering */
+    image-rendering: pixelated;               /* modern browsers */
+    -ms-interpolation-mode: nearest-neighbor; /* IE8+ */
+    image-rendering: crisp-edges;             /* Firefox */
+    image-rendering: optimize-contrast;       /* fallback */
+
+    border: none;
+
+    /* Fade-in effect */
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.home-random-image.loaded {
+    opacity: 1;
+}
+
+
+#cycler {
     margin: 0;
+    position: relative; /* needed for stacking images */
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#cycler img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* maintain aspect ratio */
+    object-fit: contain; /* ensures full image fits container */
+    z-index: 1;
+    background-color: white;
+
+    /* Crisp image rendering */
+    image-rendering: pixelated;               /* Modern browsers, best for sharp edges */
+    -ms-interpolation-mode: nearest-neighbor; /* IE8+ fallback */
+    image-rendering: crisp-edges;             /* Firefox */
+    image-rendering: optimize-contrast;       /* fallback */
     
+    transition: opacity 0.5s ease-in-out; /* smooth fade */
+    opacity: 0; /* hidden by default */
 }
-#cycler img{
-    position:absolute;
-    z-index:1;
-    background-color:white;
-    image-rendering: optimizeSpeed;             /*                     */
-    image-rendering: -moz-crisp-edges;          /* Firefox             */
-    image-rendering: -o-crisp-edges;            /* Opera               */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
-    image-rendering: optimize-contrast;         /* CSS3 Proposed       */
-    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                */
+
+#cycler img.active {
+    z-index: 3;
+    opacity: 1; /* show active image */
 }
-#cycler img.active{
-    z-index:3
+
+/* full page gray background */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    background: #b0b0b0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
 }
+
+/* main image area */
+.main-image {
+    position: relative;
+    width: 90vw;      /* keeps margins on sides */
+    max-width: 1400px;
+    margin-top: 90px; /* space under header */
+    margin-bottom: 25px;
+    height: calc(70vh); /* most of viewport height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* actual image */
+.image {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    /* box-shadow: 0 0 40px rgba(0,0,0,0.5); */
+    transition: opacity 0.25s ease;
+}
+
+/* arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: white;
+    background: rgba(0,0,0,0.35);
+    padding: 0.15em 0.5em;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+    transition: opacity 0.2s ease;
+}
+
+.nav-arrow.left { left: 10px; }
+.nav-arrow.right { right: 10px; }
+
+/* shrink then hide arrows */
+@media (max-width: 768px) {
+    .nav-arrow { font-size: 2.2rem; padding: 0.1em 0.35em; }
+}
+@media (max-width: 480px) {
+    .nav-arrow { display: none; }
+}
+
+/* thumbnail row */
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.thumbnails .thumb {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.thumbnails .thumb.selected {
+    border-color: #fff;
+    transform: scale(1.1);
+}
+
+/* responsive thumbs */
+@media (max-width: 768px) {
+    .thumbnails .thumb { width: 55px; height: 55px; }
+}
+@media (max-width: 480px) {
+    .thumbnails .thumb { width: 45px; height: 45px; }
+}
+
+
 
 .carousel-indicators {
     position: fixed;

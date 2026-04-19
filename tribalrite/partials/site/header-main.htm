@@ -1,9 +1,10 @@
-[Galleries]
-galleryOrder = "random"
-results = 100
-markup = "user"
-galleryPage = "gallery"
 ==
+<?php
+function onStart()
+{
+    $this['galleries'] = \Sqwk\Gallery\Models\Gallery::orderBy('name')->get();
+}
+?>
 ==
 <head>
     <meta charset="UTF-8">
@@ -20,9 +21,9 @@ galleryPage = "gallery"
   <title>Sean Anderson Photography | {{ this.page.title }}</title>
   <!-- <meta name="description" content="{{ this.page.meta_description }}"> -->
   <meta name="title" content="{{ this.page.meta_title }}">
-  <meta name="author" content="Phil Anderson">
+  <meta name="author" content="Sean Anderson">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Phil Anderson">
+  <meta name="generator" content="Sean Anderson">
   <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/logo-icon.png'|theme }}">
   <meta name="description" content="Sean Anderson - Time is fleeting | Movement is essential">
   <!-- <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/logo-icon.png'|theme }}"> -->
@@ -40,33 +41,22 @@ galleryPage = "gallery"
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu active">
-      <li><a href="{{ 'home'|page }}">HOME</a></li>
+      <!-- <li><a href="{{ 'home'|page }}">HOME</a></li> -->
       <div class="dropdown">
         <button class="dropbtn">PORTFOLIO
         </button>
         <div class="dropdown-content">
-          {% for my_gallery in galleries|sort((a, b) => a.slug <=> b.slug) %}
-            {% if "_" not in my_gallery.name %}
-            <a href="{{ my_gallery.url }}"> {{my_gallery.name}} </p> </a>  
+          {% for gallery in galleries %}
+            {% if "_" not in gallery.name %}
+                  <a href="{{ 'gallery'|page({'slug': gallery.slug}) }}">
+                      {{ gallery.name }}
+                  </a>
             {% endif %}
-          {% endfor %}
-
-          <!-- <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a> -->
+          {% endfor %}  
         </div>
       </div> 
-      <!-- <div class="dropdown">
-        <button class="dropbtn">FEEDING THE RAT 
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Sierra High Route</a>
-          <a href="#"></a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>  -->
+      <li><a href="https://seanandersonphotographysets.pixieset.com">SURF SESSIONS</a></li>
       <li><a href="{{ 'about'|page }}">ABOUT</a></li>
-      <!-- <li><a href="{{ 'contact'|page }}">CONTACT</a></li> -->
   </ul>
 </header>
 
