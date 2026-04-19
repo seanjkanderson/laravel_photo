@@ -4,6 +4,20 @@ layout = "inner-scroll"
 description = "Sean Anderson - Time is fleeting | Movement is essential"
 is_hidden = 0
 ==
+<?php
+function onStart()
+{
+    $password = 'ArtIsAlive';
+    
+    if (Session::get('page_unlocked') !== true) {
+        if (post('password') === $password) {
+            Session::put('page_unlocked', true);
+        } else {
+            return ['#content' => $this->renderPartial('password-form')];
+        }
+    }
+}
+?>
 ==
 
 <body> 
