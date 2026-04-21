@@ -59,7 +59,7 @@
 }
 
 .image {
-    max-width: min(80%,500px);
+    max-width: min(90%,500px);
     max-height: min(70%, 500px);
 }
 
