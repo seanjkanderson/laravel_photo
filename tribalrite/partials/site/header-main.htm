@@ -2,7 +2,7 @@
 <?php
 function onStart()
 {
-    $this['galleries'] = \Sqwk\Gallery\Models\Gallery::orderBy('name')->get();
+    $this['galleries'] = \Sqwk\Gallery\Models\Gallery::orderBy('slug')->get();
 }
 ?>
 ==
