@@ -35,36 +35,29 @@ function onStart()
 <!-- Header Area Start -->
 
 <header class="header">
-    <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/logo-icon.png'|theme }}">
-    <a href="{{ 'home'|page }}"><img src="{{ 'assets/img/core-img/sean-logo.png'|theme }}" class='logo-fade'></a>
+  <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/logo-icon.png'|theme }}">
+    <!-- <a href="{{ 'home'|page }}" class="logo">PHIL ANDERSON</a> -->
+    <a href="{{ 'home'|page }}"> <img src="{{ 'assets/img/core-img/sean-logo.png'|theme }}" class='logo-fade'> </a> 
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu active">
-
-        <!-- Desktop dropdown (hidden on mobile) -->
-        <div class="dropdown desktop-only">
-            <button class="dropbtn">PORTFOLIO</button>
-            <div class="dropdown-content">
-                {% for gallery in galleries %}
-                    {% if "_" not in gallery.name %}
-                        <a href="{{ 'gallery'|page({'slug': gallery.slug}) }}">{{ gallery.name }}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-
-        <!-- Mobile flat list (hidden on desktop) -->
-        {% for gallery in galleries %}
+      <!-- <li><a href="{{ 'home'|page }}">HOME</a></li> -->
+      <div class="dropdown">
+        <button class="dropbtn">PORTFOLIO
+        </button>
+        <div class="dropdown-content">
+          {% for gallery in galleries %}
             {% if "_" not in gallery.name %}
-                <li class="mobile-only">
-                    <a href="{{ 'gallery'|page({'slug': gallery.slug}) }}">{{ gallery.name }}</a>
-                </li>
+                  <a href="{{ 'gallery'|page({'slug': gallery.slug}) }}">
+                      {{ gallery.name }}
+                  </a>
             {% endif %}
-        {% endfor %}
-
-        <li><a href="https://seanandersonphotographysets.pixieset.com">SURF SESSIONS</a></li>
-        <li><a href="{{ 'about'|page }}">ABOUT</a></li>
-    </ul>
+          {% endfor %}  
+        </div>
+      </div> 
+      <li><a href="https://seanandersonphotographysets.pixieset.com">SURF SESSIONS</a></li>
+      <li><a href="{{ 'about'|page }}">ABOUT</a></li>
+  </ul>
 </header>
 
 
