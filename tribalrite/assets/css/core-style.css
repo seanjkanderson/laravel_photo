@@ -988,12 +988,12 @@ display: block;
 /* responsive thumbs */
 @media (max-width: 1024px) {
     .thumbnails .thumb { width: 55px; height: 55px; }
-    .main-image {width: 90vw; }
+    .main-image {width: 85vw; }
 }
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .thumbnails .thumb { width: 45px; height: 45px; }
     .main-image {width: 95vw; margin-top: 50px}
-}
+} */
 
 
 
