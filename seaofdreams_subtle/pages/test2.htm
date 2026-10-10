@@ -1,0 +1,59 @@
+title = "PORTFOLIO"
+url = "/portfolio3"
+layout = "inner-scroll"
+is_hidden = 1
+
+[Galleries]
+galleryOrder = "random"
+results = 10
+markup = "user"
+galleryPage = "gallery"
+==
+<head>
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Fotorama from CDNJS, 19 KB -->
+    <!-- <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> -->
+    <!-- <link  href="{{ '/assets/css/fotorama.dev.css'|theme }}" rel="stylesheet"> -->
+    <!-- <script src="{{ '/assets/javascript/fotorama.dev.js'|theme }}"></script> -->
+
+    <link  href="{{ '/assets/css/lightslider.css'|theme }}" rel="stylesheet">
+    <script src="{{ '/assets/javascript/lightslider.js'|theme }}"></script>            
+    <script src="{{ '/assets/javascript/project-common.js'|theme }}"></script>            
+</head>
+
+<body>
+
+
+{% for my_gallery in galleries %}
+    <p> {{my_gallery.url}}</p>
+    <div class="grid-item">
+        <div id="send-session" >
+            <div class="smoky-container">
+                <a href="{{ 'gallery'|page }}/{{my_gallery.name}}">
+                <img src="{{ my_gallery.images[0].path }}" alt="" id="send-session" class="button smoky-img"> 
+                <p class="smoky-txt"> {{my_gallery.name}} </p> </a>  
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+
+
+
+<scripts>
+
+    <script type="text/javascript">
+        $('.box-wrapper').each(function(index, element) {
+
+    setTimeout(function(){
+        element.classList.remove('loading');
+    }, index * 500);
+
+    });
+    </script>
+
+</scripts>

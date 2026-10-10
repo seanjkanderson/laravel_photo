@@ -1,0 +1,101 @@
+title = "Home"
+url = "/"
+layout = "default"
+
+[Gallery]
+markup = "user"
+idGallery = "_home"
+==
+==
+
+<head>
+</head>
+
+<style>
+    #rpreloader {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:white; /* change if the mask should have another color then white */
+    z-index:99999; /* makes sure it stays on top */
+    }
+
+</style>
+
+<body>
+
+    <div id="rpreloader">
+        <!-- {% for image in gallery.images %}
+            {% if image.index == 0 %} -->
+                <div class="container">
+                    <img src="{{ 'assets/img/core-img/preloader.gif'|theme }}" class="image" loading="lazy">
+                </div>
+            <!-- {% endif %}
+        {% endfor %} -->
+    </div>
+    
+    <div id="content">
+        <div id="container">
+            <div id="cycler"> </div>
+        </div>
+
+        <div class="js-files" data-is-authenticated="{{ gallery.images|json_encode|e('html_attr') }}">
+            <!-- ... -->
+        </div>
+    </div>
+
+</body>
+
+<scripts>
+
+    <script type="text/javascript">
+        $("#content").delay(0).fadeOut("fast");
+        $("#rpreloader").delay(3000).fadeOut("slow");
+        $("#content").delay(500).fadeIn("slow");
+
+    </script>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
+    let imagesLoaded = 0;
+    let images = JSON.parse(document.querySelector(".js-files").dataset.isAuthenticated);
+    let container = document.getElementById("cycler");
+
+    if (images.length > 0) {
+        images.forEach((image, index) => {
+            let img = document.createElement("img");
+            if (index === 0) {
+                img.classList.add("active", "image"); // ✅ Fixed
+            } else {
+                img.classList.add("image"); // ✅ Fixed
+            }
+            img.src = image.path;
+            img.loading = "lazy";
+            img.onload = () => {
+                imagesLoaded++;
+                if (imagesLoaded === 1) {
+                    document.getElementById("rpreloader").style.display = "none";
+                    document.getElementById("content").style.display = "block";
+                }
+            };
+            container.appendChild(img);
+        });
+    }
+
+    function cycleImages() {
+    let active = document.querySelector('#cycler .active');
+    let next = active.nextElementSibling || document.querySelector('#cycler img:first-child');
+    
+    active.classList.remove("active");
+    next.classList.add("active");
+}
+
+    setInterval(cycleImages, 4000);
+});
+    </script>
+
+    
+        
+</scripts>

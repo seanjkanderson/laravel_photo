@@ -1,0 +1,69 @@
+description = "Content pages"
+==
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Phil Anderson Photography | {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="Phil Anderson">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="Phil Anderson">
+        <link rel="icon" type="image/png" href="{{ 'assets/img/core-img/favicon.ico'|theme }}">
+        <link href="{{ 'assets/css/core-style.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/responsive.css'|theme }}" rel="stylesheet">
+        {% styles %}
+    </head>
+
+    <body>
+
+        <div id="page-container">
+            <div id="content-wrap"> 
+        <!-- Header -->
+        <header class="header">
+            <a href="/" class="logo">AGT</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+              <li><a href="#work">Our Work</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </header>
+
+        <!-- Content -->
+
+        <!-- <div class="scrollbar force-overflow" id="boxxy"> -->
+        <div class="gallery_area clearfix">
+            <div class="container-fluid clearfix">
+                    <h2> {{ this.page.title }} </h2>
+                    {% page %}
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <!-- jQuery (Necessary for All JavaScript Plugins) -->
+        <script src="{{ 'assets/javascript/jquery/jquery-2.2.4.min.js'|theme }}"></script>
+        <!-- Popper js -->
+        <script src="{{ 'assets/javascript/popper.min.js'|theme}}"></script>
+        <!-- Bootstrap js -->
+        <script src="{{ 'assets/javascript/bootstrap.min.js'|theme}}"></script>
+        <!-- Plugins js -->
+        <script src="{{ 'assets/javascript/plugins.js'|theme}}"></script>
+        <!-- Active js -->
+        <script src="{{ 'assets/javascript/active.js'|theme}}"></script>
+        {% framework extras %}
+        {% scripts %}
+
+    </div>
+    </div>
+
+    </body>
+
+    <!-- Footer -->
+
+    {% partial 'site/footer' %}
+</html>

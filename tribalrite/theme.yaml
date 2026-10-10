@@ -3,3 +3,7 @@ description: 'dev'
 author: Sean Anderson
 homepage: 'http://laravel_photo.com'
 code: ''
+
+twig:
+    extensions:
+        - Themes\YourTheme\Classes\TwigExtension
