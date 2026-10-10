@@ -1315,10 +1315,13 @@ transform: rotate(-45deg);
 
 .middlepane .image_2 {
     position: absolute;
-    width: auto;
-    max-width: var(--img-max-w);
-    max-height: var(--img-max-h);
-    height: auto;
+    /* Fill the shared size box and scale the photo to fit inside it (object-fit),
+       so small source files are scaled up to the same size as large ones. */
+    width: var(--img-max-w);
+    height: var(--img-max-h);
+    max-width: none;   /* a global img { max-width: 100% } would otherwise clip the box to the narrow .middlepane */
+    max-height: none;
+    object-fit: contain;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
