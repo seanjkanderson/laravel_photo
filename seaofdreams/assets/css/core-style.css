@@ -899,10 +899,18 @@ transform: rotate(-45deg);
     height: 100%;
 }
 
+/* Single source of truth for photo size: used by home (.image) and gallery (.image_2).
+   Viewport units, so the result doesn't depend on which ancestor is positioned.
+   Overridden at <=900px in responsive.css. */
+:root {
+    --img-max-w: min(50vw, 540px);
+    --img-max-h: min(60vh, 540px);
+}
+
 .image {
     position: absolute;
-    max-width: min(50%,540px);
-    max-height: min(60%, 540px);
+    max-width: var(--img-max-w);
+    max-height: var(--img-max-h);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1308,8 +1316,8 @@ transform: rotate(-45deg);
 .middlepane .image_2 {
     position: absolute;
     width: auto;
-    max-width: min(50vw, 540px);
-    max-height: min(60vh, 540px);
+    max-width: var(--img-max-w);
+    max-height: var(--img-max-h);
     height: auto;
     top: 50%;
     left: 50%;
@@ -2149,6 +2157,4 @@ body {
 	100% { 
 		opacity: 1; 
 	} 
-} 
-
-
+}
