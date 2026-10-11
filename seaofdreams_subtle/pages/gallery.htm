@@ -1,7 +1,7 @@
 title = "GALLERY"
 url = "/gallery/:slug"
 layout = "default-footerless"
-description = "Sean Anderson - Time is fleeting | Movement is essential"
+description = "Phil Anderson - Northern California-based | Minimalist landscape images of Western North America."
 is_hidden = 0
 
 [Gallery]
@@ -39,18 +39,11 @@ slug = "{{ :slug }}"
             <li data-thumb="{{ image.path }}">
                 <div class="middlepane" >
                         <div class="fade-in">
-                            <!-- {% if image.firstIndex %} -->
-                            <!-- <img src="{{ image.path | resize(500) }}" src-set="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(300) }} 300w" sizes="40vw" class="active image_2"/> -->
-                            <!-- {% else %} -->
-                        <!-- <img src="{{ image.path }}" class="active image_2" loading="lazy"/> -->
-                            <!-- {% endif %} -->
                             <img 
-                            src="{{ image.path | resize(500) }}" 
-                            srcset="{{ image.path | resize(100) }} 100w, {{ image.path | resize(250) }} 250w, {{ image.path | resize(500) }} 500w" 
-                            sizes="(max-width: 500px) 100vw, 500px" 
+                            src="{{ image.path | resize(1600, 1600, {mode: 'fit'}) }}" 
                             class="active image_2" 
                             loading="lazy" 
-                        />
+                            />
                         </div>
                         <!-- <button class="gallery_toggle empty_btn"></button> -->
                     
