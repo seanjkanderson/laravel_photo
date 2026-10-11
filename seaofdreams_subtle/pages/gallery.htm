@@ -36,13 +36,12 @@ slug = "{{ :slug }}"
     <ul id="lightSlider">
 
         {% for image in gallery.images %}
-            <li data-thumb="{{ image.path }}">
+            <li data-thumb="{{ image.path | resize(100) }}">
                 <div class="middlepane" >
                         <div class="fade-in">
                             <img 
-                            src="{{ image.path | resize(1600, 1600, {mode: 'fit'}) }}" 
+                            data-src="{{ image.path | resize(1200, 1200, {mode: 'fit'}) }}" 
                             class="active image_2" 
-                            loading="lazy" 
                             />
                         </div>
                         <!-- <button class="gallery_toggle empty_btn"></button> -->
@@ -117,6 +116,17 @@ slug = "{{ :slug }}"
         var thumbHeight = 0.10;
         var numThumbs = Math.floor(w / (thumbHeight*h));
 
+        function loadImgs($lis) {
+            $lis.find('img[data-src]').each(function () {
+                var $i = $(this);
+                $i.attr('src', $i.attr('data-src')).removeAttr('data-src');
+            });
+        }
+        function loadAround(el) {
+            var $items = el.children(), $cur = $items.filter('.active');
+            if (!$cur.length) $cur = $items.first();
+            loadImgs($cur.add($cur.prev()).add($cur.next()).add($items.first()).add($items.last()));
+        }
         var slider = $('#lightSlider').lightSlider({
         controls: false,
         gallery: true,
@@ -129,12 +139,8 @@ slug = "{{ :slug }}"
         keyPress: true,
         autoWidth: false,
 
-        // onBeforeStart: function (slider) {
-        //     for (var i = 1; i <= 2; i++) {
-        //         var img = slider.find('li:nth-child(' + i + ') img');
-        //         img.attr('src', img.attr('data-src'));
-        //     }
-        // },
+        onSliderLoad: function (el) { loadAround(el); },
+        onAfterSlide: function (el) { loadAround(el); },
     
     });
         $('#goToPrevSlide').on('click', function () {
